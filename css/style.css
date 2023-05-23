@@ -17,13 +17,27 @@
     list-style: none;
 }
 
+.nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    left: 7rem;
+}
+
 .logo-header{
     width: 135px;
+    position: relative;
+}
+
+.nav-list{
+    display: flex;
+    flex-direction: row;
 }
 
 .nav-link{
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 15px;
+    margin: 2rem;
     font-style: normal;
+    font-weight: 400;
+    font-size: 16;
 }
