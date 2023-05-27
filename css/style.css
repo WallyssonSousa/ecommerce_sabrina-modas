@@ -15,6 +15,7 @@
     color: var(--corTextPrincipal);
     background-color: var(--corPrimaria);
     list-style: none;
+    overflow-x: hidden;
 }
 
 .nav{
@@ -22,7 +23,7 @@
     flex-direction: row;
     align-items: center;
     position: relative;
-    left: 7rem;
+    left: 4.8rem;
 }
 
 .logo-header{
@@ -34,7 +35,7 @@
     display: flex;
     flex-direction: row;
     position: relative;
-    left: 2rem;
+    left: 1.5rem;
 }
 
 .nav-link{
@@ -42,7 +43,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    transition: 2s all ;
+    transition: all .5s ease-in-out;
 }
 
 .nav-link-active{
@@ -50,6 +51,13 @@
 }
 
 .nav-link:hover{
-   
-   font-weight: 500;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.input-seach{
+    position: relative;
+    left: 5rem;
+    border: none;
+    border-radius: 6px;
 }
