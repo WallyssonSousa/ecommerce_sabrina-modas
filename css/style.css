@@ -96,5 +96,19 @@
     align-items: center;
 }
 
+.container-hr{
+    display: grid;
+    place-items: center;
+}
+
+.hr-header{
+    width: 90%;
+    background-color: #F8F7FC;
+}
+
+.banner{
+    width: 100%;
+}
+
 
 
