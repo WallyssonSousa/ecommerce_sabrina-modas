@@ -3,7 +3,7 @@
 :root{
     --fontPrincipal: 'Rubik', sans-serif;
     --corTextPrincipal: #393939;
-    --corPrimaria: #F1F0FA;
+    --corPrimaria: #ffffff;
 }
 
 *{
@@ -17,6 +17,13 @@
     list-style: none;
     overflow-x: hidden;
 }
+
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 
 .nav{
     display: flex;
@@ -34,30 +41,60 @@
 .nav-list{
     display: flex;
     flex-direction: row;
-    position: relative;
-    left: 1.5rem;
 }
 
-.nav-link{
+.nav-item{
     margin: 2rem;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    transition: all .5s ease-in-out;
 }
 
-.nav-link-active{
-    font-weight: 700;
-}
-
-.nav-link:hover{
-    font-weight: 600;
-    font-size: 17px;
-}
-
-.input-seach{
-    position: relative;
-    left: 5rem;
-    border: none;
+.input-search{
+    margin-left: 7rem;
+    background-color: #F1F0FA;
     border-radius: 6px;
+    padding: 20px 55px;
+    display: flex;
+    align-items: center;
 }
+
+.input{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    position: relative;
+    right: 20px;
+    top: 3px;
+    color: #616161;
+}
+
+.input::placeholder{
+    color: #616161;
+    font-size: 14px;
+}
+
+.input-icon{
+    background: transparent;
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+}
+
+.carrinho-compras{
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 10rem;
+    cursor: pointer;
+}
+
+.perfil{
+    position: relative;
+    left: 11rem;
+    display: flex;
+    align-items: center;
+}
+
+
+
