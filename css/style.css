@@ -138,11 +138,11 @@
     transition: transform 0.3s;
 }
 
-.card:hover{
+.card:hover {
     transform: translateY(-10px);
 }
 
-.card-img{
+.card-img {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -150,30 +150,30 @@
     bottom: 20px;
 }
 
-.card-content{
+.card-content {
     position: relative;
     bottom: 20px;
     margin-bottom: 20px;
 }
 
-.img-card{
+.img-card {
     width: 80%;
     height: 300px;
     object-fit: cover;
 }
 
-.card-descricao{
+.card-descricao {
     display: flex;
     align-items: flex-start;
     flex-direction: row;
 }
 
-.descricao-card{
+.descricao-card {
     font-size: 14px;
     font-weight: 600;
 }
 
-.preco-card{
+.preco-card {
     color: #FFA7DE;
     font-weight: 600;
     margin: 5px 0;
@@ -186,7 +186,7 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: #FFA7DE;
-    color: white;
+    color: #fff;
     font-weight: 400;
     border: none;
     padding: 10px 20px;
@@ -195,8 +195,111 @@
     text-decoration: none;
     font-size: 14px;
     cursor: pointer;
-  }
-  
-  .card:hover button.add-carrinho {
+}
+
+.card:hover button.add-carrinho {
     display: block;
-  }
+}
+
+.footer {
+    background-color: #FBFCFE;
+    max-width: 100%;
+    margin: 5rem 0;
+}
+
+.footer--cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer--titulo-newsletter {
+    margin: 0 10rem;
+}
+
+.footer--titulo-newsletter h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.footer--titulo-newsletter h4 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.footer--compo-texto {
+    margin: 0 5rem;
+
+}
+
+.campo-texto {
+    background-color: #f1f0faee;
+    border-radius: 4px;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-footer{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    position: relative;
+    right: 2rem;
+}
+
+.button-footer{
+    border: none;
+    border-radius: 6px;
+    background-color: #FFA7DE;
+    color: #fff;
+    padding: 10px;
+    position: relative;
+    left: 2rem;
+    cursor: pointer;
+}
+
+.footer-hr{
+    width: 80%;
+    margin: 3rem;
+    border-color:#f1f1f1 ;
+}
+
+.footer--rodape{
+    display: flex;
+    align-items: center;
+}
+
+.footer--midia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-rodape{
+    width: 30%;
+}
+
+.footer--contatos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.footer--item-contato{
+    display: flex;
+    padding: 12px 0;
+    align-items: start;
+    justify-content: center;
+}
+
+.footer-icons{
+    padding: 0 10px;
+}
+
+.footer--pagamento{
+    margin-left: 15rem;
+}
