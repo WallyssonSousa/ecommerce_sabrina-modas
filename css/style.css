@@ -109,23 +109,94 @@
     width: 100%;
 }
 
-.container-destaques{
+.container-categoria {
     display: grid;
     place-items: center;
     text-align: center;
-    margin: 5rem;
+    margin: 2rem 5rem;
 }
 
-.titulo-destaque{
+.titulo-categoria {
     font-size: 26px;
     font-weight: 600;
     text-align: center;
     color: #0f0f0f;
 }
 
-.container-card{
+.container-card {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
+    margin: 3rem;
 }
 
+.card {
+    text-align: start;
+    padding: 20px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.card-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 20px;
+}
+
+.card-content{
+    position: relative;
+    bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.img-card{
+    width: 80%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-descricao{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.descricao-card{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.preco-card{
+    color: #FFA7DE;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.card button.add-carrinho {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FFA7DE;
+    color: white;
+    font-weight: 400;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .card:hover button.add-carrinho {
+    display: block;
+  }
