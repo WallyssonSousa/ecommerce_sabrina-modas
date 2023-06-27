@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --fontPrincipal: 'Rubik', sans-serif;
+    --corTextPrincipal: #393939;
+    --corPrimaria: #ffffff;
+    --corRosa: #FFA7DE;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: var(--fontPrincipal);
+    color: var(--corTextPrincipal);
+    background-color: var(--corPrimaria);
+    list-style: none;
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    left: 4.8rem;
+}
+
+.logo-header {
+    width: 135px;
+    position: relative;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-item {
+    margin: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.input-search {
+    background-color: #F1F0FA;
+    border-radius: 6px;
+    padding: 20px 55px;
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    position: relative;
+    right: 20px;
+    top: 3px;
+    color: #616161;
+}
+
+.input::placeholder {
+    color: #616161;
+    font-size: 14px;
+}
+
+.input-icon {
+    background: transparent;
+    position: relative;
+    top: 2px;
+    left: 30px;
+    cursor: pointer;
+}
+
+.container-icons {
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: 10em;
+}
+
+.carrinho-compras {
+    margin: 15px;
+    cursor: pointer;
+}
+
+.container-hr {
+    display: grid;
+    place-items: center;
+}
+
+.hr-header {
+    width: 90%;
+    border-color: #F8F7FC;
+}
