@@ -241,7 +241,7 @@
     align-items: center;
 }
 
-.input-footer{
+.input-footer {
     border: none;
     outline: none;
     background-color: transparent;
@@ -249,7 +249,7 @@
     right: 2rem;
 }
 
-.button-footer{
+.button-footer {
     border: none;
     border-radius: 6px;
     background-color: #FFA7DE;
@@ -260,13 +260,13 @@
     cursor: pointer;
 }
 
-.footer-hr{
+.footer-hr {
     width: 80%;
     margin: 3rem;
-    border-color:#f1f1f1 ;
+    border-color: #f1f1f1;
 }
 
-.footer--rodape{
+/* .footer--rodape{
     display: flex;
     align-items: center;
 }
@@ -302,4 +302,46 @@
 
 .footer--pagamento{
     margin-left: 15rem;
+} */
+
+.footer--rodape {
+    display: flex;
+    align-items: center;
+}
+
+.footer--midia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 33.33%;
+    flex-grow: 1;
+}
+
+.logo-rodape{
+    width: 30%;
+}
+
+.footer--contatos {
+    flex-basis: 33.33%;
+    flex-grow: 1;
+}
+
+.footer--item-contato{
+    display: flex;
+    padding: 12px 0;
+    align-items: start;
+}
+
+.footer--item-contato img{
+    margin-right: 10px;
+}
+
+.footer--pagamento {
+    flex-basis: 33.33%;
+    flex-grow: 1;
+}
+
+.footer-icons{
+    padding: 0 10px;
 }
