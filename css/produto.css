@@ -151,3 +151,203 @@
 .dropdown:hover .dropdown-child {
     display: block;
 }
+
+
+.container-produtos{
+    display: grid;
+    place-items: center;
+    text-align: center;
+    margin: 2rem 5rem;
+}
+
+.titulo-produto{
+    font-size: 26px;
+    font-weight: 500;
+    text-align: start;
+    color: #252525;
+}
+
+.categoria-produtos{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin: 3rem;
+}
+
+.card {
+    text-align: start;
+    padding: 20px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 20px;
+}
+
+.card-content {
+    position: relative;
+    bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.img-card {
+    width: 80%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-descricao {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.descricao-card {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.preco-card {
+    color: #FFA7DE;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.card button.add-carrinho {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FFA7DE;
+    color: #fff;
+    font-weight: 400;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.card:hover button.add-carrinho {
+    display: block;
+}
+
+.footer {
+    background-color: #FBFCFE;
+    max-width: 100%;
+    margin: 5rem 0;
+}
+
+.footer--cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer--titulo-newsletter {
+    margin: 0 10rem;
+}
+
+.footer--titulo-newsletter h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.footer--titulo-newsletter h4 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.footer--compo-texto {
+    margin: 0 5rem;
+
+}
+
+.campo-texto {
+    background-color: #f1f0faee;
+    border-radius: 4px;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-footer {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    position: relative;
+    right: 2rem;
+}
+
+.button-footer {
+    border: none;
+    border-radius: 6px;
+    background-color: #FFA7DE;
+    color: #fff;
+    padding: 10px;
+    position: relative;
+    left: 2rem;
+    cursor: pointer;
+}
+
+.footer-hr {
+    width: 80%;
+    margin: 3rem;
+    border-color: #f1f1f1;
+}
+
+.footer--rodape {
+    display: flex;
+    align-items: center;
+}
+
+.footer--midia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 33.33%;
+    flex-grow: 1;
+}
+
+.logo-rodape{
+    width: 30%;
+}
+
+.footer--contatos {
+    flex-basis: 33.33%;
+    flex-grow: 1;
+}
+
+.footer--item-contato{
+    display: flex;
+    padding: 12px 0;
+    align-items: start;
+}
+
+.footer--item-contato img{
+    margin-right: 10px;
+}
+
+.footer--pagamento {
+    flex-basis: 33.33%;
+    flex-grow: 1;
+}
+
+.footer-icons{
+    padding: 0 10px;
+}
