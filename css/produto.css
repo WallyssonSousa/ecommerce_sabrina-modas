@@ -104,3 +104,14 @@
     width: 90%;
     border-color: #F8F7FC;
 }
+
+.select-categoria{
+    display: grid;
+    place-items: center;
+    margin: 2rem;
+}
+
+.select-categoria select{
+    border: none;
+}
+

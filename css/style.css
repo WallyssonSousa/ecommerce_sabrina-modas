@@ -266,44 +266,6 @@
     border-color: #f1f1f1;
 }
 
-/* .footer--rodape{
-    display: flex;
-    align-items: center;
-}
-
-.footer--midia{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.logo-rodape{
-    width: 30%;
-}
-
-.footer--contatos{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-}
-
-.footer--item-contato{
-    display: flex;
-    padding: 12px 0;
-    align-items: start;
-    justify-content: center;
-}
-
-.footer-icons{
-    padding: 0 10px;
-}
-
-.footer--pagamento{
-    margin-left: 15rem;
-} */
-
 .footer--rodape {
     display: flex;
     align-items: center;
