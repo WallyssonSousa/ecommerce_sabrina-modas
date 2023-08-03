@@ -108,3 +108,20 @@
 .container-contatos{
     margin: 3rem 6rem;
 }
+
+.container-form{
+    margin: 3.5rem 0;
+}
+
+.titulo-form{
+    font-weight: 500;
+}
+
+.semi-titulo--form{
+    font-size: 15px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
