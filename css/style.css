@@ -60,7 +60,7 @@
     align-items: center;
 }
 
-.input {
+.input-header {
     border: none;
     background-color: transparent;
     outline: none;
@@ -70,7 +70,7 @@
     color: #616161;
 }
 
-.input::placeholder {
+.input-header::placeholder {
     color: #616161;
     font-size: 14px;
 }
