@@ -120,3 +120,23 @@
     padding: 15px 15px;
     margin: 0.5rem;
 }
+
+.container-button{
+    display: grid;
+    place-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.button-finalizar{
+    background-color: #FFA7DE;
+    color: #ffffff;
+    font-weight: 400;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    font-style: normal;
+    width: 15rem;
+    margin-top: 20px;
+}
