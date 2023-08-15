@@ -223,7 +223,7 @@
     margin: 5px 0;
 }
 
-.card button.add-carrinho {
+.card button.add-carrinho, .card a.add-carrinho {
     display: none;
     position: absolute;
     bottom: 10px;
@@ -241,7 +241,7 @@
     cursor: pointer;
 }
 
-.card:hover button.add-carrinho {
+.card:hover button.add-carrinho, .card:hover a.add-carrinho {
     display: block;
 }
 
