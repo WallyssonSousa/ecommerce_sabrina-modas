@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --fontPrincipal: 'Rubik', sans-serif;
+    --corTextPrincipal: #393939;
+    --corPrimaria: #ffffff;
+    --corRosa: #FFA7DE;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: var(--fontPrincipal);
+    color: var(--corTextPrincipal);
+    background-color: var(--corPrimaria);
+    list-style: none;
+    overflow-x: hidden;
+}
+
+.header {
+    display: grid;
+    place-items: center;
+}
+
+.logo-header {
+    position: relative;
+    width: 135px;
+}
+
+.container-hr {
+    display: grid;
+    place-items: center;
+}
+
+.hr-header {
+    width: 90%;
+    border-color: #F8F7FC;
+}
+
+.main{
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
