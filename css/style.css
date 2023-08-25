@@ -7,17 +7,18 @@
     --corRosa: #FFA7DE;
 }
 
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     font-family: var(--fontPrincipal);
     color: var(--corTextPrincipal);
-    background-color: var(--corPrimaria);
     list-style: none;
     overflow-x: hidden;
 }
+
+/* header */
 
 .header {
     display: flex;
@@ -94,6 +95,11 @@
     margin: 15px;
     cursor: pointer;
 }
+
+
+
+
+/* Main */
 
 .container-hr {
     display: grid;
