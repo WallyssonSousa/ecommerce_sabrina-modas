@@ -19,81 +19,120 @@
     overflow-x: hidden;
 }
 
-.header {
-    display: grid;
-    place-items: center;
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.logo-header {
-    position: relative;
-    width: 135px;
+.container-form-cadastro {
+    margin-top: 3.5rem;
 }
 
-.container-hr {
-    display: grid;
-    place-items: center;
-}
-
-.hr-header {
-    width: 90%;
-    border-color: #F8F7FC;
-}
-
-.main{
-    text-align: center;
-    display: grid;
-    place-items: center;
-}
-
-.container-titulo{
-    margin-top: 2rem;
-}
-
-.container-form-cadastro{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-.formulario{
+.formulario {
     display: flex;
     flex-direction: column;
     text-align: start;
     border: 1px solid #F1F0FA;
-    padding: 5rem;
+    border-radius: 2px;
+    padding: 2rem 4rem;
 }
 
-.form-titulo{
+.container-logo-form {
+    display: grid;
+    place-items: center;
+}
+
+.logo-form {
+    width: 135px;
+    position: relative;
+    bottom: 0.5rem;
+}
+
+.form-titulo {
     text-align: center;
     position: relative;
     bottom: 2rem;
+    font-weight: 500;
 }
 
-.label{
-    font-weight: 400;
+.input-wrapper {
+    position: relative;
+    width: 200px;
+    margin: 10px auto;
+}
+
+.input-box {
+    font-size: 16px;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 2px solid #F1F0FA;
+    color: var(--corTextPrincipal);
+    width: 100%;
+    background-color: transparent;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--corRosa);
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.input-box:focus {
+    border-color: var(--corRosa);
+    outline: none;
+}
+
+.input-box:focus+.underline {
+    transform: scaleX(1);
+}
+
+#icon{
+    background: url('../img/olho-aberto.png');
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 10.5rem;
+    bottom: 0.5rem;
     cursor: pointer;
+    background-size: cover;
 }
 
-.input{
-    border: 1px solid #F1F0FA;
-    background-color: #F1F0FA;
-    border-radius: 3px;
-    width: 95%;
-    padding: 15px 15px;
-    margin: 0.5rem;
+.container-button-form{
+    display: flex;
+    flex-direction: column;
 }
 
-.button-login{
+.container-button-form--header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5em 0;
+}
+
+.button-cadastro{
+    width: 50%;
     display: flex;
     justify-content: center;
     position: relative;
-    top: 1rem;
     background-color: #FFA7DE;
     color: #ffffff;
     font-weight: 400;
     border: none;
-    padding: 15px 30px;
+    padding: 12px;
     cursor: pointer;
     border-radius: 4px;
     font-size: 14px;
-    font-style: normal;
+    transition: 0.5s all;
 }
+
+.button-cadastro:hover{
+    background-color: #f589cc;
+}
+
