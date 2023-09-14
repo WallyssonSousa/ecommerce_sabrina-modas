@@ -18,25 +18,36 @@
                 <img src="../../img/logo.png" alt="logo" class="logo-header">
             </a>
 
-
-
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a href="../../index.html">Home</a>
+                    <a class="item" href="../../index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="views/Produtos/index.html">Produtos</a>
+                    <a class="item" href="#">Produtos</a>
                 </li>
                 <li class="nav-item">
-                    <a href="../Contato/index.html">Contato</a>
+                    <a class="item" href="../Contato/index.html">Contato</a>
                 </li>
             </ul>
         </nav>
 
-        <div class="input-search">
-            <input class="input-header" type="search" placeholder="Faça sua pesquisa" />
-            <img class="input-icon" src="../../img/procurar.png" alt="procurar">
-        </div>
+        <form class="form input-serch">
+            <button>
+                <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
+                    aria-labelledby="search">
+                    <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9"
+                        stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round">
+                    </path>
+                </svg>
+            </button>
+            <input class="input" placeholder="Faça sua pesquisa" required="" type="text">
+            <button class="reset" type="reset">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </form>
 
         <div class="container-icons">
             <div class="carrinho-compras">
@@ -48,33 +59,21 @@
             </div>
         </div>
 
-
+        <div>
+            <label class="switch">
+                <input type="checkbox" checked="checked" id="chk" />
+                <span class="slider"></span>
+            </label>
+        </div>
 
     </header>
+
 
     <div class="container-hr">
         <hr class="hr-header">
     </div>
 
     <main>
-
-        <section class="select-categoria">
-
-            <div class="dropdown">
-                <button class="mainMenuBtn">CATEGORIAS
-                    <i>
-                        <img src="../../img/icon-categoria.png" class="icon-categoria">
-                    </i>
-                </button>
-                <div class="dropdown-child">
-                    <div class="dropdown-child--links">
-                        <a href="#tenis">Tênis</a>
-                        <a href="#conjunto">Conjuntos</a>
-                    </div>
-                </div>
-            </div>
-
-        </section>
 
 
         <section class="container-produtos">
@@ -372,6 +371,8 @@
         </div>
 
     </footer>
+
+    <script src="../../js/modoNoturno.js"></script>
 </body>
 
 </html>
