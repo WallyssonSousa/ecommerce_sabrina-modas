@@ -27,7 +27,7 @@ body {
 }
 
 body.dark {
-    
+
     background: #2a2c2b;
     color: #fafafa;
 
@@ -38,6 +38,7 @@ body.dark {
         font-weight: 400;
         font-size: 16px;
     }
+
     .item {
         color: #fafafa;
     }
@@ -96,7 +97,7 @@ body.dark {
     flex-direction: row;
 }
 
-.item{
+.item {
     margin: 1.3rem;
     font-style: normal;
     color: #2a2c2b;
@@ -247,7 +248,6 @@ input:checked+.slider:before {
     transform: translateX(100%);
     box-shadow: inset 15px -4px 0px 15px var(--corPrimaria);
 }
-
 
 
 
