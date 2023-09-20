@@ -253,6 +253,38 @@ input:checked+.slider:before {
     box-shadow: inset 15px -4px 0px 15px var(--corPrimaria);
 }
 
+.perfil {
+    display: flex;
+    align-items: center;
+}
+
+.container-login-cadastro {
+    padding: 0 30px;
+}
+
+.nome-conta {
+    font-weight: 500;
+    text-align: start;
+}
+
+.login-cadastro {
+    display: flex;
+    justify-content: center;
+}
+
+.login-cadastro a {
+    font-size: 14px;
+    padding: 0 2px;
+    color: #2a2c2b;
+    text-align: start;
+}
+
+.login-cadastro p {
+    font-size: 14px;
+    text-align: start;
+}
+
+
 .container-hr {
     display: grid;
     place-items: center;
