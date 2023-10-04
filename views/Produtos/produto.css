@@ -39,6 +39,14 @@ body.dark {
         font-size: 16px;
     }
 
+    .login-cadastro a{
+        color: #f1f0fa;
+    }
+
+    .login-cadastro p{
+        color: #f1f0fa;
+    }
+
     .titulo-produto{
         color: #fafafa;
     }
