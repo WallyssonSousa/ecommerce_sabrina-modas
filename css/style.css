@@ -385,8 +385,6 @@ input:checked+.slider:before {
     width: 100%;
 }
 
-
-
 .container-categoria {
     display: grid;
     place-items: center;
@@ -478,6 +476,53 @@ input:checked+.slider:before {
 .card:hover button.add-carrinho {
     display: block;
 }
+
+/*Responsividade containers de produtos*/
+
+@media screen and (max-width: 905px) {
+    .container-card{
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+        margin: 3rem;
+    }
+
+    .card-content {
+        position: relative;
+        bottom: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .img-card {
+        width: 70%;
+        height: 280px;
+        object-fit: cover;
+    }
+
+}
+
+@media screen and (max-width: 680px) {
+    .container-card{
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        margin: 3rem;
+    }
+
+    .card-content {
+        position: relative;
+        bottom: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .img-card {
+        width: 80%;
+        height: 270px;
+        object-fit: cover;
+    }
+
+}
+
+/**/
+
 
 .footer {
     max-width: 100%;
