@@ -174,49 +174,69 @@
     </main>
 
     <footer class="footer">
-        <div class="footer--cabecalho">
-            <div class="footer--titulo-newsletter">
-                <h3>CADASTRE-SE</h3>
-                <h4>para receba novidades e promoções da nossa loja</h4>
-            </div>
 
-            <div class="footer--compo-texto">
-                <div class="campo-texto">
-                    <input class="input-footer" type="email" placeholder="Digite seu email">
-                    <button class="button-footer">Cadastre-se</button>
+        <div class="container-footer">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4 class="titulos-footer">Sobre</h4>
+                    <p class="footer-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
+                        luctus nec ullamcorper
+                        mattis, pulvinar dapibus leo.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="titulos-footer">Contato</h4>
+                    <ul>
+                        <li class="footer-item">
+                            <p>Telefone: (11) 98475-1617</p>
+                        </li>
+                        <li class="footer-item">
+                            <p>E-mail: contato@sabrina_modas.com.br</p>
+                        </li>
+                        <li class="footer-item">
+                            <p>Endereço: Av. Dos Remédios 1400 - Osasco SP</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="titulos-footer">Links úteis</h4>
+                    <ul>
+                        <li><a class="footer-item" href="views/Contato/index.html">Página de contato</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <div class="container-hr">
+        <div class="container-hr-footer">
             <hr class="footer-hr">
         </div>
 
-        <div class="footer--rodape">
-            <div class="footer--midia">
-                <img src="../../img/logo.png" alt="logo rodape" class="logo-rodape">
-                <div class="footer--midia-redesociais">
-
-                    <img src="../../img/facebook.png" alt="facebook" class="footer-icons">
-
-                    <img src="../../img/instagram.png" alt="instagram" class="footer-icons">
+        <div class="container-footer-midia">
+            <div class="col">
+                <div class="col-sociais">
+                    <img src="../../img/instagram.png" alt="instagram">
+                    <p>Sabrinamodaas___</p>
                 </div>
-            </div>
-            <div class="footer--contatos">
-                <h4>Atendimento</h4>
-                <div class="footer--item-contato">
-                    <img src="../../img/celular.png" alt="celular" class="footer-icons">
-                    <p>(11) 997135477</p>
-                </div>
-                <div class="footer--item-contato">
-                    <img src="../../img/email.png" alt="email.png" class="footer-icons">
-                    <p>contato@wallyssonsousa.com.br</p>
+                <div class="col-logo">
+                    <a href="#">
+                        <img src="../../img/logo.png" alt="Logotipo do Ecommerce" class="logo-rodape">
+                    </a>
                 </div>
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-md-12">
+                <a href="#" class="btn-voltar-topo" style="display: none;" onclick="scrollToTop()">
+                    <img src="../../img/de-volta-ao-topo.png" alt="voltar ao topo">
+                </a>
+            </div>
+        </div>
+
+
+
     </footer>
 
+    <script src="../../js/buttonVoltarTopo.js"></script>
     <script src="../../js/modoNoturno.js"></script>
     <script src="../../js/menuResponsivo.js"></script>
 </body>

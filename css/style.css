@@ -73,6 +73,14 @@ body.dark {
         color: #f1f0fa;
     }
 
+    .footer{
+        color: #f1f0fa;
+    }
+
+    .footer-item{
+        color: #f1f0fa;
+    }
+
 }
 
 
@@ -478,7 +486,7 @@ input:checked+.slider:before {
 
 @media (max-width: 999px) {
 
-    .container-categoria{
+    .container-categoria {
         margin: 3em;
     }
 
@@ -499,7 +507,7 @@ input:checked+.slider:before {
 
 @media (max-width: 850px) {
 
-    .container-categoria{
+    .container-categoria {
         margin: 2em;
     }
 
@@ -537,7 +545,7 @@ input:checked+.slider:before {
 
 @media (max-width: 750px) {
 
-    .container-card{
+    .container-card {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 15px;
@@ -589,14 +597,14 @@ input:checked+.slider:before {
     }
 }
 
-@media (max-width: 600px){
-    .container-categoria{
+@media (max-width: 600px) {
+    .container-categoria {
         margin: 0.5em;
     }
 }
 
 
-@media (max-width: 500px){
+@media (max-width: 500px) {
 
     .container-categoria {
         display: grid;
@@ -723,116 +731,114 @@ input:checked+.slider:before {
     }
 }
 
-.footer {
-    max-width: 100%;
-    margin: 5rem 0;
+
+footer {
+    padding: 20px;
+    color: var(--corTextPrincipal);
+    text-align: center;
+    margin: 5em 0 0 0;
 }
 
 .container-hr {
-    display: grid;
-    place-items: center;
-}
-
-.footer--cabecalho {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer--titulo-newsletter {
-    margin: 0 10rem;
-}
-
-.footer--titulo-newsletter h3 {
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.footer--titulo-newsletter h4 {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.footer--compo-texto {
-    margin: 0 5rem;
-
-}
-
-.campo-texto {
-    background-color: #f1f0faee;
-    border-radius: 4px;
-    padding: 20px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.input-footer {
-    border: none;
-    outline: none;
-    background-color: transparent;
-    position: relative;
-    right: 2rem;
-}
-
-.button-footer {
-    border: none;
-    border-radius: 6px;
-    background-color: #FFA7DE;
-    color: #fff;
-    padding: 10px;
-    position: relative;
-    left: 2rem;
-    cursor: pointer;
+    margin: 3em;
 }
 
 .footer-hr {
-    width: 80%;
-    margin: 3rem;
-    border-color: #f1f1f1;
+    border-color: #f1f0fa;
 }
 
-.footer--rodape {
-    display: flex;
-    align-items: center;
+.container-footer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.footer--midia {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-basis: 33.33%;
-    flex-grow: 1;
+.row {
+    margin-bottom: 20px;
 }
+
+.col-md-4 {
+    width: 33.33%;
+    float: left;
+}
+
+.titulos-footer{
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+    bottom: 3px;
+}
+
+.footer-item{
+    color: var(--corTextPrincipal);
+}
+
 
 .logo-rodape {
     width: 30%;
 }
 
-.footer--contatos {
-    flex-basis: 33.33%;
-    flex-grow: 1;
+.container-footer-midia {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.footer--item-contato {
+.col {
+    margin-bottom: 20px;
     display: flex;
-    padding: 12px 0;
-    align-items: start;
+    align-items: center;
 }
 
-.footer--item-contato img {
-    margin-right: 10px;
+.col-logo {
+    width: 50%;
 }
 
-.footer--pagamento {
-    flex-basis: 33.33%;
-    flex-grow: 1;
+.col-sociais {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.footer-icons {
-    padding: 0 10px;
+.col-sociais img{
+    display: flex;
+    align-items: center;
 }
+
+
+.col-sociais p {
+    padding: 0 5px;
+    font-size: 18px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+.btn-voltar-topo {
+    position: fixed;
+    bottom: 5em;
+    right: 1em;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid #FFA7DE;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+}
+
+.btn-voltar-topo:hover{
+    opacity: 0.7;
+}
+
+
 
 /*Responsividade footer*/
 
+@media (max-width: 600px){
+    .logo-rodape{
+        width: 50%;
+    }
+}
