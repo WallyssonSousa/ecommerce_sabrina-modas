@@ -13,11 +13,114 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family: var(--fontPrincipal);
-    color: var(--corTextPrincipal);
-    background-color: var(--corPrimaria);
     list-style: none;
     overflow-x: hidden;
 }
+
+
+body {
+    background-color: #fafafa;
+    color: #2a2c2b;
+    transition: background 0.8s linear;
+    text-decoration: none;
+}
+
+body.dark {
+
+    background: #2a2c2b;
+    color: #fafafa;
+
+    .formulario{
+        border: 1px solid var(--corTextPrincipal);
+    }
+
+    .input-box{
+        border-bottom: 2px solid var(--corTextPrincipal);
+        color: var(--corPrimaria);
+    }
+
+    .input-box::placeholder{
+        color: #393939;
+    }
+
+    .button-esqueci-senha{
+        color: var(--corPrimaria);
+    }
+}
+
+header{
+    margin: 1em 3em;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.container-buttonVoltar{
+    background-color: transparent;
+    border: 1px solid #FFA7DE;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.button-voltar{
+    color: #FFA7DE;
+    font-weight: 400;
+}
+
+.container-buttonVoltar:hover{
+    opacity: 0.7;
+}
+
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    --background: var(--corRosa);
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--corRosa);
+    transition: .5s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 15%;
+    box-shadow: inset 8px -4px 0px 0px var(--corPrimaria);
+    background: var(--background);
+    transition: .5s;
+}
+
+input:checked+.slider {
+    background-color: var(--corRosa);
+}
+
+input:checked+.slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 15px -4px 0px 15px var(--corPrimaria);
+}
+
+/*Container contatos*/
 
 .main {
     display: flex;
@@ -26,7 +129,7 @@
 }
 
 .container-form-login {
-    margin-top: 5rem;
+    margin-top: 1rem;
 }
 
 .formulario {
@@ -93,7 +196,7 @@
     transform: scaleX(1);
 }
 
-#icon{
+#icon {
     background: url('../img/olho-aberto.png');
     width: 24px;
     height: 24px;
@@ -104,25 +207,25 @@
     background-size: cover;
 }
 
-.container-button-form{
+.container-button-form {
     display: flex;
     flex-direction: column;
 }
 
-.container-button-form--header{
+.container-button-form--header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 1.5em 0;
 }
 
-.button-login{
+.button-login {
     width: 40%;
     display: flex;
     justify-content: center;
     position: relative;
     background-color: #FFA7DE;
-    color: #ffffff;
+    color: var(--corPrimaria);
     font-weight: 400;
     border: none;
     padding: 12px;
@@ -132,34 +235,34 @@
     transition: 0.5s all;
 }
 
-.button-login:hover{
+.button-login:hover {
     background-color: #f589cc;
 }
 
-.button-esqueci-senha{
+.button-esqueci-senha {
     font-size: 14px;
     color: var(--corTextPrincipal);
     font-weight: 400;
 }
 
-.container-hr{
+.container-hr {
     display: grid;
     place-items: center;
 }
 
-.hr{
+.hr {
     width: 13rem;
     border-color: #F1F0FA;
 }
 
-.container-button-form--footer{
+.container-button-form--footer {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 1rem 0;
 }
 
-.button-criar-conta{
+.button-criar-conta {
     font-size: 14px;
     color: var(--corRosa);
     font-weight: 500;
