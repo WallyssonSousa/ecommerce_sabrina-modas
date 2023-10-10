@@ -389,6 +389,9 @@ input:checked+.slider:before {
     width: 100%;
 }
 
+
+/**/
+
 .container-categoria {
     display: grid;
     place-items: center;
