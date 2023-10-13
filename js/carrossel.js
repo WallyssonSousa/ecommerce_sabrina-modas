@@ -1,0 +1,1 @@
+$('.container-banners').slick();
