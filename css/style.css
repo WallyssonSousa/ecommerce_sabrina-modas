@@ -757,10 +757,12 @@ footer {
 
 .row {
     margin-bottom: 20px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3,1fr);
 }
 
 .col-md-4 {
-    width: 33.33%;
     float: left;
 }
 
@@ -839,8 +841,26 @@ footer {
 
 /*Responsividade footer*/
 
+@media (max-width: 750px){
+    .row{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .col-md-4{
+        margin: 20px 0;
+    }
+}
+
 @media (max-width: 600px){
     .logo-rodape{
         width: 50%;
+    }
+
+    .footer-item{
+        font-size: 12px;
+    }
+
+    .col-sociais p{
+        font-size: 12px;
     }
 }
