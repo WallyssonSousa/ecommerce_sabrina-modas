@@ -26,13 +26,13 @@
             <nav class="nav">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a class="item" href="../../index.html">Home</a>
+                        <a class="item" href="../../index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="item" href="#">Produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="item" href="../Contato/index.html">Contato</a>
+                        <a class="item" href="../Contato/index.php">Contato</a>
                     </li>
                 </ul>
             </nav>
@@ -65,9 +65,9 @@
                 <div class="container-login-cadastro">
                     <h4 class="nome-conta">Faça login</h4>
                     <div class="login-cadastro">
-                        <a href="../Login/index.html">Login</a>
+                        <a href="../Login/index.php">Login</a>
                         <p>/</p>
-                        <a href="../Cadastro/">Cadastro</a>
+                        <a href="../Cadastro/index.php">Cadastro</a>
                     </div>
                 </div>
             </div>
@@ -93,9 +93,9 @@
                         <div class="container-login-cadastro">
                             <h4 class="nome-conta">Faça login</h4>
                             <div class="login-cadastro">
-                                <a href="../Login/index.html">Login</a>
+                                <a href="../Login/index.php">Login</a>
                                 <p>/</p>
-                                <a href="../Cadastro/index.html">Cadastro</a>
+                                <a href="../Cadastro/index.php">Cadastro</a>
                             </div>
                         </div>
                     </div>
@@ -112,13 +112,13 @@
                     <nav class="nav-mobile">
                         <ul class="nav-list-mobile">
                             <li class="nav-item">
-                                <a class="item" href="../../index.html">Home</a>
+                                <a class="item" href="../../index.php">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="item" href="#">Produtos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="item" href="../Contato/index.html">Contato</a>
+                                <a class="item" href="../Contato/index.php">Contato</a>
                             </li>
                         </ul>
                     </nav>
@@ -176,7 +176,7 @@
                             <p class="preco-card">R$ 80,00</p>
                         </div>
                     </div>
-                    <a class="add-carrinho" href="../Pagamento/index.html">Adicione</a>
+                    <a class="add-carrinho" href="../Pagamento/index.php">Adicione</a>
                 </div>
                 <div class="card">
 
@@ -432,7 +432,7 @@
                 <div class="col-md-4">
                     <h4 class="titulos-footer">Links úteis</h4>
                     <ul>
-                        <li><a class="footer-item" href="views/Contato/index.html">Página de contato</a></li>
+                        <li><a class="footer-item" href="views/Contato/index.php">Página de contato</a></li>
                         <li><a class="footer-item" href="https://www.instagram.com/sabrinamodaas___/">Nosso instagram</a></li>
                     </ul>
                 </div>

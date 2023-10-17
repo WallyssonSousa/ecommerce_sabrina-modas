@@ -13,7 +13,7 @@
 
     <header>
         <div class="container-buttonVoltar">
-            <a href="../../index.html" class="button-voltar">Volta</a>
+            <a href="../../index.php" class="button-voltar">Volta</a>
         </div>
         <div>
             <label class="switch">

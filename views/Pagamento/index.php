@@ -11,7 +11,7 @@
 
 <body>
     <header class="header">
-        <a href="../../index.html">
+        <a href="../../index.php">
             <img src="../../img/logo.png" alt="logo" class="logo-header">
         </a>
     </header>

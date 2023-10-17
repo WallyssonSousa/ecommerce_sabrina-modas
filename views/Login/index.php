@@ -13,7 +13,7 @@
 
     <header>
         <div class="container-buttonVoltar">
-            <a href="../../index.html" class="button-voltar">Volta</a>
+            <a href="../../index.php" class="button-voltar">Volta</a>
         </div>
         <div>
             <label class="switch">
@@ -51,7 +51,7 @@
                 <div class="container-button-form">
                     <div class="container-button-form--header">
                         <button class="button-login">Entrar</button>
-                        <a class="button-esqueci-senha" href="../RecuperarSenha/index.html">Esqueci senha</a>
+                        <a class="button-esqueci-senha" href="../RecuperarSenha/index.php">Esqueci senha</a>
                     </div>
 
                     <div class="container-hr">
@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="container-button-form--footer">
-                        <a href="../Cadastro/index.html" class="button-criar-conta">Criar Conta</a>
+                        <a href="../Cadastro/index.php" class="button-criar-conta">Criar Conta</a>
                     </div>
                 </div>
             </form>

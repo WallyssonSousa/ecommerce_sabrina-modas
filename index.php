@@ -37,10 +37,10 @@
                         <a class="item" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="item" href="views/Produtos/index.html">Produtos</a>
+                        <a class="item" href="views/Produtos/">Produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="item" href="./views/Contato/index.html">Contato</a>
+                        <a class="item" href="views/Contato/">Contato</a>
                     </li>
                 </ul>
             </nav>
@@ -73,9 +73,9 @@
                 <div class="container-login-cadastro">
                     <h4 class="nome-conta">Faça login</h4>
                     <div class="login-cadastro">
-                        <a href="views/Login/index.html">Login</a>
+                        <a href="views/Login/">Login</a>
                         <p>/</p>
-                        <a href="views/Cadastro/index.html">Cadastro</a>
+                        <a href="views/Cadastro/">Cadastro</a>
                     </div>
                 </div>
             </div>
@@ -101,9 +101,9 @@
                         <div class="container-login-cadastro">
                             <h4 class="nome-conta">Faça login</h4>
                             <div class="login-cadastro">
-                                <a href="views/Login/index.html">Login</a>
+                                <a href="views/Login/">Login</a>
                                 <p>/</p>
-                                <a href="views/Cadastro/index.html">Cadastro</a>
+                                <a href="views/Cadastro/">Cadastro</a>
                             </div>
                         </div>
                     </div>
@@ -123,10 +123,10 @@
                                 <a class="item" href="#">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="item" href="views/Produtos/index.html">Produtos</a>
+                                <a class="item" href="views/Produtos/">Produtos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="item" href="./views/Contato/index.html">Contato</a>
+                                <a class="item" href="views/Contato/">Contato</a>
                             </li>
                         </ul>
                     </nav>
@@ -187,7 +187,7 @@
                             <p class="preco-card">R$ 80,00</p>
                         </div>
                     </div>
-                    <button class="add-carrinho" href="views/Pagamento/index.html">Adicione</button>
+                    <button class="add-carrinho" href="views/Pagamento/">Adicione</button>
                 </div>
                 <div class="card">
 
@@ -440,7 +440,7 @@
                 <div class="col-md-4">
                     <h4 class="titulos-footer">Links úteis</h4>
                     <ul>
-                        <li><a class="footer-item" href="views/Contato/index.html">Página de contato</a></li>
+                        <li><a class="footer-item" href="views/Contato/">Página de contato</a></li>
                         <li><a class="footer-item" href="https://www.instagram.com/sabrinamodaas___/">Nosso
                                 instagram</a></li>
                     </ul>
