@@ -1,3 +1,7 @@
+<?php 
+    include('connection/conexao.php')
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
