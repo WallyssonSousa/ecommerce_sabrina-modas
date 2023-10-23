@@ -1,5 +1,8 @@
-<?php 
-    include('connection/conexao.php')
+<?php
+include('connection/conexao.php');
+
+$sql = "SELECT nome, imagem, preco FROM produtos";
+$result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -179,120 +182,29 @@
             <h2 class="titulo-categoria">Destaques</h2>
 
             <div class="container-card">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="img/produtos/produto1.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho" href="views/Pagamento/">Adicione</button>
-                </div>
-                <div class="card">
 
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="img/produtos/produto2.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="img/produtos/produto3.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="img/produtos/produto4.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
 
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="img/produtos/produto5.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="img/produtos/produto6.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="img/produtos/produto1.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="img/produtos/produto1.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
+                <?php
+
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<div class='card'>";
+                    echo "<div class='card-content'>";
+                    echo "<div class='card-img'>";
+                    echo "<img class='img-card' src='img/produtos/produto1.png' alt='produto1'>";
+                    echo "</div>";
+                    echo "<div class='card-descricao'>";
+                    echo "<p class='descricao-card'>Conjunto Planet Girls</p>";
+                    echo "</div>";
+                    echo "<div class='card-preco'";
+                    echo "<p class='preco-card'>R$ 80,00</p>";
+                    echo "</div>";
+                    echo "</div>";
+                    echo "<button class='add-carrinho' href='views/Pagamento/'>Adicione</button>";
+                    echo "</div>";
+                }
+
+                mysqli_close($conn);
+                ?>
             </div>
         </section>
 
@@ -300,118 +212,7 @@
             <h2 class="titulo-categoria">Mais Vendidos</h2>
 
             <div class="container-card">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="img/produtos/produto1.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="img/produtos/produto2.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="img/produtos/produto3.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="img/produtos/produto4.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="img/produtos/produto5.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="img/produtos/produto6.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="img/produtos/produto1.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="img/produtos/produto1.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
+                
             </div>
         </section>
 
