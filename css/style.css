@@ -73,11 +73,11 @@ body.dark {
         color: #f1f0fa;
     }
 
-    .footer{
+    .footer {
         color: #f1f0fa;
     }
 
-    .footer-item{
+    .footer-item {
         color: #f1f0fa;
     }
 
@@ -385,7 +385,7 @@ input:checked+.slider:before {
 
 /* Main */
 
-.banner{
+.banner {
     width: 100%;
 }
 
@@ -457,7 +457,7 @@ input:checked+.slider:before {
 }
 
 .preco-card {
-    color: var(--corRosa);
+    color: #FFA7DE;
     font-weight: 600;
     margin: 5px 0;
 }
@@ -759,21 +759,21 @@ footer {
     margin-bottom: 20px;
     display: grid;
     place-items: center;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .col-md-4 {
     float: left;
 }
 
-.titulos-footer{
+.titulos-footer {
     font-weight: 600;
     font-size: 16px;
     position: relative;
     bottom: 3px;
 }
 
-.footer-item{
+.footer-item {
     color: var(--corTextPrincipal);
 }
 
@@ -805,7 +805,7 @@ footer {
     align-items: center;
 }
 
-.col-sociais img{
+.col-sociais img {
     display: flex;
     align-items: center;
 }
@@ -833,7 +833,7 @@ footer {
     place-items: center;
 }
 
-.btn-voltar-topo:hover{
+.btn-voltar-topo:hover {
     opacity: 0.7;
 }
 
@@ -841,26 +841,26 @@ footer {
 
 /*Responsividade footer*/
 
-@media (max-width: 750px){
-    .row{
+@media (max-width: 750px) {
+    .row {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .col-md-4{
+    .col-md-4 {
         margin: 20px 0;
     }
 }
 
-@media (max-width: 600px){
-    .logo-rodape{
+@media (max-width: 600px) {
+    .logo-rodape {
         width: 50%;
     }
 
-    .footer-item{
+    .footer-item {
         font-size: 12px;
     }
 
-    .col-sociais p{
+    .col-sociais p {
         font-size: 12px;
     }
 }

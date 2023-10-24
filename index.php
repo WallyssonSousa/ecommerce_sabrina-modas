@@ -1,10 +1,3 @@
-<?php
-include('connection/conexao.php');
-
-$sql = "SELECT nome, imagem, preco FROM produtos";
-$result = $conn->query($sql);
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -12,7 +5,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="/dist/output.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <title>Sabrina Modas | Home</title>
@@ -21,6 +14,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" type="text/css" href="slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
 </head>
 
 <body>
@@ -182,37 +176,45 @@ $result = $conn->query($sql);
             <h2 class="titulo-categoria">Destaques</h2>
 
             <div class="container-card">
-
-
                 <?php
 
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<div class='card'>";
-                    echo "<div class='card-content'>";
-                    echo "<div class='card-img'>";
-                    echo "<img class='img-card' src='img/produtos/produto1.png' alt='produto1'>";
-                    echo "</div>";
-                    echo "<div class='card-descricao'>";
-                    echo "<p class='descricao-card'>Conjunto Planet Girls</p>";
-                    echo "</div>";
-                    echo "<div class='card-preco'";
-                    echo "<p class='preco-card'>R$ 80,00</p>";
-                    echo "</div>";
-                    echo "</div>";
-                    echo "<button class='add-carrinho' href='views/Pagamento/'>Adicione</button>";
-                    echo "</div>";
-                }
+                include('connection/conexao.php');
 
-                mysqli_close($conn);
+                $sql = "SELECT nome_produto, imagem_produto, categoria_produto, preco_produto FROM produtos";
+
+                $result = $conn->query($sql);
+
+                /* print_r($result); */
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<div class='card'>";
+                        echo "<div class='card-content'>";
+                        echo "<div class='card-img'>";
+                        echo '<img class="img-card"  src="img/produtos/produto1.png" />';
+                        echo "</div>";
+                        echo "<div class='card-descricao'>";
+                        echo "<p class='descricao-card'>" . $row['nome_produto'] . "</p>";
+                        echo "</div>";
+                        echo "<div class='card-preco'";
+                        echo "<p class='preco-card' style='color: #FFA7DE; font-weight: 500;'>R$ " . $row['preco_produto'] . "</p>";
+                        echo "</div>";
+                        echo "</div>";
+                        echo "<button class='add-carrinho' href='views/Pagamento/'>Adicione</button>";
+                        echo "</div>";
+                    }
+                } else {
+                    echo "<p>Nenhum produto encontrado.</p>";
+                }
                 ?>
             </div>
         </section>
-
+<!--src="' . $row['imagem_produto'] . '" -->
         <section class="container-categoria">
             <h2 class="titulo-categoria">Mais Vendidos</h2>
 
             <div class="container-card">
-                
+
             </div>
         </section>
 
