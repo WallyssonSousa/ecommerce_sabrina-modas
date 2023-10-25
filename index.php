@@ -191,7 +191,7 @@
                         echo "<div class='card'>";
                         echo "<div class='card-content'>";
                         echo "<div class='card-img'>";
-                        echo '<img class="img-card"  src="img/produtos/produto1.png" />';
+                        echo '<img class="img-card"  src="' . $row['imagem_produto'] . '" />';
                         echo "</div>";
                         echo "<div class='card-descricao'>";
                         echo "<p class='descricao-card'>" . $row['nome_produto'] . "</p>";
@@ -209,7 +209,7 @@
                 ?>
             </div>
         </section>
-<!--src="' . $row['imagem_produto'] . '" -->
+        <!--src="' . $row['imagem_produto'] . '" src="img/produtos/produto1.png"-->
         <section class="container-categoria">
             <h2 class="titulo-categoria">Mais Vendidos</h2>
 
