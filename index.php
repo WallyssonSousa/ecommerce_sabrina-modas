@@ -1,3 +1,7 @@
+<?php
+include('connection/conexao.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -15,11 +19,6 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
-    <style>
-        input[type="search"]::-ms-clear{
-            display: none;
-        }
-    </style>
 
 </head>
 
@@ -52,23 +51,56 @@
                 </ul>
             </nav>
 
-            <form class="form input-serch" method="post" action="campoBusca.php">
-                <button type="submit" value="buscar">
-                    <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
-                        aria-labelledby="search">
-                        <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9"
-                            stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round">
-                        </path>
-                    </svg>
-                </button>
-                <input class="input" placeholder="Pesquisar" name="palavra" type="search">
-                <button class="reset" type="reset">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </form>
+            <?php
+            if (!isset($_GET['busca'])) {
+                ?>
+
+                <form class="form input-serch" method="get">
+                    <button type="submit" value="buscar">
+                        <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
+                            aria-labelledby="search">
+                            <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9"
+                                stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                        </svg>
+                    </button>
+                    <input class="input" placeholder="Pesquisar" name="busca" type="text">
+                    <button class="reset" type="reset" value="Buscar">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </form>
+
+                <?php
+
+            } else {
+
+                $pesquisa = $conn->real_escape_string($_GET['busca']);
+
+                $sql_busca = "SELECT nome_produto, imagem_produto, preco_produto FROM produtos WHERE nome_produto LIKE '%$pesquisa%'";
+
+                $sql_query_busca = $conn->query($sql_busca) or die("Erro" . $conn->error);
+
+                if ($sql_query_busca->num_rows > 0) {
+                    while ($row = $sql_query_busca->fetch_assoc()) {
+                        echo "<div>";
+                        echo '<img class="img-card"  src="' . $row['imagem_produto'] . '" />';
+                        echo "<p class='descricao-card'>" . $row['nome_produto'] . "</p>";
+                        echo "<p class='preco-card' style='color: #FFA7DE; font-weight: 500;'>R$ " . $row['preco_produto'] . "</p>";
+                        echo "</div>";
+                    }
+                } else {
+                    echo "<p>Nenhum produto encontrado.</p>";
+                }
+
+                ?>
+
+
+                <?php
+            }
+            ?>
 
             <div class="container-icons">
                 <div class="carrinho-compras">
@@ -143,8 +175,8 @@
 
         <div class="line-form">
 
-            <form class="form input-serch form-mobile" method="post" action="campoBusca.php">
-                <button>
+            <form class="form input-serch form-mobile" method="get">
+                <button value="buscar">
                     <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
                         aria-labelledby="search">
                         <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9"
@@ -152,8 +184,8 @@
                         </path>
                     </svg>
                 </button>
-                <input class="input" placeholder="Pesquisar" name="palavra" type="search">
-                <button class="reset" type="reset">
+                <input class="input" placeholder="Pesquisar" name="busca" type="text">
+                <button class="reset" type="reset" value="Buscar">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
@@ -162,9 +194,16 @@
             </form>
 
         </div>
+
     </header>
 
     <main>
+
+        <?php
+
+
+
+            ?>
 
         <div class="container-banner" id="slider">
             <div>
@@ -184,11 +223,9 @@
             <div class="container-card">
                 <?php
 
-                include('connection/conexao.php');
+                $sqlProduto = "SELECT nome_produto, imagem_produto, categoria_produto, preco_produto FROM produtos";
 
-                $sql = "SELECT nome_produto, imagem_produto, categoria_produto, preco_produto FROM produtos";
-
-                $result = $conn->query($sql);
+                $result = $conn->query($sqlProduto);
 
                 /* print_r($result); */
 
@@ -215,7 +252,7 @@
                 ?>
             </div>
         </section>
-        
+
         <section class="container-categoria">
             <h2 class="titulo-categoria">Mais Vendidos</h2>
 
