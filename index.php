@@ -19,7 +19,60 @@ include('connection/conexao.php');
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
+    <style>
+        .container-busca {
+            display: grid;
+            place-items: center;
+            text-align: center;
+            position: relative;
+            width: 100%;
+            height: 350px;
+            border: 3px solid #f12312;
+        }
 
+        .card-pesquisa {
+            text-align: start;
+            width: 180px;
+            height: 300px;
+            padding: 10px;
+            border: 1px solid #f12312;
+        }
+
+        .card-img-pesquisa {
+            display: grid;
+            place-items: center;
+        }
+
+        .card-content-pesquisa {
+            position: relative;
+            bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .img-card-pesquisa {
+            width: 80%;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .card-descricao-pesquisa {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: row;
+            margin-top: 15px;
+        }
+
+        .descricao-card-pesquisa {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .preco-card-pesquisa {
+            color: #FFA7DE;
+            font-weight: 600;
+            margin: 5px 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -52,8 +105,8 @@ include('connection/conexao.php');
             </nav>
 
 
-            <form class="form input-serch" method="post">
-                <button type="submit" value="buscar">
+            <form class="form input-serch" method="get">
+                <button type="submit" value="buscar" style="cursor: pointer;" >
                     <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
                         aria-labelledby="search">
                         <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9"
@@ -144,7 +197,7 @@ include('connection/conexao.php');
 
         <div class="line-form">
 
-            <form class="form input-serch form-mobile" method="post">
+            <form class="form input-serch form-mobile" method="get">
                 <button value="buscar">
                     <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
                         aria-labelledby="search">
@@ -161,11 +214,6 @@ include('connection/conexao.php');
                     </svg>
                 </button>
             </form>
-
-            <?php
-
-            ?>
-
         </div>
 
     </header>
@@ -174,35 +222,36 @@ include('connection/conexao.php');
 
         <?php
 
-            $palavra = $_POST['busca'];
-
-            $query_pesquisa = "SELECT * FROM produtos WHERE nome_produto LIKE '%$palavra%'";
-
-            $result_pesquisa = $conn->query($query_pesquisa);
-
-            if ($result_pesquisa->num_rows < 0) {
-                    echo "";
+        if(!isset($_GET['busca'])){
+            echo "<p style='display: none'>Teste</p>";
+        } else {
+            $pesquisa = $conn -> real_escape_string($_GET['busca']);
+            $sql_pesquisa = "SELECT * FROM produtos WHERE nome_produto LIKE '%$pesquisa%'";
+            $sql_query_pesquisa = $conn -> query($sql_pesquisa) or die("Erro ao consultar!" . $conn->error);
+        
+            if($sql_query_pesquisa -> num_rows == 0){
+                echo "<p>Nenhum resultado encontrado </p>";
             } else {
-                while ($row = $result_pesquisa->fetch_assoc()) {
+                while ($row = $sql_query_pesquisa ->fetch_assoc()) {
                     echo "<div class='container-busca'>";
-                        echo "<div class='card-pesquisa '>";
-                            echo "<div class='card-content-pesquisa'>";
-                                echo "<div class='card-img-pesquisa'>";
-                                echo '<img class="img-card-pesquisa"  src="' . $row['imagem_produto'] . '" />';
-                                echo "</div>";
-                                echo "<div class='card-descricao-pesquisa'>";
-                                echo "<p class='descricao-card-pesquisa'>" . $row['nome_produto'] . "</p>";
-                                echo "</div>";
-                                echo "<div class='card-preco-pesquisa'";
-                                echo "<p class='preco-card-pesquisa' style='color: #FFA7DE; font-weight: 500;'>R$ " . $row['preco_produto'] . "</p>";
-                                echo "</div>";
-                            echo "</div>";
-                        echo "</div>";
+                    echo "<div class='card-pesquisa'>";
+                    echo "<div class='card-content-pesquisa'>";
+                    echo "<div class='card-img-pesquisa'>";
+                    echo '<img class="img-card-pesquisa"  src="' . $row['imagem_produto'] . '" />';
+                    echo "</div>";
+                    echo "<div class='card-descricao-pesquisa'>";
+                    echo "<p class='descricao-card-pesquisa'>" . $row['nome_produto'] . "</p>";
+                    echo "</div>";
+                    echo "<div class='card-preco-pesquisa'";
+                    echo "<p class='preco-card-pesquisa' style='color: #FFA7DE; font-weight: 500;'>R$ " . $row['preco_produto'] . "</p>";
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</div>";
                     echo "</div>";
                 }
             }
-
-
+        
+        }
         ?>
 
         <div class="container-banner" id="slider">

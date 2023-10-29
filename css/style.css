@@ -122,6 +122,7 @@ body.dark {
     border: none;
     background: none;
     color: #FFA7DE;
+    cursor: pointer;
 }
 
 .form {
@@ -197,6 +198,10 @@ input:not(:placeholder-shown)~.reset {
     margin-top: 3px;
     color: #FFA7DE;
 }
+
+
+
+
 
 .container-icons {
     display: flex;
@@ -404,7 +409,6 @@ input:checked+.slider:before {
     text-align: center;
     color: #0f0f0f;
 }
-
 
 .container-card {
     display: grid;
