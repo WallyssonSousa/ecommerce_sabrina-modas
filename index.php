@@ -20,14 +20,27 @@ include('connection/conexao.php');
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
     <style>
-        .container-busca {
+
+        .mensagem-resultado{
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .container-busca{
+            display: grid;
+            place-items: center;
+            margin: 0 1em 1em 1em;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border: 1px solid #f1f1f1;
+        }
+
+        .container-card-busca {
             display: grid;
             place-items: center;
             text-align: center;
             position: relative;
             width: 100%;
-            height: 350px;
-            border: 3px solid #f12312;
         }
 
         .card-pesquisa {
@@ -35,7 +48,7 @@ include('connection/conexao.php');
             width: 180px;
             height: 300px;
             padding: 10px;
-            border: 1px solid #f12312;
+            border: 1px solid #f1f1f1;
         }
 
         .card-img-pesquisa {
@@ -230,23 +243,27 @@ include('connection/conexao.php');
             $sql_query_pesquisa = $conn -> query($sql_pesquisa) or die("Erro ao consultar!" . $conn->error);
         
             if($sql_query_pesquisa -> num_rows == 0){
-                echo "<p>Nenhum resultado encontrado </p>";
+                echo "<div class='container-busca'";
+                    echo "<p class='mensagem-resultado'>Nenhum resultado encontrado </p>";
+                echo "</div>";
             } else {
                 while ($row = $sql_query_pesquisa ->fetch_assoc()) {
-                    echo "<div class='container-busca'>";
-                    echo "<div class='card-pesquisa'>";
-                    echo "<div class='card-content-pesquisa'>";
-                    echo "<div class='card-img-pesquisa'>";
-                    echo '<img class="img-card-pesquisa"  src="' . $row['imagem_produto'] . '" />';
-                    echo "</div>";
-                    echo "<div class='card-descricao-pesquisa'>";
-                    echo "<p class='descricao-card-pesquisa'>" . $row['nome_produto'] . "</p>";
-                    echo "</div>";
-                    echo "<div class='card-preco-pesquisa'";
-                    echo "<p class='preco-card-pesquisa' style='color: #FFA7DE; font-weight: 500;'>R$ " . $row['preco_produto'] . "</p>";
-                    echo "</div>";
-                    echo "</div>";
-                    echo "</div>";
+                    echo "<div class='container-busca'";
+                        echo "<div class='container-card-busca'>";
+                            echo "<div class='card-pesquisa'>";
+                                echo "<div class='card-content-pesquisa'>";
+                                     echo "<div class='card-img-pesquisa'>";
+                                            echo '<img class="img-card-pesquisa"  src="' . $row['imagem_produto'] . '" />';
+                                     echo "</div>";
+                                    echo "<div class='card-descricao-pesquisa'>";
+                                            echo "<p class='descricao-card-pesquisa'>" . $row['nome_produto'] . "</p>";
+                                    echo "</div>";
+                                    echo "<div class='card-preco-pesquisa'";
+                                            echo "<p class='preco-card-pesquisa' style='color: #FFA7DE; font-weight: 500;'>R$ " . $row['preco_produto'] . "</p>";
+                                     echo "</div>";
+                                echo "</div>";
+                            echo "</div>";
+                        echo "</div>";
                     echo "</div>";
                 }
             }
