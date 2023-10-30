@@ -20,27 +20,27 @@ include('connection/conexao.php');
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
     <style>
-
-        .mensagem-resultado{
+        .mensagem-resultado {
             text-align: center;
             font-weight: 500;
         }
 
-        .container-busca{
-            display: grid;
-            place-items: center;
+        .container-busca {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
             margin: 0 1em 1em 1em;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
             padding: 20px;
-            border: 1px solid #f1f1f1;
         }
 
         .container-card-busca {
-            display: grid;
-            place-items: center;
             text-align: center;
             position: relative;
             width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
         }
 
         .card-pesquisa {
@@ -49,6 +49,8 @@ include('connection/conexao.php');
             height: 300px;
             padding: 10px;
             border: 1px solid #f1f1f1;
+            overflow-x: hidden;
+            overflow-y: hidden;
         }
 
         .card-img-pesquisa {
@@ -119,7 +121,7 @@ include('connection/conexao.php');
 
 
             <form class="form input-serch" method="get">
-                <button type="submit" value="buscar" style="cursor: pointer;" >
+                <button type="submit" value="buscar" style="cursor: pointer;">
                     <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
                         aria-labelledby="search">
                         <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9"
@@ -235,39 +237,39 @@ include('connection/conexao.php');
 
         <?php
 
-        if(!isset($_GET['busca'])){
+        if (!isset($_GET['busca'])) {
             echo "<p style='display: none'>Teste</p>";
         } else {
-            $pesquisa = $conn -> real_escape_string($_GET['busca']);
+            $pesquisa = $conn->real_escape_string($_GET['busca']);
             $sql_pesquisa = "SELECT * FROM produtos WHERE nome_produto LIKE '%$pesquisa%'";
-            $sql_query_pesquisa = $conn -> query($sql_pesquisa) or die("Erro ao consultar!" . $conn->error);
-        
-            if($sql_query_pesquisa -> num_rows == 0){
+            $sql_query_pesquisa = $conn->query($sql_pesquisa) or die("Erro ao consultar!" . $conn->error);
+
+            if ($sql_query_pesquisa->num_rows == 0) {
                 echo "<div class='container-busca'";
-                    echo "<p class='mensagem-resultado'>Nenhum resultado encontrado </p>";
+                echo "<p class='mensagem-resultado'>Nenhum resultado encontrado </p>";
                 echo "</div>";
             } else {
-                while ($row = $sql_query_pesquisa ->fetch_assoc()) {
+                while ($row = $sql_query_pesquisa->fetch_assoc()) {
                     echo "<div class='container-busca'";
-                        echo "<div class='container-card-busca'>";
-                            echo "<div class='card-pesquisa'>";
-                                echo "<div class='card-content-pesquisa'>";
-                                     echo "<div class='card-img-pesquisa'>";
-                                            echo '<img class="img-card-pesquisa"  src="' . $row['imagem_produto'] . '" />';
-                                     echo "</div>";
-                                    echo "<div class='card-descricao-pesquisa'>";
-                                            echo "<p class='descricao-card-pesquisa'>" . $row['nome_produto'] . "</p>";
-                                    echo "</div>";
-                                    echo "<div class='card-preco-pesquisa'";
-                                            echo "<p class='preco-card-pesquisa' style='color: #FFA7DE; font-weight: 500;'>R$ " . $row['preco_produto'] . "</p>";
-                                     echo "</div>";
-                                echo "</div>";
-                            echo "</div>";
-                        echo "</div>";
+                    echo "<div class='container-card-busca'>";
+                    echo "<div class='card-pesquisa'>";
+                    echo "<div class='card-content-pesquisa'>";
+                    echo "<div class='card-img-pesquisa'>";
+                    echo '<img class="img-card-pesquisa"  src="' . $row['imagem_produto'] . '" />';
+                    echo "</div>";
+                    echo "<div class='card-descricao-pesquisa'>";
+                    echo "<p class='descricao-card-pesquisa'>" . $row['nome_produto'] . "</p>";
+                    echo "</div>";
+                    echo "<div class='card-preco-pesquisa'";
+                    echo "<p class='preco-card-pesquisa' style='color: #FFA7DE; font-weight: 500;'>R$ " . $row['preco_produto'] . "</p>";
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</div>";
                     echo "</div>";
                 }
             }
-        
+
         }
         ?>
 

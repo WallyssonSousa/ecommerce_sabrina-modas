@@ -199,10 +199,6 @@ input:not(:placeholder-shown)~.reset {
     color: #FFA7DE;
 }
 
-
-
-
-
 .container-icons {
     display: flex;
     align-items: center;
