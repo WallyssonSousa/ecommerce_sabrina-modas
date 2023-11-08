@@ -233,8 +233,8 @@ include('connection/conexao.php');
 
     <main>
 
-        <section class='container-busca'>
-            <div class='container-card-busca'>
+        
+           
                 <?php
 
                 if (!isset($_GET['busca'])) {
@@ -250,8 +250,8 @@ include('connection/conexao.php');
                         echo "</div>";
                     } else {
                         while ($row = $sql_query_pesquisa->fetch_assoc()) {
-                            echo "";
-                            echo "";
+                            echo "<section class='container-busca'>";
+                            echo "<div class='container-card-busca'>";
                             echo "<div class='card-pesquisa'>";
                             echo "<div class='card-content-pesquisa'>";
                             echo "<div class='card-img-pesquisa'>";
@@ -265,17 +265,15 @@ include('connection/conexao.php');
                             echo "</div>";
                             echo "</div>";
                             echo "</div>";
-                            echo "";
-                            echo "";
+                            echo "</div>";
+                            echo "</section>";
                         }
                     }
 
                 }
 
                 ?>
-            </div>
-        </section>
-
+            
         <div class="container-banner" id="slider">
             <div>
                 <img src="img/Banner-2.jpeg" alt="Imagem 1" class="banner">
