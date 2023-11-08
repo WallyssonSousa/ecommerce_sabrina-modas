@@ -5,3 +5,4 @@ $('.container-banner').slick({
   arrows: false,
   Infinity: true,
 });
+

@@ -26,21 +26,18 @@ include('connection/conexao.php');
         }
 
         .container-busca {
-            display: flex;
-            justify-content: center;
-            flex-direction: row;
             margin: 0 1em 1em 1em;
             padding: 20px;
+            display: grid;
+            place-items: center;
         }
 
         .container-card-busca {
-            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            place-items: center;
             position: relative;
             width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: row;
         }
 
         .card-pesquisa {
@@ -48,6 +45,7 @@ include('connection/conexao.php');
             width: 180px;
             height: 300px;
             padding: 10px;
+            margin: 5px 10px;
             border: 1px solid #f1f1f1;
             overflow-x: hidden;
             overflow-y: hidden;
@@ -235,43 +233,48 @@ include('connection/conexao.php');
 
     <main>
 
-        <?php
+        <section class='container-busca'>
+            <div class='container-card-busca'>
+                <?php
 
-        if (!isset($_GET['busca'])) {
-            echo "<p style='display: none'>Teste</p>";
-        } else {
-            $pesquisa = $conn->real_escape_string($_GET['busca']);
-            $sql_pesquisa = "SELECT * FROM produtos WHERE nome_produto LIKE '%$pesquisa%'";
-            $sql_query_pesquisa = $conn->query($sql_pesquisa) or die("Erro ao consultar!" . $conn->error);
+                if (!isset($_GET['busca'])) {
+                    echo "<p style='display: none'>Teste</p>";
+                } else {
+                    $pesquisa = $conn->real_escape_string($_GET['busca']);
+                    $sql_pesquisa = "SELECT * FROM produtos WHERE nome_produto LIKE '%$pesquisa%'";
+                    $sql_query_pesquisa = $conn->query($sql_pesquisa) or die("Erro ao consultar!" . $conn->error);
 
-            if ($sql_query_pesquisa->num_rows == 0) {
-                echo "<div class='container-busca'";
-                echo "<p class='mensagem-resultado'>Nenhum resultado encontrado </p>";
-                echo "</div>";
-            } else {
-                while ($row = $sql_query_pesquisa->fetch_assoc()) {
-                    echo "<div class='container-busca'";
-                    echo "<div class='container-card-busca'>";
-                    echo "<div class='card-pesquisa'>";
-                    echo "<div class='card-content-pesquisa'>";
-                    echo "<div class='card-img-pesquisa'>";
-                    echo '<img class="img-card-pesquisa"  src="' . $row['imagem_produto'] . '" />';
-                    echo "</div>";
-                    echo "<div class='card-descricao-pesquisa'>";
-                    echo "<p class='descricao-card-pesquisa'>" . $row['nome_produto'] . "</p>";
-                    echo "</div>";
-                    echo "<div class='card-preco-pesquisa'";
-                    echo "<p class='preco-card-pesquisa' style='color: #FFA7DE; font-weight: 500;'>R$ " . $row['preco_produto'] . "</p>";
-                    echo "</div>";
-                    echo "</div>";
-                    echo "</div>";
-                    echo "</div>";
-                    echo "</div>";
+                    if ($sql_query_pesquisa->num_rows == 0) {
+                        echo "<div class='container-busca'";
+                        echo "<p class='mensagem-resultado'>Nenhum resultado encontrado </p>";
+                        echo "</div>";
+                    } else {
+                        while ($row = $sql_query_pesquisa->fetch_assoc()) {
+                            echo "";
+                            echo "";
+                            echo "<div class='card-pesquisa'>";
+                            echo "<div class='card-content-pesquisa'>";
+                            echo "<div class='card-img-pesquisa'>";
+                            echo '<img class="img-card-pesquisa" src="' . $row['imagem_produto'] . '" />';
+                            echo "</div>";
+                            echo "<div class='card-descricao-pesquisa'>";
+                            echo "<p class='descricao-card-pesquisa'>" . $row['nome_produto'] . "</p>";
+                            echo "</div>";
+                            echo "<div class='card-preco-pesquisa'>";
+                            echo "<p class='preco-card-pesquisa' style='color: #FFA7DE; font-weight: 500;'>R$ " . $row['preco_produto'] . "</p>";
+                            echo "</div>";
+                            echo "</div>";
+                            echo "</div>";
+                            echo "";
+                            echo "";
+                        }
+                    }
+
                 }
-            }
 
-        }
-        ?>
+                ?>
+            </div>
+        </section>
 
         <div class="container-banner" id="slider">
             <div>
@@ -321,11 +324,21 @@ include('connection/conexao.php');
             </div>
         </section>
 
-        <section class="container-categoria">
-            <h2 class="titulo-categoria">Mais Vendidos</h2>
+        <section class="container-sobre">
+            <div>
+                <div>
+                    <img src="img/sabrinaModas_lojaFisica.jpeg" alt="Imagem 1" class="img-sobre">
+                </div>
+            </div>
 
-            <div class="container-card">
-
+            <div class="container-right-sobre">
+                <h3 class="titulo-right">Sobre</h3>
+                <p class="text-right">Sonhada e realizada pela empreendedora Sabrina Marques, essa loja começou de forma
+                    simples, crescendo
+                    aos poucos pelas redes sociais até chegarmos aqui, não foi fácil mas sempre buscamos crescer. Nossa
+                    loja foi inaugurada através de muitas lutas e conquistas. Hoje estamos localizados em Osasco com
+                    nossa primeira loja, que está aberta para visita dos nossos clientes trazendo sua melhor experiência
+                    conosco, e agora com nosso site exclusivo.</p>
             </div>
         </section>
 
@@ -407,6 +420,7 @@ include('connection/conexao.php');
         integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <script src="js/carrosselSobre.js"></script>
     <script src="js/carrossel.js"></script>
     <script src="js/buttonVoltarTopo.js"></script>
     <script src="js/menuResponsivo.js"></script>

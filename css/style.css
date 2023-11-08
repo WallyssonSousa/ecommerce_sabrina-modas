@@ -386,11 +386,81 @@ input:checked+.slider:before {
 
 /* Main */
 
+/*Estilização do resultado das pesquisas*/
+
+.mensagem-resultado {
+    text-align: center;
+    font-weight: 500;
+}
+
+.container-busca {
+    margin: 0 1em 1em 1em;
+    padding: 20px;
+    display: grid;
+    place-items: center;
+}
+
+.container-card-busca {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    place-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.card-pesquisa {
+    text-align: start;
+    width: 180px;
+    height: 300px;
+    padding: 10px;
+    margin: 5px 10px;
+    border: 1px solid #f1f1f1;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.card-img-pesquisa {
+    display: grid;
+    place-items: center;
+}
+
+.card-content-pesquisa {
+    position: relative;
+    bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.img-card-pesquisa {
+    width: 80%;
+    object-fit: cover;
+    position: relative;
+}
+
+.card-descricao-pesquisa {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+.descricao-card-pesquisa {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.preco-card-pesquisa {
+    color: #FFA7DE;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+/*estilização do banner*/
+
 .banner {
     width: 100%;
 }
 
-/**/
+/*Produtos*/
 
 .container-categoria {
     display: grid;
@@ -733,6 +803,40 @@ input:checked+.slider:before {
     }
 }
 
+.container-sobre {
+    display: flex;
+    flex-direction: row;
+    margin: 100px;
+    border: 1px solid #f1f1f1;
+    padding: 60px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.img-sobre {
+    width: 120%;
+    border-radius: 2px;
+    margin: 0 20px;
+    object-fit: cover;
+}
+
+.container-right-sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    flex-wrap: wrap;
+    margin: 0 50px;
+}
+
+.titulo-right {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.text-right {
+    position: relative;
+    top: 20px;
+}
 
 footer {
     padding: 20px;
