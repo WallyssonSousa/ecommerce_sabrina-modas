@@ -26,7 +26,7 @@ include('connection/conexao.php');
         }
 
         .container-busca {
-            margin: 0 1em 1em 1em;
+            margin: -50px 1em 1em 1em;
             padding: 20px;
             display: grid;
             place-items: center;
@@ -63,7 +63,8 @@ include('connection/conexao.php');
         }
 
         .img-card-pesquisa {
-            width: 80%;
+            width: 70%;
+            height: 200px;
             object-fit: cover;
             position: relative;
         }
@@ -233,8 +234,8 @@ include('connection/conexao.php');
 
     <main>
 
-        
-           
+        <section class='container-busca'>
+            <div class='container-card-busca'>
                 <?php
 
                 if (!isset($_GET['busca'])) {
@@ -245,13 +246,11 @@ include('connection/conexao.php');
                     $sql_query_pesquisa = $conn->query($sql_pesquisa) or die("Erro ao consultar!" . $conn->error);
 
                     if ($sql_query_pesquisa->num_rows == 0) {
-                        echo "<div class='container-busca'";
-                        echo "<p class='mensagem-resultado'>Nenhum resultado encontrado </p>";
-                        echo "</div>";
+                        echo "<p class='mensagem-resultado' style='position: absolute;'>Nenhum resultado encontrado </p>";
                     } else {
                         while ($row = $sql_query_pesquisa->fetch_assoc()) {
-                            echo "<section class='container-busca'>";
-                            echo "<div class='container-card-busca'>";
+                            echo "";
+                            echo "";
                             echo "<div class='card-pesquisa'>";
                             echo "<div class='card-content-pesquisa'>";
                             echo "<div class='card-img-pesquisa'>";
@@ -265,15 +264,17 @@ include('connection/conexao.php');
                             echo "</div>";
                             echo "</div>";
                             echo "</div>";
-                            echo "</div>";
-                            echo "</section>";
+                            echo "";
+                            echo "";
                         }
                     }
 
                 }
 
                 ?>
-            
+            </div>
+        </section>
+
         <div class="container-banner" id="slider">
             <div>
                 <img src="img/Banner-2.jpeg" alt="Imagem 1" class="banner">
