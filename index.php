@@ -249,8 +249,6 @@ include('connection/conexao.php');
                         echo "<p class='mensagem-resultado' style='position: absolute;'>Nenhum resultado encontrado </p>";
                     } else {
                         while ($row = $sql_query_pesquisa->fetch_assoc()) {
-                            echo "";
-                            echo "";
                             echo "<div class='card-pesquisa'>";
                             echo "<div class='card-content-pesquisa'>";
                             echo "<div class='card-img-pesquisa'>";
@@ -264,8 +262,6 @@ include('connection/conexao.php');
                             echo "</div>";
                             echo "</div>";
                             echo "</div>";
-                            echo "";
-                            echo "";
                         }
                     }
 
