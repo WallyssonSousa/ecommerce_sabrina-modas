@@ -39,6 +39,10 @@ body.dark {
         font-size: 16px;
     }
 
+    .card-pesquisa{
+        border: 1px solid var(--corTextPrincipal);
+    }
+
     .login-cadastro a {
         color: #f1f0fa;
     }
@@ -71,6 +75,10 @@ body.dark {
         padding-block: 0.7em;
         border: none;
         color: #f1f0fa;
+    }
+
+    .container-sobre {
+        border: 1px solid var(--corTextPrincipal);
     }
 
     .footer {
@@ -394,10 +402,12 @@ input:checked+.slider:before {
 }
 
 .container-busca {
-    margin: 0 1em 1em 1em;
+    margin: -50px 1em 1em 1em;
     padding: 20px;
     display: grid;
     place-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .container-card-busca {
@@ -411,7 +421,7 @@ input:checked+.slider:before {
 .card-pesquisa {
     text-align: start;
     width: 180px;
-    height: 300px;
+    height: 260px;
     padding: 10px;
     margin: 5px 10px;
     border: 1px solid #f1f1f1;
@@ -431,7 +441,8 @@ input:checked+.slider:before {
 }
 
 .img-card-pesquisa {
-    width: 80%;
+    width: 70%;
+    height: 200px;
     object-fit: cover;
     position: relative;
 }

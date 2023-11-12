@@ -20,6 +20,16 @@ include('connection/conexao.php');
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
     <style>
+        body.dark {
+            .card-pesquisa {
+                border: 1px solid var(--corTextPrincipal);
+            }
+
+            .container-sobre {
+                border: 1px solid var(--corTextPrincipal);
+            }
+        }
+
         .mensagem-resultado {
             text-align: center;
             font-weight: 500;
@@ -30,6 +40,8 @@ include('connection/conexao.php');
             padding: 20px;
             display: grid;
             place-items: center;
+            overflow-x: hidden;
+            overflow-y: hidden;
         }
 
         .container-card-busca {
@@ -43,12 +55,14 @@ include('connection/conexao.php');
         .card-pesquisa {
             text-align: start;
             width: 180px;
-            height: 300px;
+            height: 260px;
             padding: 10px;
             margin: 5px 10px;
             border: 1px solid #f1f1f1;
             overflow-x: hidden;
             overflow-y: hidden;
+            position: relative;
+            top: 25px;
         }
 
         .card-img-pesquisa {
@@ -236,6 +250,20 @@ include('connection/conexao.php');
 
         <section class='container-busca'>
             <div class='container-card-busca'>
+
+                <!--                 <div class='card-pesquisa'>
+                    <div class='card-content-pesquisa'>
+                        <div class='card-img-pesquisa'>
+                            <img class="img-card-pesquisa" src="img/produtos/produto1.png" />
+                        </div>
+                        <div class='card-descricao-pesquisa'>
+                            <p class='descricao-card-pesquisa'>Descrição teste</p>
+                        </div>
+                        <div class='card-preco-pesquisa'>
+                            <p class='preco-card-pesquisa' style='color: #FFA7DE; font-weight: 500;'>R$ 200.00</p>
+                        </div>
+                    </div>
+                </div> -->
                 <?php
 
                 if (!isset($_GET['busca'])) {
