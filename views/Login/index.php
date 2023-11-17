@@ -26,31 +26,24 @@
     <main class="main">
 
         <div class="container-form-login">
-            <form action="" class="formulario">
+            <form action="testeLogin.php" method="POST" class="formulario">
 
                 <div class="container-logo-form">
                     <img class="logo-form" src="../../img/logo.png" alt="logo">
                 </div>
 
                 <div class="input-wrapper">
-                    <input class="input-box" type="text" placeholder="Nome" required>
+                    <input class="input-box" type="text" name="email" placeholder="E-mail">
                     <span class="underline"></span>
                 </div>
 
                 <div class="input-wrapper">
-                    <input class="input-box" type="email" placeholder="E-mail" required>
+                    <input class="input-box" type="password" name="senha" placeholder="Senha">
                     <span class="underline"></span>
                 </div>
-
-                <div class="input-wrapper">
-                    <input class="input-box" type="password" placeholder="Senha" id="senha" required>
-                    <div id="icon" onclick="mostrarSenha()"></div>
-                    <span class="underline"></span>
-                </div>
-
                 <div class="container-button-form">
                     <div class="container-button-form--header">
-                        <button class="button-login">Entrar</button>
+                    <input class="button-login" type="submit" name="submit" value="Login">
                         <a class="button-esqueci-senha" href="../RecuperarSenha/index.php">Esqueci senha</a>
                     </div>
 
