@@ -177,6 +177,10 @@ include('connection/conexao.php');
                 margin: 40px;
                 padding: 40px;
             }
+
+            .preco-card {
+                font-size: 12px;
+            }
         }
 
         @media (max-width: 420px) {
@@ -435,7 +439,6 @@ include('connection/conexao.php');
                         echo "<p class='preco-card' style='color: #FFA7DE; font-weight: 500;'>R$ " . $row['preco_produto'] . "</p>";
                         echo "</div>";
                         echo "</div>";
-                        echo "<button class='add-carrinho' href='views/Pagamento/'>Adicione</button>";
                         echo "</div>";
                     }
                 } else {
