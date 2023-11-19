@@ -65,9 +65,9 @@
                 <div class="container-login-cadastro">
                     <h4 class="nome-conta">Faça login</h4>
                     <div class="login-cadastro">
-                        <a href="../Login/index.php">Login</a>
+                        <a href="../Login/login.php">Login</a>
                         <p>/</p>
-                        <a href="../Cadastro/index.php">Cadastro</a>
+                        <a href="../Cadastro/cadastro.php">Cadastro</a>
                     </div>
                 </div>
             </div>
@@ -93,9 +93,9 @@
                         <div class="container-login-cadastro">
                             <h4 class="nome-conta">Faça login</h4>
                             <div class="login-cadastro">
-                                <a href="../Login/index.php">Login</a>
+                                <a href="../Login/login.php">Login</a>
                                 <p>/</p>
-                                <a href="../Cadastro/index.php">Cadastro</a>
+                                <a href="../Cadastro/cadastro.php">Cadastro</a>
                             </div>
                         </div>
                     </div>

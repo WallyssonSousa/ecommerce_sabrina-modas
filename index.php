@@ -100,6 +100,118 @@ include('connection/conexao.php');
             font-weight: 600;
             margin: 5px 0;
         }
+
+        @media (max-width: 1040px) {
+            .text-right {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 950px) {
+
+            .titulo-right {
+                font-size: 22px;
+            }
+
+            .text-right {
+                font-size: 12px;
+            }
+
+            .img-sobre {
+                width: 120%;
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 860px) {
+            .container-sobre {
+                display: flex;
+                flex-direction: column;
+                margin: 100px;
+            }
+
+            .titulo-right {
+                font-size: 20px;
+                position: relative;
+                bottom: 5px;
+            }
+
+            .text-right {
+                top: 0;
+            }
+
+            .img-sobre {
+                width: 90%;
+                height: 300px;
+            }
+
+            .container-right-sobre {
+                margin: 45px 30px;
+            }
+
+            .container-img-sobre {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .container-sobre {
+                margin: 60px;
+                padding: 35px;
+            }
+
+            .container-right-sobre {
+                margin: 40px 0;
+            }
+
+            .img-sobre {
+                width: 100%;
+                height: 230px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .container-sobre {
+                margin: 40px;
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .container-sobre {
+                margin: 30px;
+                padding: 30px;
+            }
+
+            .img-sobre {
+                height: 200px;
+            }
+
+            .text-right {
+                font-size: 11px;
+            }
+
+            .titulo-right {
+                font-size: 18px;
+                bottom: 4px;
+            }
+
+            .btn-voltar-topo {
+                position: fixed;
+                bottom: 5em;
+                right: 3em;
+                padding: 10px;
+                background-color: transparent;
+                border: 1px solid #FFA7DE;
+                border-radius: 5px;
+                font-size: 8px;
+                cursor: pointer;
+                display: grid;
+                place-items: center;
+            }
+        }
     </style>
 </head>
 
@@ -162,9 +274,9 @@ include('connection/conexao.php');
                 <div class="container-login-cadastro">
                     <h4 class="nome-conta">Faça login</h4>
                     <div class="login-cadastro">
-                        <a href="views/Login/">Login</a>
+                        <a href="views/Login/login.php">Login</a>
                         <p>/</p>
-                        <a href="views/Cadastro/">Cadastro</a>
+                        <a href="views/Cadastro/cadastro.php">Cadastro</a>
                     </div>
                 </div>
             </div>
@@ -190,9 +302,9 @@ include('connection/conexao.php');
                         <div class="container-login-cadastro">
                             <h4 class="nome-conta">Faça login</h4>
                             <div class="login-cadastro">
-                                <a href="views/Login/">Login</a>
+                                <a href="views/Login/login.php">Login</a>
                                 <p>/</p>
-                                <a href="views/Cadastro/">Cadastro</a>
+                                <a href="views/Cadastro/cadastro.php">Cadastro</a>
                             </div>
                         </div>
                     </div>
@@ -250,20 +362,6 @@ include('connection/conexao.php');
 
         <section class='container-busca'>
             <div class='container-card-busca'>
-
-                <!--                 <div class='card-pesquisa'>
-                    <div class='card-content-pesquisa'>
-                        <div class='card-img-pesquisa'>
-                            <img class="img-card-pesquisa" src="img/produtos/produto1.png" />
-                        </div>
-                        <div class='card-descricao-pesquisa'>
-                            <p class='descricao-card-pesquisa'>Descrição teste</p>
-                        </div>
-                        <div class='card-preco-pesquisa'>
-                            <p class='preco-card-pesquisa' style='color: #FFA7DE; font-weight: 500;'>R$ 200.00</p>
-                        </div>
-                    </div>
-                </div> -->
                 <?php
 
                 if (!isset($_GET['busca'])) {
@@ -349,7 +447,7 @@ include('connection/conexao.php');
 
         <section class="container-sobre">
             <div>
-                <div>
+                <div class="container-img-sobre">
                     <img src="img/sabrinaModas_lojaFisica.jpeg" alt="Imagem 1" class="img-sobre">
                 </div>
             </div>
