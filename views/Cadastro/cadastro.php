@@ -48,12 +48,6 @@
                     <span class="underline"></span>
                 </div>
 
-                <div class="input-wrapper">
-                    <input class="input-box" type="password" placeholder="Confirmar Senha" id="confirmarSenha" required>
-                    <div id="icon" onclick="mostrarSenha()"></div>
-                    <span class="underline"></span>
-                </div>
-
                 <div class="container-button-form">
                     <div class="container-button-form--header">
                         <button class="button-cadastro">Criar Conta</button>

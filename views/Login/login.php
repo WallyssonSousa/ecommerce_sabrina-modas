@@ -33,6 +33,11 @@
                 </div>
 
                 <div class="input-wrapper">
+                    <input class="input-box" type="text" name="nome" placeholder="Nome do usuário">
+                    <span class="underline"></span>
+                </div>
+
+                <div class="input-wrapper">
                     <input class="input-box" type="text" name="email" placeholder="E-mail">
                     <span class="underline"></span>
                 </div>

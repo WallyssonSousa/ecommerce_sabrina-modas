@@ -128,10 +128,6 @@ input:checked+.slider:before {
     align-items: center;
 }
 
-.container-form-login {
-    margin-top: 1rem;
-}
-
 .formulario {
     display: flex;
     flex-direction: column;
