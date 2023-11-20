@@ -1,3 +1,18 @@
+<?php
+    include_once('../../connection/conexao.php');
+    if (isset($_POST['submit'])) {
+
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+
+        $result = mysqli_query($conn, "INSERT INTO usuarios(nome_usuario, email_usuario, senha) VALUES ('$nome' , '$email', '$senha') ");
+    }
+
+    $login = '../login/login.php';
+
+    header('Location: ' . $login);
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -26,31 +41,31 @@
     <main class="main">
 
         <div class="container-form-cadastro">
-            <form action="" class="formulario">
+            <form action="" method="POST" class="formulario">
 
                 <div class="container-logo-form">
                     <img class="logo-form" src="../../img/logo.png" alt="logo">
                 </div>
 
                 <div class="input-wrapper">
-                    <input class="input-box" type="text" placeholder="Nome" required>
+                    <input class="input-box" type="text" name="nome" placeholder="Nome" required>
                     <span class="underline"></span>
                 </div>
 
                 <div class="input-wrapper">
-                    <input class="input-box" type="email" placeholder="E-mail" required>
+                    <input class="input-box" type="email" name="email" placeholder="E-mail" required>
                     <span class="underline"></span>
                 </div>
 
                 <div class="input-wrapper">
-                    <input class="input-box" type="password" placeholder="Senha" id="senha" required>
+                    <input class="input-box" type="password" name="senha" placeholder="Senha" id="senha" required>
                     <div id="icon" onclick="mostrarSenha()"></div>
                     <span class="underline"></span>
                 </div>
 
                 <div class="container-button-form">
                     <div class="container-button-form--header">
-                        <button class="button-cadastro">Criar Conta</button>
+                        <input type="submit" name="submit" value="Cadastro" class="button-cadastro">
                     </div>
                 </div>
             </form>

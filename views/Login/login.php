@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="container-button-form--footer">
-                        <a href="../Cadastro/index.php" class="button-criar-conta">Criar Conta</a>
+                        <a href="../Cadastro/cadastro.php" class="button-criar-conta">Criar Conta</a>
                     </div>
                 </div>
             </form>
