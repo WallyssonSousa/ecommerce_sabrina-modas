@@ -419,7 +419,7 @@ include('connection/conexao.php');
             <div class="container-card">
                 <?php
 
-                $sqlProduto = "SELECT nome_produto, imagem_produto, categoria_produto, preco_produto FROM produtos";
+                $sqlProduto = "SELECT nome_produto, imagem_produto, categoria_produto, preco_produto FROM produtos WHERE categoria_produto = 'Destaque'";
 
                 $result = $conn->query($sqlProduto);
 
@@ -439,6 +439,7 @@ include('connection/conexao.php');
                         echo "<p class='preco-card' style='color: #FFA7DE; font-weight: 500;'>R$ " . $row['preco_produto'] . "</p>";
                         echo "</div>";
                         echo "</div>";
+                        echo "<button class='add-carrinho'>Adicione</button>";
                         echo "</div>";
                     }
                 } else {
