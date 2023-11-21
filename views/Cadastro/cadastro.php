@@ -6,12 +6,13 @@
         $email = $_POST['email'];
         $senha = $_POST['senha'];
 
-        $result = mysqli_query($conn, "INSERT INTO usuarios(nome_usuario, email_usuario, senha) VALUES ('$nome' , '$email', '$senha') ");
+        $result = mysqli_query($conn, "INSERT INTO usuarios(nome_usuario, email_usuario, senha) 
+        VALUES ('$nome' , '$email', '$senha') ");
+
+        $login = '../Login/login.php';
+        header('Location: ' . $login);
     }
 
-    $login = '../login/login.php';
-
-    header('Location: ' . $login);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -59,13 +60,12 @@
 
                 <div class="input-wrapper">
                     <input class="input-box" type="password" name="senha" placeholder="Senha" id="senha" required>
-                    <div id="icon" onclick="mostrarSenha()"></div>
                     <span class="underline"></span>
                 </div>
 
                 <div class="container-button-form">
                     <div class="container-button-form--header">
-                        <input type="submit" name="submit" value="Cadastro" class="button-cadastro">
+                        <input type="submit" name="submit" value="Cadastrar" class="button-cadastro">
                     </div>
                 </div>
             </form>
