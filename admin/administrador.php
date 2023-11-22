@@ -146,14 +146,19 @@ $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
 
-                        while ($row = $result->fetch_assoc()) {
+                        while ($user_data = $result->fetch_assoc()) {
                             echo "<tr>";
-                            echo "<td>" . $row['id_usuario'] . "</td>";
-                            echo "<td>" . $row['nome_usuario'] . "</td>";
-                            echo "<td>" . $row['email_usuario'] . "</td>";
-                            echo "<td><a class='button-editar'
-                                    href='editar.php?id=$row[id_usuario]'>
-                                    <img src='../img/lapis.png'/>
+                            echo "<td>" . $user_data['id_usuario'] . "</td>";
+                            echo "<td>" . $user_data['nome_usuario'] . "</td>";
+                            echo "<td>" . $user_data['email_usuario'] . "</td>";
+                            echo "<td>
+                                    <a class='button-editar'
+                                        href='edit.php?id=$user_data[id_usuario]'>
+                                        <img src='../img/lapis.png'/>
+                                    </a>
+                                    <a class='button-excluir' href='delete.php?id=$user_data[id_usuario]'>
+                                        <img src='../img/lixeira.png' />
+                                    </a>
                                 </td>";
                             echo "</tr>";
                         }
