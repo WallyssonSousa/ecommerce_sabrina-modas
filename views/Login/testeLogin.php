@@ -32,6 +32,7 @@
         }
 
     } else {
+        echo "Usuário não encontrado";
         header('Location: login.php');
     }
 ?>
