@@ -40,12 +40,6 @@
         <div class="container-buttonVoltar">
             <a href="administrador.php" class="button-voltar">Volta</a>
         </div>
-        <div>
-            <label class="switch">
-                <input type="checkbox" checked="checked" id="chk" />
-                <span class="slider"></span>
-            </label>
-        </div>
     </header>
 
     <main class="main">
@@ -71,14 +65,14 @@
                     <input class="input-box" type="password" name="senha" placeholder="Senha" value="<?php echo $senha ?>" id="senha" required>
                     <span class="underline"></span>
                 </div>
-
+                
 
                 <input type="hidden" name="id" value=<?php echo $id?>>
-                <input type="submit" name="update" id="submit">
-                
+                <input type="submit" name="update" id="update" class="button-cadastro">
+
                 <!-- <div class="container-button-form">
                     <div class="container-button-form--header">
-                        <input type="submit" name="update" id="update" class="button-cadastro">
+                        
                     </div>
                 </div> -->
             </form>
