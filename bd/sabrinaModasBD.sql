@@ -29,6 +29,12 @@ https://lh3.googleusercontent.com/pw/ADCreHe9ShgEfB9tSl8dSmn4uBxc4_AS2gYtC63J-8S
 
 */
 
+create table usuarios(
+	id_usuario int auto_increment primary key, 
+    nome_usuario varchar(500), 
+    email_usuario varchar(500), 
+    senha varchar (180)
+);
 
 
 select * from produtos;
