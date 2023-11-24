@@ -543,27 +543,7 @@ input:checked+.slider:before {
     margin: 5px 0;
 }
 
-.card button.add-carrinho {
-    display: none;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--corRosa);
-    color: #fff;
-    font-weight: 400;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 14px;
-    cursor: pointer;
-}
 
-.card:hover button.add-carrinho {
-    display: block;
-}
 
 /* Responsividade containers de produtos */
 
@@ -606,7 +586,7 @@ input:checked+.slider:before {
         font-weight: 600;
     }
 
-    .card button.add-carrinho {
+    .card .button.add-carrinho {
         display: none;
         position: absolute;
         bottom: 8px;
@@ -661,7 +641,7 @@ input:checked+.slider:before {
         margin: 2px 5px;
     }
 
-    .card button.add-carrinho {
+    .card .button.add-carrinho {
         display: none;
         position: absolute;
         bottom: 8px;

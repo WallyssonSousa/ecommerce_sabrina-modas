@@ -137,6 +137,11 @@ $logado = $_SESSION['nome'];
             margin: 5px 0;
         }
 
+        .card-descricao a{
+            color: #393939;
+            font-weight: 600;
+        }
+
         @media (max-width: 1040px) {
             .text-right {
                 font-size: 14px;
@@ -282,20 +287,20 @@ $logado = $_SESSION['nome'];
                         <a class="item" href="../../views/Contato/">Contato</a>
                     </li>
                     <li class="nav-item">
-                        <?php 
-                            
-                            $email_admin = "SabrinaModasAdmin@gmail.com";
-                            $senha_admin = password_hash("SabrinaModasAdmin2023%", PASSWORD_DEFAULT);
+                        <?php
 
-                            if(isset($_SESSION['email'])){
-                                if($_SESSION['email'] == $email_admin && password_verify($_SESSION['senha'], $senha_admin)){
-                                    echo "<a class='item' href='../../admin/administrador.php'>Admin</a>";
-                                } else {
+                        $email_admin = "SabrinaModasAdmin@gmail.com";
+                        $senha_admin = password_hash("SabrinaModasAdmin2023%", PASSWORD_DEFAULT);
 
-                                }
+                        if (isset($_SESSION['email'])) {
+                            if ($_SESSION['email'] == $email_admin && password_verify($_SESSION['senha'], $senha_admin)) {
+                                echo "<a class='item' href='../../admin/administrador.php'>Admin</a>";
                             } else {
 
                             }
+                        } else {
+
+                        }
                         ?>
                     </li>
                 </ul>
@@ -388,6 +393,23 @@ $logado = $_SESSION['nome'];
                             <li class="nav-item">
                                 <a class="item" href="views/Contato/">Contato</a>
                             </li>
+                            <li class="nav-item">
+                                <?php
+
+                                $email_admin = "SabrinaModasAdmin@gmail.com";
+                                $senha_admin = password_hash("SabrinaModasAdmin2023%", PASSWORD_DEFAULT);
+
+                                if (isset($_SESSION['email'])) {
+                                    if ($_SESSION['email'] == $email_admin && password_verify($_SESSION['senha'], $senha_admin)) {
+                                        echo "<a class='item' href='../../admin/administrador.php'>Admin</a>";
+                                    } else {
+
+                                    }
+                                } else {
+
+                                }
+                                ?>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -474,7 +496,7 @@ $logado = $_SESSION['nome'];
             <div class="container-card">
                 <?php
 
-                $sqlProduto = "SELECT nome_produto, imagem_produto, categoria_produto, preco_produto FROM produtos WHERE categoria_produto = 'Destaque'";
+                $sqlProduto = "SELECT id_produto, nome_produto, imagem_produto, categoria_produto, preco_produto FROM produtos WHERE categoria_produto = 'Destaque'";
 
                 $result = $conn->query($sqlProduto);
 
@@ -488,7 +510,9 @@ $logado = $_SESSION['nome'];
                         echo '<img class="img-card"  src="' . $row['imagem_produto'] . '" />';
                         echo "</div>";
                         echo "<div class='card-descricao'>";
-                        echo "<p class='descricao-card'>" . $row['nome_produto'] . "</p>";
+                        echo "<a href='../../viewsLogado/Detalhes/index.php?id_produto=$row[id_produto]'>
+                        <p class='descricao-card'>" . $row['nome_produto'] . "</p>
+                    </a>";
                         echo "</div>";
                         echo "<div class='card-preco'";
                         echo "<p class='preco-card' style='color: #FFA7DE; font-weight: 500;'>R$ " . $row['preco_produto'] . "</p>";

@@ -19,7 +19,10 @@
     overflow-x: hidden;
 }
 
-
+.header {
+    display: grid;
+    place-items: center;
+}
 
 .logo-header {
     position: relative;

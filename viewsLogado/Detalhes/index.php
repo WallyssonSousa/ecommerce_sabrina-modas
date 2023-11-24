@@ -159,7 +159,7 @@ if (!empty($_GET['id_produto'])) {
 <body>
 
     <div class="container-buttonVoltar">
-        <a href="../../index.php" class="button-voltar">Volta</a>
+        <a href="../paginaInicial/index.php" class="button-voltar">Volta</a>
     </div>
 
     <header class="header">

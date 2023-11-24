@@ -101,6 +101,33 @@ include('connection/conexao.php');
             margin: 5px 0;
         }
 
+        .card-descricao a{
+            color: #393939;
+            font-weight: 600;
+        }
+
+        .card .button.add-button {
+            display: none;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--corRosa);
+            color: #fff;
+            font-weight: 400;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .card:hover .button.add-button {
+            display: block;
+        }
+
         @media (max-width: 1040px) {
             .text-right {
                 font-size: 14px;
@@ -152,6 +179,46 @@ include('connection/conexao.php');
             .container-img-sobre {
                 display: flex;
                 justify-content: center;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .card .button.add-button {
+                display: none;
+                position: absolute;
+                bottom: 8px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: var(--corRosa);
+                color: #fff;
+                font-weight: 400;
+                border: none;
+                padding: 8px 18px;
+                border-radius: 6px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 12px;
+                cursor: pointer;
+            }
+        }
+
+        @media (max-width: 750px) {
+            .card .button.button.add-button {
+                display: none;
+                position: absolute;
+                bottom: 8px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: var(--corRosa);
+                color: #fff;
+                font-weight: 400;
+                border: none;
+                padding: 6px 16px;
+                border-radius: 6px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 12px;
+                cursor: pointer;
             }
         }
 
@@ -419,7 +486,13 @@ include('connection/conexao.php');
             <div class="container-card">
                 <?php
 
-                $sqlProduto = "SELECT nome_produto, imagem_produto, categoria_produto, preco_produto FROM produtos WHERE categoria_produto = 'Destaque'";
+                $sqlProduto = "SELECT id_produto , 
+                                nome_produto, 
+                                imagem_produto, 
+                                categoria_produto, 
+                                preco_produto 
+                                FROM produtos 
+                                WHERE categoria_produto = 'Destaque'";
 
                 $result = $conn->query($sqlProduto);
 
@@ -433,13 +506,17 @@ include('connection/conexao.php');
                         echo '<img class="img-card"  src="' . $row['imagem_produto'] . '" />';
                         echo "</div>";
                         echo "<div class='card-descricao'>";
-                        echo "<p class='descricao-card'>" . $row['nome_produto'] . "</p>";
+                        echo "<a href='./views/Detalhes/index.php?id_produto=$row[id_produto]'>
+                                <p class='descricao-card'>" . $row['nome_produto'] . "</p>
+                            </a>";
                         echo "</div>";
                         echo "<div class='card-preco'";
                         echo "<p class='preco-card' style='color: #FFA7DE; font-weight: 500;'>R$ " . $row['preco_produto'] . "</p>";
                         echo "</div>";
                         echo "</div>";
-                        echo "<button class='add-carrinho'>Adicione</button>";
+                        echo "<div class='card-buttons'>";
+                        echo "<button class='button add-button'>Adicione</button>";
+                        echo "</div>";
                         echo "</div>";
                     }
                 } else {
