@@ -1,17 +1,17 @@
 <?php
-    include_once('../../connection/conexao.php');
-    if (isset($_POST['submit'])) {
+include_once('../../connection/conexao.php');
+if (isset($_POST['submit'])) {
 
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
-        $result = mysqli_query($conn, "INSERT INTO usuarios(nome_usuario, email_usuario, senha) 
+    $result = mysqli_query($conn, "INSERT INTO usuarios(nome_usuario, email_usuario, senha) 
         VALUES ('$nome' , '$email', '$senha') ");
 
-        $login = '../Login/login.php';
-        header('Location: ' . $login);
-    }
+    $login = '../Login/login.php';
+    header('Location: ' . $login);
+}
 
 ?>
 <!DOCTYPE html>
@@ -23,6 +23,13 @@
     <title>Sabrina Modas | Cadastro</title>
     <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./cadastro.css">
+    <style>
+        body.dark {
+            .input-box::placeholder {
+                color: #6a6a6a;
+            }
+        }
+    </style>
 </head>
 
 <body>

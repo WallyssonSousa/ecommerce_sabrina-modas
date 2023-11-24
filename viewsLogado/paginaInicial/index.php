@@ -281,6 +281,23 @@ $logado = $_SESSION['nome'];
                     <li class="nav-item">
                         <a class="item" href="../../views/Contato/">Contato</a>
                     </li>
+                    <li class="nav-item">
+                        <?php 
+                            
+                            $email_admin = "SabrinaModasAdmin@gmail.com";
+                            $senha_admin = password_hash("SabrinaModasAdmin2023%", PASSWORD_DEFAULT);
+
+                            if(isset($_SESSION['email'])){
+                                if($_SESSION['email'] == $email_admin && password_verify($_SESSION['senha'], $senha_admin)){
+                                    echo "<a class='item' href='../../admin/administrador.php'>Admin</a>";
+                                } else {
+
+                                }
+                            } else {
+
+                            }
+                        ?>
+                    </li>
                 </ul>
             </nav>
 

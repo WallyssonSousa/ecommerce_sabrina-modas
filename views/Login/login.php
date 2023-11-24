@@ -7,6 +7,13 @@
     <title>Sabrina Modas | Login</title>
     <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./login.css">
+    <style>
+        body.dark{
+            .input-box::placeholder{
+                color: #6a6a6a;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -33,17 +40,17 @@
                 </div>
 
                 <div class="input-wrapper">
-                    <input class="input-box" type="text" name="nome" placeholder="Nome do usuário">
+                    <input class="input-box" type="text" name="nome" placeholder="Nome do usuário" required >
                     <span class="underline"></span>
                 </div>
 
                 <div class="input-wrapper">
-                    <input class="input-box" type="text" name="email" placeholder="E-mail">
+                    <input class="input-box" type="text" name="email" placeholder="E-mail" required >
                     <span class="underline"></span>
                 </div>
 
                 <div class="input-wrapper">
-                    <input class="input-box" type="password" name="senha" placeholder="Senha">
+                    <input class="input-box" type="password" name="senha" placeholder="Senha" required >
                     <span class="underline"></span>
                 </div>
                 <div class="container-button-form">

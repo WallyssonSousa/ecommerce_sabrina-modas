@@ -112,10 +112,10 @@ $result = $conn->query($sql);
             <nav class="nav">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a class="item" href="#">Home</a>
+                        <a class="item" href="../viewsLogado/paginaInicial/index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="item" href="../../views/Produtos/">Produtos</a>
+                        <a class="item" href="../viewsLogado/Produtos">Produtos</a>
                     </li>
                     <li class="nav-item">
                         <a class="item" href="../../views/Contato/">Contato</a>
