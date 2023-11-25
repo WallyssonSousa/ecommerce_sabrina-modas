@@ -44,7 +44,7 @@ $result = $conn->query($sql);
                 color: #fafafa;
             }
 
-            th{
+            th {
                 border: 1px solid #393939;
             }
         }
@@ -82,7 +82,8 @@ $result = $conn->query($sql);
             border-radius: 5px;
         }
 
-        td, th{
+        td,
+        th {
             padding: 10px 50px;
             text-align: left;
         }
@@ -119,6 +120,9 @@ $result = $conn->query($sql);
                     </li>
                     <li class="nav-item">
                         <a class="item" href="../../views/Contato/">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="item" href="./upload/uploadDeProduto.php">Criar Produto</a>
                     </li>
                 </ul>
             </nav>
@@ -171,6 +175,9 @@ $result = $conn->query($sql);
                             </li>
                             <li class="nav-item">
                                 <a class="item" href="../views/Contato/">Contato</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="item" href="./uploadDeProduto.php">Criar Produto</a>
                             </li>
                         </ul>
                     </nav>
