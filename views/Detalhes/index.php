@@ -171,7 +171,7 @@ if (!empty($_GET['id_produto'])) {
     <main class="main">
         <div class="container-detalhes">
             <div class="container-img">
-                <img class="img-detalhes" src="<?php echo $imagem; ?>" alt="imagem-produto">
+                <img class="img-detalhes" src="../../admin/upload/<?php echo $imagem; ?>" alt="imagem-produto">
             </div>
             <div class="container-detalhesDoProduto">
                 <div class="container-nome-produto">
