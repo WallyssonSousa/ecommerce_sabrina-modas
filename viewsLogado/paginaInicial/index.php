@@ -507,7 +507,7 @@ $logado = $_SESSION['nome'];
                         echo "<div class='card'>";
                         echo "<div class='card-content'>";
                         echo "<div class='card-img'>";
-                        echo '<img class="img-card"  src="../../admin/upload/images/' . $row['imagem_produto'] . '" />';
+                        echo '<img class="img-card"  src="../../admin/upload/' . $row['imagem_produto'] . '" />';
                         echo "</div>";
                         echo "<div class='card-descricao'>";
                         echo "<a href='../../viewsLogado/Detalhes/index.php?id_produto=$row[id_produto]'>

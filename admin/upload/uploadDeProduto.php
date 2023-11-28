@@ -4,16 +4,17 @@ include_once('../../connection/conexao.php');
 
 if (isset($_POST['add_produto'])) {
 
+    if (isset($_FILES["imagem"]) && !empty($_FILES["imagem"])) {
+        $imagem = 'images/' . $_FILES["imagem"]["name"];
+        move_uploaded_file($_FILES["imagem"]["tmp_name"], $imagem);
+    }
+
     $nome = $_POST['nome'];
     $descricao = $_POST['descricao'];
     $categoria = $_POST['categoria'];
     $cor = $_POST['cor'];
     $marca = $_POST['marca'];
     $preco = $_POST['preco'];
-    $imagem = $_FILES['imagem']['name'];
-    $imagem_tmp_name = $_FILES['imagem']['tmp_name'];
-    $pasta_imagem = 'images/' . $imagem;
-
     $result = mysqli_query($conn, "INSERT INTO produtos(nome_produto, descricao_produto, imagem_produto, categoria_produto, cor_produto, marca_produto, preco_produto)
      VALUES('$nome', '$descricao', '$imagem', '$categoria', '$cor', '$marca', '$preco' )");
 
@@ -40,9 +41,6 @@ if (isset($_POST['add_produto'])) {
     </header>
     <main>
         <div class="container">
-            <div class="container-logo">
-                <h3 class="logo-add">Adicionar Produtos</h3>
-            </div>
             <form action="./uploadDeProduto.php" method="POST" enctype="multipart/form-data">
                 <div class="input-wrapper">
                     <input class="input-box" type="text" name="nome" placeholder="Nome do Produto" required>
@@ -70,9 +68,9 @@ if (isset($_POST['add_produto'])) {
                 </div>
                 <div class="input-wrapper-file">
                     <input class="input-box-file" name="imagem" type="file" accept="image/png, image/jpg, image/jpeg" />
-                    <div class="input-file-button">Escolher arquivo</div>
+                    <div class="input-file-button">Selecione um Arquivo</div>
                 </div>
-                <div class="container-button-add">
+                <div class="container-button-add" >
                     <button class="button-add" name="add_produto" type="submit">Enviar Arquivo</button>
                 </div>
             </form>
