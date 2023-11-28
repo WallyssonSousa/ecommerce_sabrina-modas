@@ -1,12 +1,12 @@
 <?php
 
 include_once('../../connection/conexao.php');
-if (isset($_POST['submit'])) {
+if (isset($_POST['add_produto'])) {
 
-    if (isset($_FILES["imagem"]) && !empty($_FILES["imagem"])) {
+/*     if (isset($_FILES["imagem"]) && !empty($_FILES["imagem"])) {
         $imagem = "./images/" . $_FILES["imagem"]["name"];
         move_uploaded_file($_FILES["imagem"]["tmp_name"], $imagem);
-    }
+    } */
 
     $nome = $_POST['nome'];
     $descricao = $_POST['descricao'];
@@ -14,6 +14,9 @@ if (isset($_POST['submit'])) {
     $cor = $_POST['cor'];
     $marca = $_POST['marca'];
     $preco = $_POST['preco'];
+    $imagem = $_FILES['imagem']['name'];
+    $imagem_tpm_name = $_FILES['imagem']['tmp_name'];
+    $pasta_imagem = 'images/' . $imagem;
 
     $result = mysqli_query($conn, "INSERT INTO produtos(nome_produto, descricao_produto, imagem_produto, categoria_produto, cor_produto, marca_produto, preco_produto)
      VALUES('$nome', '$descricao', '$imagem', '$categoria', '$cor', '$marca', '$preco' )");
@@ -38,7 +41,7 @@ if (isset($_POST['submit'])) {
         <div>
             <p>
                 <label>Selecionar o arquivo</label>
-                <input name="imagem" type="file" accept="image/*" />
+                <input name="imagem" type="file" accept="image/png, image/jpg, image/jpeg" />
             </p>
         </div>
         <div>
@@ -57,9 +60,9 @@ if (isset($_POST['submit'])) {
             <input type="text" name="marca" placeholder="Marca do Produto" required>
         </div>
         <div>
-            <input type="text" name="preco" placeholder="Preço do Produto" required>
+            <input type="number" min="0" name="preco" placeholder="Preço do Produto" required>
         </div>
-        <button name="upload" type="submit">Enviar Arquivo</button>
+        <button name="add_produto" type="submit">Enviar Arquivo</button>
     </form>
 </body>
 
