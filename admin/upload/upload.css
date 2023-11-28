@@ -55,12 +55,36 @@ main{
     border: 1px solid #F1F0FA;
     border-radius: 2px;
     padding: 2rem 4rem;
+    margin-bottom: 20px;
 }
 
-.input-wrapper {
+.container-logo{
+    padding: 20px;
+    text-align: center;
+}
+
+.logo-add{
+    font-weight: 500;
+    color: var(--corTextPrincipal);
+}
+
+.input-wrapper, .input-wrapper-file{
     position: relative;
     width: 200px;
     margin: 10px auto;
+}
+
+.input-wrapper-file{
+    display: grid;
+    place-items: center;
+}
+
+.file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
 }
 
 .input-box {
@@ -72,6 +96,27 @@ main{
     width: 100%;
     background-color: transparent;
     transition: border-color 0.3s ease-in-out;
+}
+
+.input-box::placeholder{
+    color: #75757d;
+}
+
+.input-box-file{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        opacity: 0;
+}
+
+.input-file-button {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 2px solid #F1F0FA;
+    text-align: start;
+    position: relative;
+    color: #75757d;
 }
 
 .underline {
@@ -93,3 +138,35 @@ main{
 .input-box:focus+.underline {
     transform: scaleX(1);
 }
+
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+.container-button-add{
+    display: grid;
+    place-items: center;
+}
+
+.button-add {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: #FFA7DE;
+    color: var(--corPrimaria);
+    font-weight: 400;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: 0.5s all;
+}
+
+.button-add:hover {
+    background-color: #f589cc;
+}
+

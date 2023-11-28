@@ -40,6 +40,9 @@ if (isset($_POST['add_produto'])) {
     </header>
     <main>
         <div class="container">
+            <div class="container-logo">
+                <h3 class="logo-add">Adicionar Produtos</h3>
+            </div>
             <form action="./uploadDeProduto.php" method="POST" enctype="multipart/form-data">
                 <div class="input-wrapper">
                     <input class="input-box" type="text" name="nome" placeholder="Nome do Produto" required>
@@ -65,10 +68,13 @@ if (isset($_POST['add_produto'])) {
                     <input class="input-box" type="number" min="0" name="preco" placeholder="Preço do Produto" required>
                     <span class="underline"></span>
                 </div>
-                <div>
-                    <input name="imagem" type="file" accept="image/png, image/jpg, image/jpeg" />
+                <div class="input-wrapper-file">
+                    <input class="input-box-file" name="imagem" type="file" accept="image/png, image/jpg, image/jpeg" />
+                    <div class="input-file-button">Escolher arquivo</div>
                 </div>
-                <button name="add_produto" type="submit">Enviar Arquivo</button>
+                <div class="container-button-add">
+                    <button class="button-add" name="add_produto" type="submit">Enviar Arquivo</button>
+                </div>
             </form>
         </div>
     </main>
