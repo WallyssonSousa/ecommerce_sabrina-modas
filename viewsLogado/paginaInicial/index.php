@@ -459,7 +459,7 @@ $logado = $_SESSION['nome'];
                             echo "<div class='card-pesquisa'>";
                             echo "<div class='card-content-pesquisa'>";
                             echo "<div class='card-img-pesquisa'>";
-                            echo '<img class="img-card-pesquisa" src="' . $row['imagem_produto'] . '" />';
+                            echo '<img class="img-card-pesquisa" src="../../admin/upload/' . $row['imagem_produto'] . '" />';
                             echo "</div>";
                             echo "<div class='card-descricao-pesquisa'>";
                             echo "<p class='descricao-card-pesquisa'>" . $row['nome_produto'] . "</p>";
@@ -552,12 +552,6 @@ $logado = $_SESSION['nome'];
 
         <div class="container-footer">
             <div class="row">
-                <div class="col-md-4">
-                    <h4 class="titulos-footer">Sobre</h4>
-                    <p class="footer-item">Sabrina Modas é um empreendimento que busca trazer modernidade e estilo
-                        através de peças de alta qualidade gerando conforto e autoestima com os melhores preços e
-                        serviços.</p>
-                </div>
                 <div class="col-md-4">
                     <h4 class="titulos-footer">Contato</h4>
                     <ul>
