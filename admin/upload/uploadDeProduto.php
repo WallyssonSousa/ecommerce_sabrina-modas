@@ -18,8 +18,10 @@ if (isset($_POST['add_produto'])) {
     $result = mysqli_query($conn, "INSERT INTO produtos(nome_produto, descricao_produto, imagem_produto, categoria_produto, cor_produto, marca_produto, preco_produto)
      VALUES('$nome', '$descricao', '$imagem', '$categoria', '$cor', '$marca', '$preco' )");
 
-    header('Location: uploadDeProduto.php');
+    header("Location: uploadDeProduto.php");
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -70,7 +72,7 @@ if (isset($_POST['add_produto'])) {
                     <input class="input-box-file" name="imagem" type="file" accept="image/png, image/jpg, image/jpeg" />
                     <div class="input-file-button">Selecione um Arquivo</div>
                 </div>
-                <div class="container-button-add" >
+                <div class="container-button-add">
                     <button class="button-add" name="add_produto" type="submit">Enviar Arquivo</button>
                 </div>
             </form>

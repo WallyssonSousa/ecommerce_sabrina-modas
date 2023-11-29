@@ -24,6 +24,19 @@ body {
     text-decoration: none;
 }
 
+.container-mensagem{
+    display: flex;
+    justify-content: space-around;
+    max-width: 100%;
+    align-items: center;
+    padding: 4em;
+    background-color: #FFA7DE;
+}
+
+.mensagem{
+    font-size: 16px;
+}
+
 header{
     margin: 1em 3em;
     display: flex;
