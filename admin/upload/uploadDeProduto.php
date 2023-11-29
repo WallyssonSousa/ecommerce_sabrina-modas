@@ -77,6 +77,63 @@ if (isset($_POST['add_produto'])) {
                 </div>
             </form>
         </div>
+        <div class="container-listaDeProdutos">
+            <h2>Lista de Produtos</h2>
+            <table class="table">
+                <thead>
+                    <th scope="col">Imagem</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Cor</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">...</th>
+                </thead>
+                <tbody>
+                    <?php
+                    $selectProdutos = mysqli_query($conn, "SELECT * FROM produtos");
+                    if (mysqli_num_rows($selectProdutos) > 0) {
+                        while ($row = mysqli_fetch_assoc($selectProdutos)) {
+
+                            ?>
+                            <tr>
+                                <td><img class="lista-img" src="./<?php echo $row['imagem_produto'] ?>" alt="Imagem" /></td>
+                                <td>
+                                    <?php echo $row['nome_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $row['descricao_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $row['categoria_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $row['cor_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $row['marca_produto'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $row['preco_produto'] ?>
+                                </td>
+                                <td> <a class='button-editar' href='edit.php?id_usuario=$user_data[id_usuario]'>
+                                        <img src='../../img/lapis.png' />
+                                    </a>
+                                    <a class='button-excluir' href='delete.php?id_usuario=$user_data[id_usuario]'>
+                                        <img src='../../img/lixeira.png' />
+                                    </a>
+                                </td>
+                            </tr>
+                            <?php
+                        }
+                    } else {
+                        echo "Nenhum produto encontrado!";
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </main>
 </body>
 

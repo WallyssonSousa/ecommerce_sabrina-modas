@@ -183,3 +183,42 @@ input[type="number"]::-webkit-outer-spin-button {
     background-color: #f589cc;
 }
 
+.container-listaDeProdutos{
+    display: grid;
+    place-items: center;
+    margin-top: 5em;
+}
+
+.container-listaDeProdutos h2{
+    font-weight: 500;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
+    margin-top: 3em;
+}
+
+th{
+    padding: 20px 30px;
+    text-align: left;
+    border-bottom: 1px solid #f1f1f1;
+    font-weight: 500;
+}
+
+td{
+    padding: 20px 30px;
+    text-align: left;
+    border-bottom: 1px solid #f1f1f1;
+    font-weight: 400;
+}
+
+.lista-img{
+    width: 85%;
+    height: 200px;
+    object-fit: cover;
+    position: relative;
+    border-radius: 5px;
+}
