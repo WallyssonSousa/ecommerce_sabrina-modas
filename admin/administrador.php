@@ -119,10 +119,10 @@ $result = $conn->query($sql);
                         <a class="item" href="../viewsLogado/Produtos">Produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="item" href="../../views/Contato/">Contato</a>
+                        <a class="item" href="../views/Contato/">Contato</a>
                     </li>
                     <li class="nav-item">
-                        <a class="item" href="./upload/uploadDeProduto.php">Criar Produto</a>
+                        <a class="item" href="./upload/uploadDeProduto.php">Criar/Editar/Excluir Produto</a>
                     </li>
                 </ul>
             </nav>
@@ -177,7 +177,7 @@ $result = $conn->query($sql);
                                 <a class="item" href="../views/Contato/">Contato</a>
                             </li>
                             <li class="nav-item">
-                                <a class="item" href="./uploadDeProduto.php">Criar Produto</a>
+                                <a class="item" href="./uploadDeProduto.php">Criar/Editar/Excluir Produto</a>
                             </li>
                         </ul>
                     </nav>
