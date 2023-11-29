@@ -70,11 +70,6 @@
                 <input type="hidden" name="id" value=<?php echo $id?>>
                 <input type="submit" name="update" id="update" class="button-cadastro">
 
-                <!-- <div class="container-button-form">
-                    <div class="container-button-form--header">
-                        
-                    </div>
-                </div> -->
             </form>
         </div>
     </main> 

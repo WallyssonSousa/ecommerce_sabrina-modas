@@ -117,10 +117,10 @@ if (isset($_POST['add_produto'])) {
                                 <td>
                                     <?php echo $row['preco_produto'] ?>
                                 </td>
-                                <td> <a class='button-editar' href='edit.php?id_usuario=$user_data[id_usuario]'>
+                                <td> <a class='button-editar' href='editProduto.php?id_produto=<?php echo $row['id_produto'] ?>'>
                                         <img src='../../img/lapis.png' />
                                     </a>
-                                    <a class='button-excluir' href='delete.php?id_usuario=$user_data[id_usuario]'>
+                                    <a class='button-excluir' href='deleteProduto.php?id_produto=<?php echo $row['id_produto'] ?>'>
                                         <img src='../../img/lixeira.png' />
                                     </a>
                                 </td>
