@@ -15,6 +15,25 @@ if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true
 
 $logado = $_SESSION['nome'];
 
+if (isset($_POST['add_carrinho'])){
+    $produto_nome = $_POST['produto_nome'];
+    $produto_preco = $_POST['produto_preco'];
+    $produto_imagem = $_POST['produto_imagem'];
+    $produto_quantidade = 1;
+
+    $select_carrinho = "SELECT * FROM carrinho WHERE nome_produto = '$produto_nome'";
+
+    $result = $conn->query($select_carrinho);
+
+    if($result -> num_rows > 0){
+        echo "Testando pela milésima vez e espero que dessa vez funcione!";
+    } else { 
+        $insert_produto = mysqli_query($conn, "INSERT INTO carrinho (imagem_produto, nome_produto, preco_produto,quantidade) 
+        VALUES('$produto_imagem', '$produto_nome', '$produto_preco', '$produto_quantidade')");
+        echo "Caso o if tenha dado certo, isso daqui vai aparecer e eu vou ficar feliz pra caralho!";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -43,6 +62,11 @@ $logado = $_SESSION['nome'];
             .container-sobre {
                 border: 1px solid var(--corTextPrincipal);
             }
+        }
+
+        .container-carrinho {
+            display: flex;
+            align-items: center;
         }
 
         .logado-sair {
@@ -137,7 +161,7 @@ $logado = $_SESSION['nome'];
             margin: 5px 0;
         }
 
-        .card-descricao a{
+        .card-descricao a {
             color: #393939;
             font-weight: 600;
         }
@@ -325,10 +349,10 @@ $logado = $_SESSION['nome'];
                 </button>
             </form>
 
-
             <div class="container-icons">
                 <div class="carrinho-compras">
                     <img src="../../img/carrinho.png" alt="carrinho">
+                    <span>0</span>
                 </div>
             </div>
 
@@ -500,27 +524,35 @@ $logado = $_SESSION['nome'];
 
                 $result = $conn->query($sqlProduto);
 
-                /* print_r($result); */
-
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        echo "<div class='card'>";
-                        echo "<div class='card-content'>";
-                        echo "<div class='card-img'>";
-                        echo '<img class="img-card"  src="../../admin/upload/' . $row['imagem_produto'] . '" />';
-                        echo "</div>";
-                        echo "<div class='card-descricao'>";
-                        echo "<a href='../../viewsLogado/Detalhes/index.php?id_produto=$row[id_produto]'>
-                        <p class='descricao-card'>" . $row['nome_produto'] . "</p>
-                    </a>";
-                        echo "</div>";
-                        echo "<div class='card-preco'";
-                        echo "<p class='preco-card' style='color: #FFA7DE; font-weight: 500;'>R$ " . $row['preco_produto'] . "</p>";
-                        echo "</div>";
-                        echo "</div>";
-                        echo "<button class='add-carrinho'>Adicione</button>";
-                        echo "</div>";
-                    }
+
+                        ?>
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-img">
+                                    <img class="img-card" name="imagem_produto"
+                                        src="../../admin/upload/<?php echo $row['imagem_produto'] ?>" />
+                                </div>
+                                <div class="card-descricao">
+                                    <a href="../../viewsLogado/Detalhes/index.php?id_produto=<?php echo $row['id_produto'] ?>">
+                                        <p class="descricao-card">
+                                            <?php echo $row['nome_produto'] ?>
+                                        </p>
+                                    </a>
+                                </div>
+                                <div class="card-preco">
+                                    <p class="preco-card" style="color: #FFA7DE; font-weight: 500;">
+                                        <?php echo $row['preco_produto'] ?>
+                                    </p>
+                                </div>
+                            </div>
+                            <input type="hidden" name="produto_nome" value="<?php echo $row['nome_produto'] ?>">
+                            <input type="hidden" name="produto_preco" value="<?php echo $row['preco_produto'] ?>">
+                            <input type="hidden" name="produto_imagem" value="<?php echo $row['imagem_produto'] ?>">
+                            <input type="submit" class="add-carrinho" name="add_carrinho" value='Adicionar'>
+                        </div>
+                    <?php }
                 } else {
                     echo "<p>Nenhum produto encontrado.</p>";
                 }
