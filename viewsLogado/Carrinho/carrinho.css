@@ -422,6 +422,7 @@ input:checked+.slider:before {
 
 .titulo{
     font-weight: 500;
+    color: #FFA7DE;
 }
 
 .container-carrinho{

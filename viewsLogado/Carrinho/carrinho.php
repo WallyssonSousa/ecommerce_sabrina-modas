@@ -13,6 +13,23 @@ if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true
 }
 
 $logado = $_SESSION['nome'];
+
+if(isset($_POST['update_update_btn'])){
+    $update_value = $_POST['update_quantidade'];
+    $update_id = $_POST['update_quantidade_id'];
+    $update_quantidade_query = mysqli_query($conn, "UPDATE carrinho 
+    SET quantidade = '$update_value' WHERE id_carrinho = '$update_id'");
+
+    if($update_quantidade_query){
+        header('location: carrinho.php');
+    }
+}
+
+if(isset($_GET['remover'])){
+    $remover_id = $_GET['remover'];
+    mysqli_query($conn, "DELETE FROM carrinho WHERE id_carrinho = 'CAST('$remover_id' AS DOUBLE)");
+    header('location: carrinho.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -159,12 +176,15 @@ $logado = $_SESSION['nome'];
                         <th scope="col">Nome</th>
                         <th scope="col">Preço</th>
                         <th scope="col">Quantidade</th>
+                        <th scope="col">Sub Total</th>
+                        <th scope="col">...</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    $select_carrinho = "SELECT * FROM carrinho";
+                    $select_carrinho = "SELECT * FROM carrinho;";
                     $result = $conn->query($select_carrinho);
+                    $total = 0;
 
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
@@ -177,24 +197,51 @@ $logado = $_SESSION['nome'];
                                     <?php echo $row['nome_produto'] ?>
                                 </td>
                                 <td>
-                                    R$ <?php echo number_format($row['preco_produto']); ?>
+                                    R$
+                                    <?php echo number_format($row['preco_produto']); ?>
                                 </td>
                                 <td>
                                     <form action="" method="post">
-                                        <input type="number" name="upload_quantidade" 
-                                            min="1" value="<?php echo $row['quantidade'] ?>" >
+                                        <input type="hidden" name="update_quantidade_id"
+                                            value="<?php echo $row['id_carrinho'] ?>">
+                                        <input type="number" name="update_quantidade" min="1"
+                                            value="<?php echo $row['quantidade'] ?>">
+                                        <input type="submit" value="update" name="update_update_btn">
                                     </form>
+                                </td>
+                                <td>
+                                    R$
+                                    <?php echo $sub_total = number_format($row['preco_produto'] * $row['quantidade']); ?>
+                                </td>
+                                <td>
+                                    <a href='apagar.php?id_carrinho="<?php echo $row['id_carrinho']; ?>"'
+                                        class="btn-remover">Remover</a>
                                 </td>
                             </tr>
 
-                        <?php }
+                        <?php
+                        $total += $sub_total;
+                        }
                     }
                     ?>
+                    <tr>
+                        <td>
+                            <a href="voltar()" style="margin-top: 0;" >Continuar comprando</a>
+                        </td>
+                        <td colspan="3">Total</td>
+                        <td><?php echo $total ?></td>
+                        <td><a href="carrinho.php?deletar_tudo" class="btn-deletar"> Apagar tudo </a></td>
+                    </tr>
                 </tbody>
             </table>
         </section>
     </main>
 
+    <script>
+        function voltar(){
+            window.history.back();
+        }
+    </script>
     <script src="../../js/menuResponsivo.js"></script>
 </body>
 

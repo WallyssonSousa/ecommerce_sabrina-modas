@@ -386,7 +386,7 @@ if (isset($_POST['add_carrinho'])) {
 
             <div class="container-icons">
                 <div class="carrinho-compras">
-                    <img src="../../img/carrinho.png" alt="carrinho">
+                    <a href="../Carrinho/carrinho.php"><img src="../../img/carrinho.png" alt="carrinho"></a>
                     <span>
                         <?php echo $row_count; ?>
                     </span>
@@ -442,7 +442,7 @@ if (isset($_POST['add_carrinho'])) {
 
                     <div class="container-icons-mobile">
                         <div class="carrinho-compras">
-                            <img src="../../img/carrinho.png" alt="carrinho">
+                            <a href="../Carrinho/carrinho.php"><img src="../../img/carrinho.png" alt="carrinho"></a>
                             <span><?php echo $row_count; ?></span>
                         </div>
                     </div>
