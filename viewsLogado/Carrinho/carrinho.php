@@ -25,11 +25,11 @@ if(isset($_POST['update_update_btn'])){
     }
 }
 
-if(isset($_GET['remover'])){
-    $remover_id = $_GET['remover'];
-    mysqli_query($conn, "DELETE FROM carrinho WHERE id_carrinho = 'CAST('$remover_id' AS DOUBLE)");
+if(isset($_GET['apagarTudo'])){
+    mysqli_query($conn, "DELETE FROM carrinho");
     header('location: carrinho.php');
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -226,22 +226,16 @@ if(isset($_GET['remover'])){
                     ?>
                     <tr>
                         <td>
-                            <a href="voltar()" style="margin-top: 0;" >Continuar comprando</a>
+                            <a href="../../views/Produto/index.php">Continuar comprando</a>
                         </td>
                         <td colspan="3">Total</td>
                         <td><?php echo $total ?></td>
-                        <td><a href="carrinho.php?deletar_tudo" class="btn-deletar"> Apagar tudo </a></td>
+                        <td><a href="carrinho.php?apagarTudo" class="btn-deletar"> Apagar tudo </a></td>
                     </tr>
                 </tbody>
             </table>
         </section>
     </main>
-
-    <script>
-        function voltar(){
-            window.history.back();
-        }
-    </script>
     <script src="../../js/menuResponsivo.js"></script>
 </body>
 
