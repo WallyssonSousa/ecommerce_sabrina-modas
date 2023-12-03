@@ -15,7 +15,7 @@ if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true
 
 $logado = $_SESSION['nome'];
 
-if (isset($_POST['add_carrinho'])){
+if (isset($_POST['add_carrinho'])) {
     $produto_nome = $_POST['produto_nome'];
     $produto_preco = $_POST['produto_preco'];
     $produto_imagem = $_POST['produto_imagem'];
@@ -25,12 +25,11 @@ if (isset($_POST['add_carrinho'])){
 
     $result = $conn->query($select_carrinho);
 
-    if($result -> num_rows > 0){
-        echo "Testando pela milésima vez e espero que dessa vez funcione!";
-    } else { 
+    if (mysqli_num_rows($result) > 0) {
+
+    } else {
         $insert_produto = mysqli_query($conn, "INSERT INTO carrinho (imagem_produto, nome_produto, preco_produto,quantidade) 
         VALUES('$produto_imagem', '$produto_nome', '$produto_preco', '$produto_quantidade')");
-        echo "Caso o if tenha dado certo, isso daqui vai aparecer e eu vou ficar feliz pra caralho!";
     }
 }
 
@@ -64,9 +63,40 @@ if (isset($_POST['add_carrinho'])){
             }
         }
 
-        .container-carrinho {
+        .carrinho-compras {
             display: flex;
             align-items: center;
+            justify-content: space-between;
+        }
+
+        .carrinho-compras span {
+            background-color: #FFA7DE;
+            padding: 7px;
+            border-radius: 3px;
+            color: #fafafa;
+            margin: 5px;
+        }
+
+        .card button.add-carrinho {
+            display: none;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--corRosa);
+            color: #fff;
+            font-weight: 400;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .card:hover button.add-carrinho {
+            display: block;
         }
 
         .logado-sair {
@@ -349,11 +379,19 @@ if (isset($_POST['add_carrinho'])){
                 </button>
             </form>
 
+            <?php
+            $select_rows = mysqli_query($conn, "SELECT * FROM carrinho") or die('query failed');
+            $row_count = mysqli_num_rows($select_rows);
+            ?>
+
             <div class="container-icons">
                 <div class="carrinho-compras">
                     <img src="../../img/carrinho.png" alt="carrinho">
-                    <span>0</span>
+                    <span>
+                        <?php echo $row_count; ?>
+                    </span>
                 </div>
+
             </div>
 
             <div class="perfil">
@@ -397,9 +435,15 @@ if (isset($_POST['add_carrinho'])){
                         </div>
                     </div>
 
+                    <?php
+                    $select_rows = mysqli_query($conn, "SELECT * FROM carrinho") or die('query failed');
+                    $row_count = mysqli_num_rows($select_rows);
+                    ?>
+
                     <div class="container-icons-mobile">
                         <div class="carrinho-compras">
                             <img src="../../img/carrinho.png" alt="carrinho">
+                            <span><?php echo $row_count; ?></span>
                         </div>
                     </div>
 
@@ -528,30 +572,34 @@ if (isset($_POST['add_carrinho'])){
                     while ($row = $result->fetch_assoc()) {
 
                         ?>
-                        <div class="card">
-                            <div class="card-content">
-                                <div class="card-img">
-                                    <img class="img-card" name="imagem_produto"
-                                        src="../../admin/upload/<?php echo $row['imagem_produto'] ?>" />
-                                </div>
-                                <div class="card-descricao">
-                                    <a href="../../viewsLogado/Detalhes/index.php?id_produto=<?php echo $row['id_produto'] ?>">
-                                        <p class="descricao-card">
-                                            <?php echo $row['nome_produto'] ?>
+                        <form action="" method="post">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-img">
+                                        <img class="img-card" name="imagem_produto"
+                                            src="../../admin/upload/<?php echo $row['imagem_produto'] ?>" />
+                                    </div>
+                                    <div class="card-descricao">
+                                        <a
+                                            href="../../viewsLogado/Detalhes/index.php?id_produto=<?php echo $row['id_produto'] ?>">
+                                            <p class="descricao-card">
+                                                <?php echo $row['nome_produto'] ?>
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <div class="card-preco">
+                                        <p class="preco-card" style="color: #FFA7DE; font-weight: 500;">
+                                           R$ <?php echo $row['preco_produto'] ?>
                                         </p>
-                                    </a>
+                                    </div>
                                 </div>
-                                <div class="card-preco">
-                                    <p class="preco-card" style="color: #FFA7DE; font-weight: 500;">
-                                        <?php echo $row['preco_produto'] ?>
-                                    </p>
-                                </div>
+                                <input type="hidden" name="produto_nome" value="<?php echo $row['nome_produto'] ?>">
+                                <input type="hidden" name="produto_preco" value="<?php echo $row['preco_produto'] ?>">
+                                <input type="hidden" name="produto_imagem" value="<?php echo $row['imagem_produto'] ?>">
+                                <button type="submit" class="add-carrinho" name="add_carrinho"
+                                    value='Adicionar'>Adicionar</button>
                             </div>
-                            <input type="hidden" name="produto_nome" value="<?php echo $row['nome_produto'] ?>">
-                            <input type="hidden" name="produto_preco" value="<?php echo $row['preco_produto'] ?>">
-                            <input type="hidden" name="produto_imagem" value="<?php echo $row['imagem_produto'] ?>">
-                            <input type="submit" class="add-carrinho" name="add_carrinho" value='Adicionar'>
-                        </div>
+                        </form>
                     <?php }
                 } else {
                     echo "<p>Nenhum produto encontrado.</p>";
