@@ -85,6 +85,12 @@ $logado = $_SESSION['nome'];
             font-weight: 400;
             background-color: #FFA7DE;
         }
+
+        @media screen and (max-width: 800px) {
+            .perfil{
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -108,7 +114,7 @@ $logado = $_SESSION['nome'];
                         <a class="item" href="../paginaInicial">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="item" href="#">Produtos</a>
+                        <a class="item" href="../paginaProdutos">Produtos</a>
                     </li>
                     <li class="nav-item">
                         <a class="item" href="../paginaContatos">Contato</a>
@@ -132,6 +138,7 @@ $logado = $_SESSION['nome'];
                     </li>
                 </ul>
             </nav>
+
 
             <div class="perfil">
                 <div class="container-login-cadastro">
@@ -180,13 +187,13 @@ $logado = $_SESSION['nome'];
                     <nav class="nav-mobile">
                         <ul class="nav-list-mobile">
                             <li class="nav-item">
-                                <a class="item" href="#">Home</a>
+                                <a class="item" href="../paginaInicial">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="item" href="views/Produtos/">Produtos</a>
+                                <a class="item" href="../paginaProdutos/">Produtos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="item" href="views/Contato/">Contato</a>
+                                <a class="item" href="../paginaContatos">Contato</a>
                             </li>
                             <li class="nav-item">
                                 <?php

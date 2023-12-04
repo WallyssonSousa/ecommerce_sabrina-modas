@@ -281,6 +281,10 @@ input:checked+.slider:before {
         display: none;
     }
 
+    .container-login-cadastro{
+        display: none;
+    }
+
     .mobile-menu-icon {
         display: flex;
         align-items: center;

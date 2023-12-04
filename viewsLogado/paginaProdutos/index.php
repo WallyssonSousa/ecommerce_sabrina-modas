@@ -184,13 +184,13 @@ if (isset($_POST['add_carrinho'])) {
                     <nav class="nav-mobile">
                         <ul class="nav-list-mobile">
                             <li class="nav-item">
-                                <a class="item" href="#">Home</a>
+                                <a class="item" href="../paginaInicial">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="item" href="views/Produtos/">Produtos</a>
+                                <a class="item" href="../paginaProdutos">Produtos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="item" href="views/Contato/">Contato</a>
+                                <a class="item" href="../paginaContatos">Contato</a>
                             </li>
                             <li class="nav-item">
                                 <?php
