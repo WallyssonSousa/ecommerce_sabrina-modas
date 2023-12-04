@@ -40,291 +40,13 @@ if (isset($_POST['add_carrinho'])) {
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="/dist/output.css" rel="stylesheet">
+    <title>Sabrina Modas | Produtos</title>
     <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
-    <title>Sabrina Modas | Home</title>
-
-
-    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-
-    <style>
-        body.dark {
-            .card-pesquisa {
-                border: 1px solid var(--corTextPrincipal);
-            }
-
-            .container-sobre {
-                border: 1px solid var(--corTextPrincipal);
-            }
-
-            .descricao-card{
-                color: #fafafa;
-            }
-        }
-
-        .carrinho-compras {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .carrinho-compras span {
-            background-color: #FFA7DE;
-            padding: 7px;
-            border-radius: 3px;
-            color: #fafafa;
-            margin: 5px;
-        }
-
-        .card button.add-carrinho {
-            display: none;
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--corRosa);
-            color: #fff;
-            font-weight: 400;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .card:hover button.add-carrinho {
-            display: block;
-        }
-
-        .logado-sair {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .nome-logado {
-            font-weight: 600;
-        }
-
-        .button-sair {
-            color:
-                /* #FFA7DE */
-                var(--corPrimaria);
-            padding: 5px;
-            border-radius: 5px;
-            margin: 0 5px;
-            font-weight: 400;
-            background-color: #FFA7DE;
-        }
-
-        .mensagem-resultado {
-            text-align: center;
-            font-weight: 500;
-        }
-
-        .preco-card-pesquisa,.preco-card{
-            color: #FFA7DE; 
-            font-weight: 500;
-        }
-
-        .container-busca {
-            margin: -50px 1em 1em 1em;
-            padding: 20px;
-            display: grid;
-            place-items: center;
-            overflow-x: hidden;
-            overflow-y: hidden;
-        }
-
-        .container-card-busca {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            place-items: center;
-            position: relative;
-            width: 100%;
-        }
-
-        .card-pesquisa {
-            text-align: start;
-            width: 180px;
-            height: 260px;
-            padding: 10px;
-            margin: 5px 10px;
-            border: 1px solid #f1f1f1;
-            overflow-x: hidden;
-            overflow-y: hidden;
-            position: relative;
-            top: 25px;
-        }
-
-        .card-img-pesquisa {
-            display: grid;
-            place-items: center;
-        }
-
-        .card-content-pesquisa {
-            position: relative;
-            bottom: 20px;
-            margin-bottom: 20px;
-        }
-
-        .img-card-pesquisa {
-            width: 70%;
-            height: 200px;
-            object-fit: cover;
-            position: relative;
-        }
-
-        .card-descricao-pesquisa {
-            display: flex;
-            align-items: flex-start;
-            flex-direction: row;
-            margin-top: 15px;
-        }
-
-        .descricao-card-pesquisa {
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .preco-card-pesquisa {
-            color: #FFA7DE;
-            font-weight: 600;
-            margin: 5px 0;
-        }
-
-        .card-descricao a {
-            color: #393939;
-            font-weight: 600;
-        }
-
-        @media (max-width: 1040px) {
-            .text-right {
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 950px) {
-
-            .titulo-right {
-                font-size: 22px;
-            }
-
-            .text-right {
-                font-size: 12px;
-            }
-
-            .img-sobre {
-                width: 120%;
-                margin: 0;
-            }
-        }
-
-        @media (max-width: 860px) {
-            .container-sobre {
-                display: flex;
-                flex-direction: column;
-                margin: 100px;
-            }
-
-            .titulo-right {
-                font-size: 20px;
-                position: relative;
-                bottom: 5px;
-            }
-
-            .text-right {
-                top: 0;
-            }
-
-            .img-sobre {
-                width: 90%;
-                height: 300px;
-            }
-
-            .container-right-sobre {
-                margin: 45px 30px;
-            }
-
-            .container-img-sobre {
-                display: flex;
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 650px) {
-
-            .container-sobre {
-                margin: 60px;
-                padding: 35px;
-            }
-
-            .container-right-sobre {
-                margin: 40px 0;
-            }
-
-            .img-sobre {
-                width: 100%;
-                height: 230px;
-            }
-        }
-
-        @media (max-width: 500px) {
-            .container-sobre {
-                margin: 40px;
-                padding: 40px;
-            }
-
-            .preco-card {
-                font-size: 12px;
-            }
-        }
-
-        @media (max-width: 420px) {
-            .container-sobre {
-                margin: 30px;
-                padding: 30px;
-            }
-
-            .img-sobre {
-                height: 200px;
-            }
-
-            .text-right {
-                font-size: 11px;
-            }
-
-            .titulo-right {
-                font-size: 18px;
-                bottom: 4px;
-            }
-
-            .btn-voltar-topo {
-                position: fixed;
-                bottom: 5em;
-                right: 3em;
-                padding: 10px;
-                background-color: transparent;
-                border: 1px solid #FFA7DE;
-                border-radius: 5px;
-                font-size: 8px;
-                cursor: pointer;
-                display: grid;
-                place-items: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./produto.css">
 </head>
 
 <body>
-
     <header class="header">
 
         <div class="line-header">
@@ -341,10 +63,10 @@ if (isset($_POST['add_carrinho'])) {
             <nav class="nav">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a class="item" href="#">Home</a>
+                        <a class="item" href="../paginaInicial">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="item" href="../paginaProdutos">Produtos</a>
+                        <a class="item" href="#">Produtos</a>
                     </li>
                     <li class="nav-item">
                         <a class="item" href="../paginaContatos">Contato</a>
@@ -450,7 +172,9 @@ if (isset($_POST['add_carrinho'])) {
                     <div class="container-icons-mobile">
                         <div class="carrinho-compras">
                             <a href="../Carrinho/carrinho.php"><img src="../../img/carrinho.png" alt="carrinho"></a>
-                            <span><?php echo $row_count; ?></span>
+                            <span>
+                                <?php echo $row_count; ?>
+                            </span>
                         </div>
                     </div>
 
@@ -511,68 +235,66 @@ if (isset($_POST['add_carrinho'])) {
                 </button>
             </form>
         </div>
-
     </header>
+
+    <section class='container-busca'>
+        <div class='container-card-busca'>
+            <?php
+
+            if (!isset($_GET['busca'])) {
+                echo "<p style='display: none'>Teste</p>";
+            } else {
+                $pesquisa = $conn->real_escape_string($_GET['busca']);
+                $sql_pesquisa = "SELECT * FROM produtos WHERE nome_produto LIKE '%$pesquisa%'";
+                $sql_query_pesquisa = $conn->query($sql_pesquisa) or die("Erro ao consultar!" . $conn->error);
+
+                if ($sql_query_pesquisa->num_rows == 0) {
+                    echo "<p class='mensagem-resultado' style='position: absolute;'>Nenhum resultado encontrado </p>";
+                } else {
+                    while ($row = $sql_query_pesquisa->fetch_assoc()) {
+
+                        ?>
+
+                        <div class="card-pesquisa">
+                            <div class="card-content-pesquisa">
+                                <div class="card-img-pesquisa">
+                                    <img src="../../admin/upload/<?php echo $row['imagem_produto'] ?>" class="img-card-pesquisa">
+                                </div>
+                                <div class="card-descricao-pesquisa">
+                                    <p class="descricao-card-pesquisa">
+                                        <?php echo $row['nome_produto'] ?>
+                                    </p>
+                                </div>
+                                <div class="card-preco-pesquisa">
+                                    <p class="preco-card-pesquisa">R$
+                                        <?php echo $row['preco_produto'] ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                }
+
+            }
+
+            ?>
+        </div>
+    </section>
+
+    <div class="container-hr">
+        <hr class="hr-header">
+    </div>
 
     <main>
 
-        <section class='container-busca'>
-            <div class='container-card-busca'>
-                <?php
+        <section class="container-produtos">
 
-                if (!isset($_GET['busca'])) {
-                    echo "<p style='display: none'>Teste</p>";
-                } else {
-                    $pesquisa = $conn->real_escape_string($_GET['busca']);
-                    $sql_pesquisa = "SELECT * FROM produtos WHERE nome_produto LIKE '%$pesquisa%'";
-                    $sql_query_pesquisa = $conn->query($sql_pesquisa) or die("Erro ao consultar!" . $conn->error);
-
-                    if ($sql_query_pesquisa->num_rows == 0) {
-                        echo "<p class='mensagem-resultado' style='position: absolute;'>Nenhum resultado encontrado </p>";
-                    } else {
-                        while ($row = $sql_query_pesquisa->fetch_assoc()) {
-
-                            ?>
-
-                            <div class="card-pesquisa">
-                                <div class="card-content-pesquisa">
-                                    <div class="card-img-pesquisa">
-                                        <img src="../../admin/upload/<?php echo $row['imagem_produto'] ?>" class="img-card-pesquisa">
-                                    </div>
-                                    <div class="card-descricao-pesquisa">
-                                        <p class="descricao-card-pesquisa"><?php echo$row['nome_produto']?></p>
-                                    </div>
-                                    <div class="card-preco-pesquisa">
-                                        <p class="preco-card-pesquisa">R$ <?php echo $row['preco_produto'] ?></p>
-                                    </div>
-                                </div>
-                            </div>
-                <?php
-                        }
-                    }
-
-                }
-
-                ?>
+            <div class="container-titulo">
+                <h3 class="titulo-produto">Produtos Gerais</h3>
             </div>
-        </section>
 
-        <div class="container-banner" id="slider">
-            <div>
-                <img src="../../img/Banner-2.jpeg" alt="Imagem 1" class="banner">
-            </div>
-            <div>
-                <img src="../../img/Banner-1.jpeg" alt="Imagem 2" class="banner">
-            </div>
-            <div>
-                <img src="../../img/banner.jpg" alt="Imagem 3" class="banner">
-            </div>
-        </div>
-
-        <section class="container-categoria">
-            <h2 class="titulo-categoria">Destaques</h2>
-
-            <div class="container-card">
+            <div class="categoria-produtos">
                 <?php
 
                 $sqlProduto = "SELECT id_produto, nome_produto, imagem_produto, categoria_produto, preco_produto FROM produtos WHERE categoria_produto = 'Destaque'";
@@ -581,8 +303,8 @@ if (isset($_POST['add_carrinho'])) {
 
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-
                         ?>
+
                         <form action="" method="post">
                             <div class="card">
                                 <div class="card-content">
@@ -600,7 +322,8 @@ if (isset($_POST['add_carrinho'])) {
                                     </div>
                                     <div class="card-preco">
                                         <p class="preco-card">
-                                           R$ <?php echo $row['preco_produto'] ?>
+                                            R$
+                                            <?php echo $row['preco_produto'] ?>
                                         </p>
                                     </div>
                                 </div>
@@ -611,30 +334,136 @@ if (isset($_POST['add_carrinho'])) {
                                     value='Adicionar'>Adicionar</button>
                             </div>
                         </form>
+
                     <?php }
                 } else {
-                    echo "<p>Nenhum produto encontrado.</p>";
+                    echo "Não há produtos cadastrados";
                 }
+
                 ?>
             </div>
-        </section>
 
-        <section class="container-sobre">
-            <div>
-                <div class="container-img-sobre">
-                    <img src="../../img/sabrinaModas_lojaFisica.jpeg" alt="Imagem 1" class="img-sobre">
+            <div class="container-titulo">
+                <h3 class="titulo-produto">Conjunto</h3>
+            </div>
+
+            <div class="categoria-produtos" id="conjunto">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img class="img-card" src="../../img/produtos/produto1.png" alt="produto1">
+                        </div>
+                        <div class="card-descricao">
+                            <p class="descricao-card">Conjunto Planet Girls</p>
+                        </div>
+                        <div class="card-preco">
+                            <p class="preco-card">R$ 80,00</p>
+                        </div>
+                    </div>
+                    <button class="add-carrinho">Adicione</button>
+                </div>
+                <div class="card">
+
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img class="img-card" src="../../img/produtos/produto2.png" alt="produto1">
+                        </div>
+                        <div class="card-descricao">
+                            <p class="descricao-card">Conjunto Planet Girls</p>
+                        </div>
+                        <div class="card-preco">
+                            <p class="preco-card">R$ 80,00</p>
+                        </div>
+                    </div>
+                    <button class="add-carrinho">Adicione</button>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img class="img-card" src="../../img/produtos/produto3.png" alt="produto1">
+                        </div>
+                        <div class="card-descricao">
+                            <p class="descricao-card">Conjunto Planet Girls</p>
+                        </div>
+                        <div class="card-preco">
+                            <p class="preco-card">R$ 80,00</p>
+                        </div>
+                    </div>
+                    <button class="add-carrinho">Adicione</button>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img class="img-card" src="../../img/produtos/produto4.png" alt="produto1">
+                        </div>
+                        <div class="card-descricao">
+                            <p class="descricao-card">Conjunto Planet Girls</p>
+                        </div>
+                        <div class="card-preco">
+                            <p class="preco-card">R$ 80,00</p>
+                        </div>
+                    </div>
+
+                    <button class="add-carrinho">Adicione</button>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img class="img-card" src="../../img/produtos/produto5.png" alt="produto1">
+                        </div>
+                        <div class="card-descricao">
+                            <p class="descricao-card">Conjunto Planet Girls</p>
+                        </div>
+                        <div class="card-preco">
+                            <p class="preco-card">R$ 80,00</p>
+                        </div>
+                    </div>
+                    <button class="add-carrinho">Adicione</button>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img class="img-card" src="../../img/produtos/produto6.png" alt="produto1">
+                        </div>
+                        <div class="card-descricao">
+                            <p class="descricao-card">Conjunto Planet Girls</p>
+                        </div>
+                        <div class="card-preco">
+                            <p class="preco-card">R$ 80,00</p>
+                        </div>
+                    </div>
+                    <button class="add-carrinho">Adicione</button>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img class="img-card" src="../../img/produtos/produto1.png" alt="produto1">
+                        </div>
+                        <div class="card-descricao">
+                            <p class="descricao-card">Conjunto Planet Girls</p>
+                        </div>
+                        <div class="card-preco">
+                            <p class="preco-card">R$ 80,00</p>
+                        </div>
+                    </div>
+                    <button class="add-carrinho">Adicione</button>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img class="img-card" src="../../img/produtos/produto1.png" alt="produto1">
+                        </div>
+                        <div class="card-descricao">
+                            <p class="descricao-card">Conjunto Planet Girls</p>
+                        </div>
+                        <div class="card-preco">
+                            <p class="preco-card">R$ 80,00</p>
+                        </div>
+                    </div>
+                    <button class="add-carrinho">Adicione</button>
                 </div>
             </div>
 
-            <div class="container-right-sobre">
-                <h3 class="titulo-right">Sobre</h3>
-                <p class="text-right">Sonhada e realizada pela empreendedora Sabrina Marques, essa loja começou de forma
-                    simples, crescendo
-                    aos poucos pelas redes sociais até chegarmos aqui, não foi fácil mas sempre buscamos crescer. Nossa
-                    loja foi inaugurada através de muitas lutas e conquistas. Hoje estamos localizados em Osasco com
-                    nossa primeira loja, que está aberta para visita dos nossos clientes trazendo sua melhor experiência
-                    conosco, e agora com nosso site exclusivo.</p>
-            </div>
         </section>
 
     </main>
@@ -643,6 +472,12 @@ if (isset($_POST['add_carrinho'])) {
 
         <div class="container-footer">
             <div class="row">
+                <div class="col-md-4">
+                    <h4 class="titulos-footer">Sobre</h4>
+                    <p class="footer-item">Sabrina Modas é um empreendimento que busca trazer modernidade e estilo
+                        através de peças de alta qualidade gerando conforto e autoestima com os melhores preços e
+                        serviços.</p>
+                </div>
                 <div class="col-md-4">
                     <h4 class="titulos-footer">Contato</h4>
                     <ul>
@@ -660,7 +495,7 @@ if (isset($_POST['add_carrinho'])) {
                 <div class="col-md-4">
                     <h4 class="titulos-footer">Links úteis</h4>
                     <ul>
-                        <li><a class="footer-item" href="../../views/Contato/">Página de contato</a></li>
+                        <li><a class="footer-item" href="views/Contato/index.php">Página de contato</a></li>
                         <li><a class="footer-item" href="https://www.instagram.com/sabrinamodaas___/">Nosso
                                 instagram</a></li>
                     </ul>
@@ -668,7 +503,7 @@ if (isset($_POST['add_carrinho'])) {
             </div>
         </div>
 
-        <div class="container-hr">
+        <div class="container-hr-footer">
             <hr class="footer-hr">
         </div>
 
@@ -693,28 +528,14 @@ if (isset($_POST['add_carrinho'])) {
                 </a>
             </div>
         </div>
+
+
+
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"
-        integrity="sha512-h9kKZlwV1xrIcr2LwAPZhjlkx+x62mNwuQK5PAu9d3D+JXMNlGx8akZbqpXvp0vA54rz+DrqYVrzUGDMhwKmwQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"
-        integrity="sha512-h9kKZlwV1xrIcr2LwAPZhjlkx+x62mNwuQK5PAu9d3D+JXMNlGx8akZbqpXvp0vA54rz+DrqYVrzUGDMhwKmwQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.min.js"
-        integrity="sha512-fDGBclS3HUysEBIKooKWFDEWWORoA20n60OwY7OSYgxGEew9s7NgDaPkj7gqQcVXnASPvZAiFW8DiytstdlGtQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
-        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script src="../../js/carrosselSobre.js"></script>
-    <script src="../../js/carrossel.js"></script>
     <script src="../../js/buttonVoltarTopo.js"></script>
     <script src="../../js/menuResponsivo.js"></script>
     <script src="../../js/modoNoturno.js"></script>
-    <script src="../../js/dropdownUsuario.js"></script>
 </body>
 
 </html>
