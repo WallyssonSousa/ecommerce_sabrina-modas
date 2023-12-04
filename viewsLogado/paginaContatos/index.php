@@ -32,6 +32,10 @@ $logado = $_SESSION['nome'];
                 width: 90%;
                 border-color: #393939;
             }
+
+            .footer-hr {
+                border-color: #393939;
+            }
         }
 
         .perfil {
@@ -87,7 +91,7 @@ $logado = $_SESSION['nome'];
         }
 
         @media screen and (max-width: 800px) {
-            .perfil{
+            .perfil {
                 display: none;
             }
         }
@@ -335,7 +339,7 @@ $logado = $_SESSION['nome'];
 
         <div class="container-footer-midia">
             <div class="col">
-            <div class="col-logo">
+                <div class="col-logo">
                     <a href="#">
                         <img src="../../img/logo.png" alt="Logotipo do Ecommerce" class="logo-rodape">
                     </a>

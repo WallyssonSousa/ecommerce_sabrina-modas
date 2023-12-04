@@ -7,6 +7,22 @@
     <title>Sabrina Modas | Produtos</title>
     <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./produto.css">
+    <style>
+        body.dark {
+            .hr-header {
+                width: 97%;
+                border-color: #393939;
+            }
+
+            .footer-hr {
+                border-color: #393939;
+            }
+        }
+
+        .hr-header{
+            width: 97%;
+        }
+    </style>
 </head>
 
 <body>
@@ -164,7 +180,7 @@
             </div>
 
             <div class="categoria-produtos" id="tenis">
-                
+
             </div>
 
             <div class="container-titulo">
@@ -320,7 +336,8 @@
                     <h4 class="titulos-footer">Links úteis</h4>
                     <ul>
                         <li><a class="footer-item" href="views/Contato/index.php">Página de contato</a></li>
-                        <li><a class="footer-item" href="https://www.instagram.com/sabrinamodaas___/">Nosso instagram</a></li>
+                        <li><a class="footer-item" href="https://www.instagram.com/sabrinamodaas___/">Nosso
+                                instagram</a></li>
                     </ul>
                 </div>
             </div>

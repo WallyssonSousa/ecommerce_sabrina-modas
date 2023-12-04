@@ -44,6 +44,13 @@ if (isset($_POST['add_carrinho'])) {
     <title>Sabrina Modas | Produtos</title>
     <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./produto.css">
+    <style>
+        body.dark {
+            .footer-hr {
+                border-color: #393939;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -509,7 +516,7 @@ if (isset($_POST['add_carrinho'])) {
 
         <div class="container-footer-midia">
             <div class="col">
-            <div class="col-logo">
+                <div class="col-logo">
                     <a href="#">
                         <img src="../../img/logo.png" alt="Logotipo do Ecommerce" class="logo-rodape">
                     </a>

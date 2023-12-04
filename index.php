@@ -28,6 +28,14 @@ include('connection/conexao.php');
             .container-sobre {
                 border: 1px solid var(--corTextPrincipal);
             }
+
+            .descricao-card {
+                color: #f1f1f1
+            }
+
+            .footer-hr {
+                border-color: #393939;
+            }
         }
 
         .mensagem-resultado {
@@ -591,11 +599,11 @@ include('connection/conexao.php');
             <div class="col">
                 <div class="col-logo">
                     <a href="#">
-                        <img src="../../img/logo.png" alt="Logotipo do Ecommerce" class="logo-rodape">
+                        <img src="./img/logo.png" alt="Logotipo do Ecommerce" class="logo-rodape">
                     </a>
                 </div>
                 <div class="col-sociais">
-                    <img src="../../img/instagram.png" alt="instagram">
+                    <img src="./img/instagram.png" alt="instagram">
                     <p>@sabrinamodaas___</p>
                 </div>
             </div>
@@ -604,7 +612,7 @@ include('connection/conexao.php');
         <div class="row">
             <div class="col-md-12">
                 <a href="#" class="btn-voltar-topo" style="display: none;" onclick="scrollToTop()">
-                    <img src="../../img/de-volta-ao-topo.png" alt="voltar ao topo">
+                    <img src="./img/de-volta-ao-topo.png" alt="voltar ao topo">
                 </a>
             </div>
         </div>

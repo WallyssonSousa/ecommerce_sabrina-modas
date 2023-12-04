@@ -12,6 +12,14 @@
             .input-box::placeholder{
                 color: #6a6a6a;
             }
+
+            .hr{
+                border-color: #393939;
+            }
+        }
+
+        .container-form-login{
+            margin-bottom: 2em;
         }
     </style>
 </head>

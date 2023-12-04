@@ -501,7 +501,6 @@ input:checked+.slider:before {
     color: var(--corTextPrincipal);
 }
 
-
 .logo-rodape {
     width: 30%;
 }

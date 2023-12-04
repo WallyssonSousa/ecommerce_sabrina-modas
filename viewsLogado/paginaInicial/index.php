@@ -65,6 +65,10 @@ if (isset($_POST['add_carrinho'])) {
             .descricao-card {
                 color: #fafafa;
             }
+
+            .footer-hr{
+                border-color: #393939;
+            }
         }
 
         .carrinho-compras {
@@ -320,6 +324,15 @@ if (isset($_POST['add_carrinho'])) {
                 display: grid;
                 place-items: center;
             }
+        }
+
+        .container-hr{
+            display: grid;
+            place-items: center;
+        }
+
+        .footer-hr{
+            width: 95%;            
         }
     </style>
 </head>
