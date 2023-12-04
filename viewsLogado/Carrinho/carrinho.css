@@ -7,7 +7,7 @@
     --corRosa: #FFA7DE;
 }
 
-.modonoturno:root {}
+
 
 * {
     margin: 0;
@@ -459,4 +459,72 @@ td{
     object-fit: cover;
     position: relative;
     border-radius: 5px;
+}
+
+.input-quantidade {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
+}
+
+.btn-update-quantidade{
+    padding: 10px;
+    border: 1px solid #f1f1f1;
+    background-color: #FFA7DE;
+    border-radius: 3px;
+    color: #f1f1f1;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 1s;
+}
+
+.btn-update-quantidade:hover {
+    background-color: #f589cc;
+}
+.btn-remover, .btn-voltar{
+    padding: 10px;
+    background-color: #FFA7DE;
+    color: #f1f1f1;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 12px;
+    transition: all 1s;
+}
+
+.btn-remover:hover{
+    background-color: #f589cc;
+}
+
+.btn-remover-all{
+    padding: 10px;
+    background-color: #FFA7DE;
+    color: #f1f1f1;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 12px;
+    transition: all 1s;
+}
+
+.btn-remover-all:hover{
+    background-color: #f589cc;
+}
+
+.btn-checkout{
+    background-color: #FFA7DE;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #f1f1f1;
+    color: #f1f1f1;
+    margin: 10px;
+    font-size: 14px;
+}
+
+.btn-checkout.desabilitado{
+    opacity: .5;
+    transition: all 1s;
+}
+
+.btn-checkout.desabilitado:hover{
+    opacity: .3;
 }

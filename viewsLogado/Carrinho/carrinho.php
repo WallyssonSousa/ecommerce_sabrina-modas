@@ -14,18 +14,18 @@ if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true
 
 $logado = $_SESSION['nome'];
 
-if(isset($_POST['update_update_btn'])){
+if (isset($_POST['update_update_btn'])) {
     $update_value = $_POST['update_quantidade'];
     $update_id = $_POST['update_quantidade_id'];
     $update_quantidade_query = mysqli_query($conn, "UPDATE carrinho 
     SET quantidade = '$update_value' WHERE id_carrinho = '$update_id'");
 
-    if($update_quantidade_query){
+    if ($update_quantidade_query) {
         header('location: carrinho.php');
     }
 }
 
-if(isset($_GET['apagarTudo'])){
+if (isset($_GET['apagarTudo'])) {
     mysqli_query($conn, "DELETE FROM carrinho");
     header('location: carrinho.php');
 }
@@ -56,38 +56,6 @@ if(isset($_GET['apagarTudo'])){
             <a href="#">
                 <img src="../../img/logo.png" alt="logo" class="logo-header">
             </a>
-
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a class="item" href="../paginaInicial/index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="item" href="../../views/Produtos/">Produtos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="item" href="../../views/Contato/">Contato</a>
-                    </li>
-                    <li class="nav-item">
-                        <?php
-
-                        $email_admin = "SabrinaModasAdmin@gmail.com";
-                        $senha_admin = password_hash("SabrinaModasAdmin2023%", PASSWORD_DEFAULT);
-
-                        if (isset($_SESSION['email'])) {
-                            if ($_SESSION['email'] == $email_admin && password_verify($_SESSION['senha'], $senha_admin)) {
-                                echo "<a class='item' href='../../admin/administrador.php'>Admin</a>";
-                            } else {
-
-                            }
-                        } else {
-
-                        }
-                        ?>
-                    </li>
-                </ul>
-            </nav>
-
 
             <div class="perfil">
                 <div class="container-login-cadastro">
@@ -123,39 +91,6 @@ if(isset($_GET['apagarTudo'])){
                         </div>
                     </div>
 
-                </div>
-
-                <div class="menu-mobile-bottom">
-                    <nav class="nav-mobile">
-                        <ul class="nav-list-mobile">
-                            <li class="nav-item">
-                                <a class="item" href="../paginaInicial/index.php">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="item" href="views/Produtos/">Produtos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="item" href="views/Contato/">Contato</a>
-                            </li>
-                            <li class="nav-item">
-                                <?php
-
-                                $email_admin = "SabrinaModasAdmin@gmail.com";
-                                $senha_admin = password_hash("SabrinaModasAdmin2023%", PASSWORD_DEFAULT);
-
-                                if (isset($_SESSION['email'])) {
-                                    if ($_SESSION['email'] == $email_admin && password_verify($_SESSION['senha'], $senha_admin)) {
-                                        echo "<a class='item' href='../../admin/administrador.php'>Admin</a>";
-                                    } else {
-
-                                    }
-                                } else {
-
-                                }
-                                ?>
-                            </li>
-                        </ul>
-                    </nav>
                 </div>
             </div>
         </div>
@@ -204,14 +139,15 @@ if(isset($_GET['apagarTudo'])){
                                     <form action="" method="post">
                                         <input type="hidden" name="update_quantidade_id"
                                             value="<?php echo $row['id_carrinho'] ?>">
-                                        <input type="number" name="update_quantidade" min="1"
+                                        <input class="input-quantidade" type="number" name="update_quantidade" min="1"
                                             value="<?php echo $row['quantidade'] ?>">
-                                        <input type="submit" value="update" name="update_update_btn">
+                                        <input type="submit" value="Atualizar" class="btn-update-quantidade"
+                                            name="update_update_btn">
                                     </form>
                                 </td>
                                 <td>
                                     R$
-                                    <?php echo $sub_total = number_format($row['preco_produto'] * $row['quantidade']); ?>
+                                    <?php echo $sub_total = number_format($row['preco_produto'] * $row['quantidade']); ?>,0
                                 </td>
                                 <td>
                                     <a href='apagar.php?id_carrinho="<?php echo $row['id_carrinho']; ?>"'
@@ -219,23 +155,33 @@ if(isset($_GET['apagarTudo'])){
                                 </td>
                             </tr>
 
-                        <?php
-                        $total += $sub_total;
+                            <?php
+                            $total += floatval($sub_total);
                         }
                     }
                     ?>
-                    <tr>
+                    <tr class="footer-carrinho">
                         <td>
-                            <a href="../../views/Produto/index.php">Continuar comprando</a>
+                            <a onclick="voltarPagina()" class="btn-voltar">Continuar comprando</a>
                         </td>
-                        <td colspan="3">Total</td>
-                        <td><?php echo $total ?></td>
-                        <td><a href="carrinho.php?apagarTudo" class="btn-deletar"> Apagar tudo </a></td>
+                        <td colspan="3">Total: </td>
+                        <td>R$
+                            <?php echo $total ?>,0
+                        </td>
+                        <td><a href="carrinho.php?apagarTudo" class="btn-remover-all">Remover tudo</a></td>
                     </tr>
                 </tbody>
             </table>
+            <a href="checkout.php"
+                                class="btn-checkout <?= ($total > 1) ? '' : 'desabilitado'; ?>">Prosseguir para Checkout</a>
         </section>
     </main>
+
+    <script>
+        function voltarPagina() {
+            history.go(-2);
+        }
+    </script>
     <script src="../../js/menuResponsivo.js"></script>
 </body>
 
