@@ -393,7 +393,7 @@ include('../../connection/conexao.php');
                         <div class="carrinho-compras">
                             <a href="../Login/login.php"><img src="../../img/carrinho.png" alt="carrinho"></a>
                             <span>
-                                <?php echo $row_count; ?>
+                                0
                             </span>
                         </div>
                     </div>
@@ -535,8 +535,8 @@ include('../../connection/conexao.php');
                                 <input type="hidden" name="produto_nome" value="<?php echo $row['nome_produto'] ?>">
                                 <input type="hidden" name="produto_preco" value="<?php echo $row['preco_produto'] ?>">
                                 <input type="hidden" name="produto_imagem" value="<?php echo $row['imagem_produto'] ?>">
-                                <button type="submit" class="add-carrinho" name="add_carrinho"
-                                    value='Adicionar'><a href="../Login/login.php" style="color: #fff" >Adicionar</a></button>
+                                <button type="submit" class="add-carrinho" name="add_carrinho" value='Adicionar'><a
+                                        href="../Login/login.php" style="color: #fff">Adicionar</a></button>
                             </div>
                         </form>
 
@@ -685,11 +685,13 @@ include('../../connection/conexao.php');
 
         <div class="container-footer">
             <div class="row">
-                <div class="col-md-4">
-                    <h4 class="titulos-footer">Sobre</h4>
-                    <p class="footer-item">Sabrina Modas é um empreendimento que busca trazer modernidade e estilo
-                        através de peças de alta qualidade gerando conforto e autoestima com os melhores preços e
-                        serviços.</p>
+            <div class="col-md-4">
+                    <h4 class="titulos-footer">Menu Rodapé</h4>
+                    <ul>
+                        <li>Produtos</li>
+                        <li>Contato</li>
+                        <li>Carrinho</li>
+                    </ul>
                 </div>
                 <div class="col-md-4">
                     <h4 class="titulos-footer">Contato</h4>

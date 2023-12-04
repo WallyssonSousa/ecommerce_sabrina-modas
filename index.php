@@ -582,7 +582,6 @@ include('connection/conexao.php');
                 <div class="col-md-4">
                     <h4 class="titulos-footer">Menu Rodapé</h4>
                     <ul>
-                        <li>Home</li>
                         <li>Produtos</li>
                         <li>Contato</li>
                         <li>Carrinho</li>

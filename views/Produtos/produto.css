@@ -762,6 +762,8 @@ footer {
 
 .row {
     margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .col-md-4 {
