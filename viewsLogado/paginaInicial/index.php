@@ -61,6 +61,10 @@ if (isset($_POST['add_carrinho'])) {
             .container-sobre {
                 border: 1px solid var(--corTextPrincipal);
             }
+
+            .descricao-card{
+                color: #fafafa;
+            }
         }
 
         .carrinho-compras {
@@ -122,6 +126,11 @@ if (isset($_POST['add_carrinho'])) {
 
         .mensagem-resultado {
             text-align: center;
+            font-weight: 500;
+        }
+
+        .preco-card-pesquisa,.preco-card{
+            color: #FFA7DE; 
             font-weight: 500;
         }
 
@@ -524,19 +533,23 @@ if (isset($_POST['add_carrinho'])) {
                         echo "<p class='mensagem-resultado' style='position: absolute;'>Nenhum resultado encontrado </p>";
                     } else {
                         while ($row = $sql_query_pesquisa->fetch_assoc()) {
-                            echo "<div class='card-pesquisa'>";
-                            echo "<div class='card-content-pesquisa'>";
-                            echo "<div class='card-img-pesquisa'>";
-                            echo '<img class="img-card-pesquisa" src="../../admin/upload/' . $row['imagem_produto'] . '" />';
-                            echo "</div>";
-                            echo "<div class='card-descricao-pesquisa'>";
-                            echo "<p class='descricao-card-pesquisa'>" . $row['nome_produto'] . "</p>";
-                            echo "</div>";
-                            echo "<div class='card-preco-pesquisa'>";
-                            echo "<p class='preco-card-pesquisa' style='color: #FFA7DE; font-weight: 500;'>R$ " . $row['preco_produto'] . "</p>";
-                            echo "</div>";
-                            echo "</div>";
-                            echo "</div>";
+
+                            ?>
+
+                            <div class="card-pesquisa">
+                                <div class="card-content-pesquisa">
+                                    <div class="card-img-pesquisa">
+                                        <img src="../../admin/upload/<?php echo $row['imagem_produto'] ?>" class="img-card-pesquisa">
+                                    </div>
+                                    <div class="card-descricao-pesquisa">
+                                        <p class="descricao-card-pesquisa"><?php echo$row['nome_produto']?></p>
+                                    </div>
+                                    <div class="card-preco-pesquisa">
+                                        <p class="preco-card-pesquisa">R$ <?php echo $row['preco_produto'] ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                <?php
                         }
                     }
 
@@ -588,7 +601,7 @@ if (isset($_POST['add_carrinho'])) {
                                         </a>
                                     </div>
                                     <div class="card-preco">
-                                        <p class="preco-card" style="color: #FFA7DE; font-weight: 500;">
+                                        <p class="preco-card">
                                            R$ <?php echo $row['preco_produto'] ?>
                                         </p>
                                     </div>
