@@ -101,7 +101,7 @@ include('connection/conexao.php');
             margin: 5px 0;
         }
 
-        .card-descricao a{
+        .card-descricao a {
             color: #393939;
             font-weight: 600;
         }
@@ -551,6 +551,15 @@ include('connection/conexao.php');
         <div class="container-footer">
             <div class="row">
                 <div class="col-md-4">
+                    <h4 class="titulos-footer">Menu Rodapé</h4>
+                    <ul>
+                        <li>Home</li>
+                        <li>Produtos</li>
+                        <li>Contato</li>
+                        <li>Carrinho</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
                     <h4 class="titulos-footer">Contato</h4>
                     <ul>
                         <li class="footer-item">
@@ -567,7 +576,6 @@ include('connection/conexao.php');
                 <div class="col-md-4">
                     <h4 class="titulos-footer">Links úteis</h4>
                     <ul>
-                        <li><a class="footer-item" href="views/Contato/">Página de contato</a></li>
                         <li><a class="footer-item" href="https://www.instagram.com/sabrinamodaas___/">Nosso
                                 instagram</a></li>
                     </ul>
@@ -581,14 +589,14 @@ include('connection/conexao.php');
 
         <div class="container-footer-midia">
             <div class="col">
-                <div class="col-sociais">
-                    <img src="img/instagram.png" alt="instagram">
-                    <p>Sabrinamodaas___</p>
-                </div>
                 <div class="col-logo">
                     <a href="#">
-                        <img src="img/logo.png" alt="Logotipo do Ecommerce" class="logo-rodape">
+                        <img src="../../img/logo.png" alt="Logotipo do Ecommerce" class="logo-rodape">
                     </a>
+                </div>
+                <div class="col-sociais">
+                    <img src="../../img/instagram.png" alt="instagram">
+                    <p>@sabrinamodaas___</p>
                 </div>
             </div>
         </div>
@@ -596,7 +604,7 @@ include('connection/conexao.php');
         <div class="row">
             <div class="col-md-12">
                 <a href="#" class="btn-voltar-topo" style="display: none;" onclick="scrollToTop()">
-                    <img src="img/de-volta-ao-topo.png" alt="voltar ao topo">
+                    <img src="../../img/de-volta-ao-topo.png" alt="voltar ao topo">
                 </a>
             </div>
         </div>

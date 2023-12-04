@@ -213,14 +213,14 @@
 
         <div class="container-footer-midia">
             <div class="col">
-                <div class="col-sociais">
-                    <img src="../../img/instagram.png" alt="instagram">
-                    <p>Sabrinamodaas___</p>
-                </div>
                 <div class="col-logo">
                     <a href="#">
                         <img src="../../img/logo.png" alt="Logotipo do Ecommerce" class="logo-rodape">
                     </a>
+                </div>
+                <div class="col-sociais">
+                    <img src="../../img/instagram.png" alt="instagram">
+                    <p>@sabrinamodaas___</p>
                 </div>
             </div>
         </div>

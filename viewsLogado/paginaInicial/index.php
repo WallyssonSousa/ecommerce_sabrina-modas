@@ -62,7 +62,7 @@ if (isset($_POST['add_carrinho'])) {
                 border: 1px solid var(--corTextPrincipal);
             }
 
-            .descricao-card{
+            .descricao-card {
                 color: #fafafa;
             }
         }
@@ -129,8 +129,9 @@ if (isset($_POST['add_carrinho'])) {
             font-weight: 500;
         }
 
-        .preco-card-pesquisa,.preco-card{
-            color: #FFA7DE; 
+        .preco-card-pesquisa,
+        .preco-card {
+            color: #FFA7DE;
             font-weight: 500;
         }
 
@@ -450,7 +451,9 @@ if (isset($_POST['add_carrinho'])) {
                     <div class="container-icons-mobile">
                         <div class="carrinho-compras">
                             <a href="../Carrinho/carrinho.php"><img src="../../img/carrinho.png" alt="carrinho"></a>
-                            <span><?php echo $row_count; ?></span>
+                            <span>
+                                <?php echo $row_count; ?>
+                            </span>
                         </div>
                     </div>
 
@@ -537,17 +540,22 @@ if (isset($_POST['add_carrinho'])) {
                             <div class="card-pesquisa">
                                 <div class="card-content-pesquisa">
                                     <div class="card-img-pesquisa">
-                                        <img src="../../admin/upload/<?php echo $row['imagem_produto'] ?>" class="img-card-pesquisa">
+                                        <img src="../../admin/upload/<?php echo $row['imagem_produto'] ?>"
+                                            class="img-card-pesquisa">
                                     </div>
                                     <div class="card-descricao-pesquisa">
-                                        <p class="descricao-card-pesquisa"><?php echo$row['nome_produto']?></p>
+                                        <p class="descricao-card-pesquisa">
+                                            <?php echo $row['nome_produto'] ?>
+                                        </p>
                                     </div>
                                     <div class="card-preco-pesquisa">
-                                        <p class="preco-card-pesquisa">R$ <?php echo $row['preco_produto'] ?></p>
+                                        <p class="preco-card-pesquisa">R$
+                                            <?php echo $row['preco_produto'] ?>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                <?php
+                            <?php
                         }
                     }
 
@@ -600,7 +608,8 @@ if (isset($_POST['add_carrinho'])) {
                                     </div>
                                     <div class="card-preco">
                                         <p class="preco-card">
-                                           R$ <?php echo $row['preco_produto'] ?>
+                                            R$
+                                            <?php echo $row['preco_produto'] ?>
                                         </p>
                                     </div>
                                 </div>
@@ -644,6 +653,15 @@ if (isset($_POST['add_carrinho'])) {
         <div class="container-footer">
             <div class="row">
                 <div class="col-md-4">
+                    <h4 class="titulos-footer">Menu Rodapé</h4>
+                    <ul>
+                        <li>Home</li>
+                        <li>Produtos</li>
+                        <li>Contato</li>
+                        <li>Carrinho</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
                     <h4 class="titulos-footer">Contato</h4>
                     <ul>
                         <li class="footer-item">
@@ -660,7 +678,6 @@ if (isset($_POST['add_carrinho'])) {
                 <div class="col-md-4">
                     <h4 class="titulos-footer">Links úteis</h4>
                     <ul>
-                        <li><a class="footer-item" href="../../views/Contato/">Página de contato</a></li>
                         <li><a class="footer-item" href="https://www.instagram.com/sabrinamodaas___/">Nosso
                                 instagram</a></li>
                     </ul>
@@ -674,14 +691,14 @@ if (isset($_POST['add_carrinho'])) {
 
         <div class="container-footer-midia">
             <div class="col">
-                <div class="col-sociais">
-                    <img src="../../img/instagram.png" alt="instagram">
-                    <p>Sabrinamodaas___</p>
-                </div>
-                <div class="col-logo">
+            <div class="col-logo">
                     <a href="#">
                         <img src="../../img/logo.png" alt="Logotipo do Ecommerce" class="logo-rodape">
                     </a>
+                </div>
+                <div class="col-sociais">
+                    <img src="../../img/instagram.png" alt="instagram">
+                    <p>@sabrinamodaas___</p>
                 </div>
             </div>
         </div>
