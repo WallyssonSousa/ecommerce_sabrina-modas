@@ -1,3 +1,9 @@
+<?php
+
+include('../../connection/conexao.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -19,8 +25,271 @@
             }
         }
 
-        .hr-header{
+        .hr-header {
             width: 97%;
+        }
+
+        .carrinho-compras {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .carrinho-compras span {
+            background-color: #FFA7DE;
+            padding: 7px;
+            border-radius: 3px;
+            color: #fafafa;
+            margin: 5px;
+        }
+
+        .container-busca {
+            margin: -50px 1em 1em 1em;
+            padding: 20px;
+            display: grid;
+            place-items: center;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        .container-card-busca {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            place-items: center;
+            position: relative;
+            width: 100%;
+        }
+
+        .card-pesquisa {
+            text-align: start;
+            width: 180px;
+            height: 260px;
+            padding: 10px;
+            margin: 5px 10px;
+            border: 1px solid #f1f1f1;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            position: relative;
+            top: 25px;
+        }
+
+        .card-img-pesquisa {
+            display: grid;
+            place-items: center;
+        }
+
+        .card-content-pesquisa {
+            position: relative;
+            bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .img-card-pesquisa {
+            width: 70%;
+            height: 200px;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .card-descricao-pesquisa {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: row;
+            margin-top: 15px;
+        }
+
+        .descricao-card-pesquisa {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .preco-card-pesquisa {
+            color: #FFA7DE;
+            font-weight: 600;
+            margin: 5px 0;
+        }
+
+        .card-descricao a {
+            color: #393939;
+            font-weight: 600;
+        }
+
+        .card .button.add-button {
+            display: none;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--corRosa);
+            color: #fff;
+            font-weight: 400;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .card:hover .button.add-button {
+            display: block;
+        }
+
+        @media (max-width: 1040px) {
+            .text-right {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 950px) {
+
+            .titulo-right {
+                font-size: 22px;
+            }
+
+            .text-right {
+                font-size: 12px;
+            }
+
+            .img-sobre {
+                width: 120%;
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 860px) {
+            .container-sobre {
+                display: flex;
+                flex-direction: column;
+                margin: 100px;
+            }
+
+            .titulo-right {
+                font-size: 20px;
+                position: relative;
+                bottom: 5px;
+            }
+
+            .text-right {
+                top: 0;
+            }
+
+            .img-sobre {
+                width: 90%;
+                height: 300px;
+            }
+
+            .container-right-sobre {
+                margin: 45px 30px;
+            }
+
+            .container-img-sobre {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .card .button.add-button {
+                display: none;
+                position: absolute;
+                bottom: 8px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: var(--corRosa);
+                color: #fff;
+                font-weight: 400;
+                border: none;
+                padding: 8px 18px;
+                border-radius: 6px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 12px;
+                cursor: pointer;
+            }
+        }
+
+        @media (max-width: 750px) {
+            .card .button.button.add-button {
+                display: none;
+                position: absolute;
+                bottom: 8px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: var(--corRosa);
+                color: #fff;
+                font-weight: 400;
+                border: none;
+                padding: 6px 16px;
+                border-radius: 6px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 12px;
+                cursor: pointer;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .container-sobre {
+                margin: 60px;
+                padding: 35px;
+            }
+
+            .container-right-sobre {
+                margin: 40px 0;
+            }
+
+            .img-sobre {
+                width: 100%;
+                height: 230px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .container-sobre {
+                margin: 40px;
+                padding: 40px;
+            }
+
+            .preco-card {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .container-sobre {
+                margin: 30px;
+                padding: 30px;
+            }
+
+            .img-sobre {
+                height: 200px;
+            }
+
+            .text-right {
+                font-size: 11px;
+            }
+
+            .titulo-right {
+                font-size: 18px;
+                bottom: 4px;
+            }
+
+            .btn-voltar-topo {
+                position: fixed;
+                bottom: 5em;
+                right: 3em;
+                padding: 10px;
+                background-color: transparent;
+                border: 1px solid #FFA7DE;
+                border-radius: 5px;
+                font-size: 8px;
+                cursor: pointer;
+                display: grid;
+                place-items: center;
+            }
         }
     </style>
 </head>
@@ -53,8 +322,8 @@
                 </ul>
             </nav>
 
-            <form class="form input-serch">
-                <button>
+            <form class="form input-serch" method="get">
+                <button type="submit" value="buscar" style="cursor: pointer;">
                     <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
                         aria-labelledby="search">
                         <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9"
@@ -62,8 +331,8 @@
                         </path>
                     </svg>
                 </button>
-                <input class="input" placeholder="Faça sua pesquisa" required="" type="text">
-                <button class="reset" type="reset">
+                <input class="input" placeholder="Pesquisar" name="busca" type="text">
+                <button class="reset" type="reset" value="Buscar">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
@@ -73,7 +342,10 @@
 
             <div class="container-icons">
                 <div class="carrinho-compras">
-                    <img src="../../img/carrinho.png" alt="carrinho">
+                    <a href="../Login/login.php"><img src="../../img/carrinho.png" alt="carrinho"></a>
+                    <span>
+                        0
+                    </span>
                 </div>
             </div>
 
@@ -116,9 +388,13 @@
                         </div>
                     </div>
 
+
                     <div class="container-icons-mobile">
                         <div class="carrinho-compras">
-                            <img src="../../img/carrinho.png" alt="carrinho">
+                            <a href="../Login/login.php"><img src="../../img/carrinho.png" alt="carrinho"></a>
+                            <span>
+                                <?php echo $row_count; ?>
+                            </span>
                         </div>
                     </div>
 
@@ -144,8 +420,8 @@
 
         <div class="line-form">
 
-            <form class="form input-serch form-mobile">
-                <button>
+            <form class="form input-serch form-mobile" method="get">
+                <button value="buscar">
                     <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
                         aria-labelledby="search">
                         <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9"
@@ -153,8 +429,8 @@
                         </path>
                     </svg>
                 </button>
-                <input class="input" placeholder="Faça sua pesquisa" required="" type="text">
-                <button class="reset" type="reset">
+                <input class="input" placeholder="Pesquisar" name="busca" type="text">
+                <button class="reset" type="reset" value="Buscar">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
@@ -165,6 +441,50 @@
         </div>
     </header>
 
+    <section class='container-busca'>
+        <div class='container-card-busca'>
+            <?php
+
+            if (!isset($_GET['busca'])) {
+                echo "<p style='display: none'>Teste</p>";
+            } else {
+                $pesquisa = $conn->real_escape_string($_GET['busca']);
+                $sql_pesquisa = "SELECT * FROM produtos WHERE nome_produto LIKE '%$pesquisa%'";
+                $sql_query_pesquisa = $conn->query($sql_pesquisa) or die("Erro ao consultar!" . $conn->error);
+
+                if ($sql_query_pesquisa->num_rows == 0) {
+                    echo "<p class='mensagem-resultado' style='position: absolute;'>Nenhum resultado encontrado </p>";
+                } else {
+                    while ($row = $sql_query_pesquisa->fetch_assoc()) {
+
+                        ?>
+
+                        <div class="card-pesquisa">
+                            <div class="card-content-pesquisa">
+                                <div class="card-img-pesquisa">
+                                    <img src="../../admin/upload/<?php echo $row['imagem_produto'] ?>" class="img-card-pesquisa">
+                                </div>
+                                <div class="card-descricao-pesquisa">
+                                    <p class="descricao-card-pesquisa">
+                                        <?php echo $row['nome_produto'] ?>
+                                    </p>
+                                </div>
+                                <div class="card-preco-pesquisa">
+                                    <p class="preco-card-pesquisa">R$
+                                        <?php echo $row['preco_produto'] ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                }
+
+            }
+
+            ?>
+        </div>
+    </section>
 
     <div class="container-hr">
         <hr class="hr-header">
@@ -174,6 +494,59 @@
 
 
         <section class="container-produtos">
+
+            <div class="container-titulo">
+                <h3 class="titulo-produto">Produtos Gerais</h3>
+            </div>
+
+            <div class="categoria-produtos">
+                <?php
+
+                $sqlProduto = "SELECT id_produto, nome_produto, imagem_produto, categoria_produto, preco_produto FROM produtos WHERE categoria_produto = 'Destaque'";
+
+                $result = $conn->query($sqlProduto);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        ?>
+
+                        <form action="" method="post">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-img">
+                                        <img class="img-card" name="imagem_produto"
+                                            src="../../admin/upload/<?php echo $row['imagem_produto'] ?>" />
+                                    </div>
+                                    <div class="card-descricao">
+                                        <a
+                                            href="../../viewsLogado/Detalhes/index.php?id_produto=<?php echo $row['id_produto'] ?>">
+                                            <p class="descricao-card">
+                                                <?php echo $row['nome_produto'] ?>
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <div class="card-preco">
+                                        <p class="preco-card">
+                                            R$
+                                            <?php echo $row['preco_produto'] ?>
+                                        </p>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="produto_nome" value="<?php echo $row['nome_produto'] ?>">
+                                <input type="hidden" name="produto_preco" value="<?php echo $row['preco_produto'] ?>">
+                                <input type="hidden" name="produto_imagem" value="<?php echo $row['imagem_produto'] ?>">
+                                <button type="submit" class="add-carrinho" name="add_carrinho"
+                                    value='Adicionar'><a href="../Login/login.php" style="color: #fff" >Adicionar</a></button>
+                            </div>
+                        </form>
+
+                    <?php }
+                } else {
+                    echo "Não há produtos cadastrados";
+                }
+
+                ?>
+            </div>
 
             <div class="container-titulo">
                 <h3 class="titulo-produto">Tênis</h3>

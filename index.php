@@ -43,6 +43,21 @@ include('connection/conexao.php');
             font-weight: 500;
         }
 
+        
+        .carrinho-compras {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .carrinho-compras span {
+            background-color: #FFA7DE;
+            padding: 7px;
+            border-radius: 3px;
+            color: #fafafa;
+            margin: 5px;
+        }
+
         .container-busca {
             margin: -50px 1em 1em 1em;
             padding: 20px;
@@ -345,7 +360,10 @@ include('connection/conexao.php');
 
             <div class="container-icons">
                 <div class="carrinho-compras">
-                    <img src="img/carrinho.png" alt="carrinho">
+                    <a href="views/Login/login.php"><img src="./img/carrinho.png" alt="carrinho"></a>
+                    <span>
+                        0
+                    </span>
                 </div>
             </div>
 
@@ -390,7 +408,10 @@ include('connection/conexao.php');
 
                     <div class="container-icons-mobile">
                         <div class="carrinho-compras">
-                            <img src="img/carrinho.png" alt="carrinho">
+                            <a href="views/Login/login.php"><img src="./img/carrinho.png" alt="carrinho"></a>
+                            <span>
+                                0
+                            </span>
                         </div>
                     </div>
 
@@ -523,7 +544,7 @@ include('connection/conexao.php');
                         echo "</div>";
                         echo "</div>";
                         echo "<div class='card-buttons'>";
-                        echo "<button class='button add-button'>Adicione</button>";
+                        echo "<button class='button add-button'><a href='views/Login/login.php' style='color: #fff'>Adicionar</a></button>";
                         echo "</div>";
                         echo "</div>";
                     }

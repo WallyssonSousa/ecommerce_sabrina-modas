@@ -238,21 +238,18 @@ $logado = $_SESSION['nome'];
                 <div class="container-form">
                     <h3 class="titulo-form">Formulário de Contato</h3>
                     <p class="semi-titulo--form">Campos marcados com * são de preenchimento obrigatório.</p>
-                    <form class="formulario">
+                    <form class="formulario" onsubmit="abrirWhatsapp()">
                         <label class="label-formulario" for="nome">*Nome:</label>
-                        <input class="input-formulario" type="text" name="nome" id="nome">
+                        <input class="input-formulario" type="text" name="nome" id="nome" required>
 
                         <label class="label-formulario" for="email">*Email:</label>
-                        <input class="input-formulario" type="email" name="email" id="email">
+                        <input class="input-formulario" type="email" name="email" id="email" required>
 
                         <label class="label-formulario" for="telefone">Telefone:</label>
                         <input class="input-formulario" type="tel" name="telefone" id="telefone">
 
                         <label class="label-formulario" for="assunto">Assunto</label>
                         <input class="input-formulario" type="text" name="assunto" id="assunto">
-
-                        <label class="label-formulario" for="mensagem">*Mensagem</label>
-                        <textarea class="textarea" name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
 
                         <button class="button-enviar">Enviar</button>
 
@@ -363,6 +360,7 @@ $logado = $_SESSION['nome'];
 
     </footer>
 
+    <script src="../../js/contato.js"></script>
     <script src="../../js/buttonVoltarTopo.js"></script>
     <script src="../../js/modoNoturno.js"></script>
     <script src="../../js/menuResponsivo.js"></script>
