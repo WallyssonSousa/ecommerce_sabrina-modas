@@ -773,14 +773,14 @@ input:checked+.slider:before {
     .card button.add-carrinho {
         display: none;
         position: absolute;
-        bottom: 8px;
+        bottom: 10px;
         left: 50%;
         transform: translateX(-50%);
         background-color: var(--corRosa);
         color: #fff;
         font-weight: 400;
         border: none;
-        padding: 8px 18px;
+        padding: 8px 10px;
         border-radius: 6px;
         text-align: center;
         text-decoration: none;
@@ -828,14 +828,14 @@ input:checked+.slider:before {
     .card button.add-carrinho {
         display: none;
         position: absolute;
-        bottom: 8px;
+        bottom: 10px;
         left: 50%;
         transform: translateX(-50%);
         background-color: var(--corRosa);
         color: #fff;
         font-weight: 400;
         border: none;
-        padding: 6px 16px;
+        padding: 8px 10px;
         border-radius: 6px;
         text-align: center;
         text-decoration: none;
@@ -907,6 +907,24 @@ input:checked+.slider:before {
         width: 75%;
         height: 155px;
         object-fit: cover;
+    }
+
+    .card button.add-carrinho {
+        display: none;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--corRosa);
+        color: #fff;
+        font-weight: 400;
+        border: none;
+        padding: 8px 10px;
+        border-radius: 6px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 12px;
+        cursor: pointer;
     }
 }
 

@@ -50,6 +50,234 @@ if (isset($_POST['add_carrinho'])) {
                 border-color: #393939;
             }
         }
+
+        @media (max-width: 860px) {
+
+            .card-pesquisa {
+                text-align: start;
+                width: 170px;
+                height: 250px;
+                padding: 5px;
+                margin: 5px 6px;
+                border: 1px solid #f1f1f1;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                position: relative;
+                top: 25px;
+            }
+
+            .container-sobre {
+                display: flex;
+                flex-direction: column;
+                margin: 100px;
+            }
+
+            .titulo-right {
+                font-size: 20px;
+                position: relative;
+                bottom: 5px;
+            }
+
+            .text-right {
+                top: 0;
+            }
+
+            .img-sobre {
+                width: 90%;
+                height: 300px;
+            }
+
+            .container-right-sobre {
+                margin: 45px 30px;
+            }
+
+            .container-img-sobre {
+                display: flex;
+                justify-content: center;
+            }
+
+            .card button.add-carrinho {
+                display: none;
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: var(--corRosa);
+                color: #fff;
+                font-weight: 400;
+                border: none;
+                padding: 8px 10px;
+                border-radius: 6px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 12px;
+                cursor: pointer;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .card-pesquisa {
+                text-align: start;
+                width: 140px;
+                height: 225px;
+                padding: 5px;
+                margin: 5px 6px;
+                border: 1px solid #f1f1f1;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                position: relative;
+                top: 25px;
+            }
+
+            .img-card-pesquisa {
+                width: 70%;
+                height: 170px;
+                object-fit: cover;
+                position: relative;
+            }
+
+            .preco-card-pesquisa {
+                color: #FFA7DE;
+                font-weight: 600;
+                margin: 5px 0;
+                font-size: 14px;
+            }
+
+            .descricao-card-pesquisa {
+                font-size: 12px;
+                font-weight: 600;
+            }
+
+            .container-sobre {
+                margin: 60px;
+                padding: 35px;
+            }
+
+            .container-right-sobre {
+                margin: 40px 0;
+            }
+
+            .img-sobre {
+                width: 100%;
+                height: 230px;
+            }
+
+            .card button.add-carrinho {
+                display: none;
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: var(--corRosa);
+                color: #fff;
+                font-weight: 400;
+                border: none;
+                padding: 8px 10px;
+                border-radius: 6px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 12px;
+                cursor: pointer;
+            }
+
+            .card:hover button.add-carrinho {
+                display: block;
+            }
+        }
+
+        @media (max-width: 530px) {
+            .container-sobre {
+                margin: 40px;
+                padding: 40px;
+            }
+
+            .preco-card {
+                font-size: 12px;
+            }
+
+            .card-pesquisa {
+                text-align: start;
+                width: 130px;
+                height: 220px;
+                padding: 5px;
+                margin: 5px 6px;
+                border: 1px solid #f1f1f1;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                position: relative;
+                top: 25px;
+            }
+
+            .img-card-pesquisa {
+                width: 75%;
+                height: 160px;
+                object-fit: cover;
+                position: relative;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .container-sobre {
+                margin: 40px;
+                padding: 40px;
+            }
+
+            .preco-card {
+                font-size: 12px;
+            }
+
+            .descricao-card-pesquisa {
+                font-size: 10px;
+                font-weight: 600;
+            }
+
+            .preco-card-pesquisa {
+                color: #FFA7DE;
+                font-weight: 600;
+                margin: 5px 0;
+                font-size: 12px;
+            }
+
+            .card-pesquisa {
+                text-align: start;
+                width: 115px;
+                height: 195px;
+                padding: 5px;
+                margin: 5px 6px;
+                border: 1px solid #f1f1f1;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                position: relative;
+                top: 25px;
+            }
+
+            .img-card-pesquisa {
+                width: 80%;
+                height: 130px;
+                object-fit: cover;
+                position: relative;
+            }
+
+            .preco-card-pesquisa {
+                color: #FFA7DE;
+                font-weight: 600;
+                margin: 5px 0;
+                font-size: 11px;
+            }
+
+        }
+
+        @media (max-width: 450px) {
+            .container-card-busca {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                place-items: center;
+                position: relative;
+                width: 100%;
+                margin-top: 10px
+            }
+        }
     </style>
 </head>
 
