@@ -530,13 +530,13 @@ if (isset($_POST['add_carrinho'])) {
         <section class="container-produtos">
 
             <div class="container-titulo">
-                <h3 class="titulo-produto">Produtos Gerais</h3>
+                <h3 class="titulo-produto">Calçados</h3>
             </div>
 
             <div class="categoria-produtos">
                 <?php
 
-                $sqlProduto = "SELECT id_produto, nome_produto, imagem_produto, categoria_produto, preco_produto FROM produtos WHERE categoria_produto = 'Destaque'";
+                $sqlProduto = "SELECT id_produto, nome_produto, imagem_produto, categoria_produto, preco_produto FROM produtos WHERE categoria_produto = 'Calçados'";
 
                 $result = $conn->query($sqlProduto);
 
@@ -583,125 +583,112 @@ if (isset($_POST['add_carrinho'])) {
             </div>
 
             <div class="container-titulo">
-                <h3 class="titulo-produto">Conjunto</h3>
+                <h3 class="titulo-produto">Cropped</h3>
             </div>
 
-            <div class="categoria-produtos" id="conjunto">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="../../img/produtos/produto1.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
+            <div class="categoria-produtos">
+                <?php
 
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="../../img/produtos/produto2.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="../../img/produtos/produto3.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="../../img/produtos/produto4.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
+                $sqlProduto = "SELECT id_produto, nome_produto, imagem_produto, categoria_produto, preco_produto FROM produtos WHERE categoria_produto = 'Cropped'";
 
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="../../img/produtos/produto5.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="../../img/produtos/produto6.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="../../img/produtos/produto1.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img class="img-card" src="../../img/produtos/produto1.png" alt="produto1">
-                        </div>
-                        <div class="card-descricao">
-                            <p class="descricao-card">Conjunto Planet Girls</p>
-                        </div>
-                        <div class="card-preco">
-                            <p class="preco-card">R$ 80,00</p>
-                        </div>
-                    </div>
-                    <button class="add-carrinho">Adicione</button>
-                </div>
+                $result = $conn->query($sqlProduto);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        ?>
+
+                        <form action="" method="post">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-img">
+                                        <img class="img-card" name="imagem_produto"
+                                            src="../../admin/upload/<?php echo $row['imagem_produto'] ?>" />
+                                    </div>
+                                    <div class="card-descricao">
+                                        <a
+                                            href="../../viewsLogado/Detalhes/index.php?id_produto=<?php echo $row['id_produto'] ?>">
+                                            <p class="descricao-card">
+                                                <?php echo $row['nome_produto'] ?>
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <div class="card-preco">
+                                        <p class="preco-card">
+                                            R$
+                                            <?php echo $row['preco_produto'] ?>
+                                        </p>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="produto_nome" value="<?php echo $row['nome_produto'] ?>">
+                                <input type="hidden" name="produto_preco" value="<?php echo $row['preco_produto'] ?>">
+                                <input type="hidden" name="produto_imagem" value="<?php echo $row['imagem_produto'] ?>">
+                                <button type="submit" class="add-carrinho" name="add_carrinho"
+                                    value='Adicionar'>Adicionar</button>
+                            </div>
+                        </form>
+
+                    <?php }
+                } else {
+                    echo "Não há produtos cadastrados";
+                }
+
+                ?>
             </div>
+
+            <div class="container-titulo">
+                <h3 class="titulo-produto">Vestido</h3>
+            </div>
+
+            <div class="categoria-produtos">
+                <?php
+
+                $sqlProduto = "SELECT id_produto, nome_produto, imagem_produto, categoria_produto, preco_produto FROM produtos WHERE categoria_produto = 'Vestido'";
+
+                $result = $conn->query($sqlProduto);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        ?>
+
+                        <form action="" method="post">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-img">
+                                        <img class="img-card" name="imagem_produto"
+                                            src="../../admin/upload/<?php echo $row['imagem_produto'] ?>" />
+                                    </div>
+                                    <div class="card-descricao">
+                                        <a
+                                            href="../../viewsLogado/Detalhes/index.php?id_produto=<?php echo $row['id_produto'] ?>">
+                                            <p class="descricao-card">
+                                                <?php echo $row['nome_produto'] ?>
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <div class="card-preco">
+                                        <p class="preco-card">
+                                            R$
+                                            <?php echo $row['preco_produto'] ?>
+                                        </p>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="produto_nome" value="<?php echo $row['nome_produto'] ?>">
+                                <input type="hidden" name="produto_preco" value="<?php echo $row['preco_produto'] ?>">
+                                <input type="hidden" name="produto_imagem" value="<?php echo $row['imagem_produto'] ?>">
+                                <button type="submit" class="add-carrinho" name="add_carrinho"
+                                    value='Adicionar'>Adicionar</button>
+                            </div>
+                        </form>
+
+                    <?php }
+                } else {
+                    echo "Não há produtos cadastrados";
+                }
+
+                ?>
+            </div>
+
+           
 
         </section>
 

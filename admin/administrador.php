@@ -76,7 +76,7 @@ $result = $conn->query($sql);
         table {
             width: 100%;
             border-collapse: collapse;
-            border: 1px solid #393939;
+            border: 1px solid #f1f1f1;
             border-radius: 5px;
         }
 
@@ -87,7 +87,7 @@ $result = $conn->query($sql);
         }
 
         th {
-            border: 1px solid #393939;
+            border: 1px solid #f1f1f1;
             font-weight: 500;
         }
 
@@ -174,7 +174,7 @@ $result = $conn->query($sql);
                         <a class="item" href="../viewsLogado/paginaInicial/index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="item" href="../viewsLogado/Produtos">Produtos</a>
+                        <a class="item" href="../viewsLogado/paginaProdutos/">Produtos</a>
                     </li>
                     <li class="nav-item">
                         <a class="item" href="../views/Contato/">Contato</a>
