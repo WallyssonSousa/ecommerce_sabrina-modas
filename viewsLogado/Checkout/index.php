@@ -24,13 +24,47 @@ if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true
     <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
     <title>Sabrina Modas | Checkout</title>
     <style>
+        body.dark {
+            .checkout-pedido {
+                border: 1px solid #393939;
+                color: #FFA7DE;
+                padding: 10px;
+                text-align: center;
+                width: 50%;
+                position: relative;
+                left: 150px;
+            }
+
+            .checkout-form {
+                display: flex;
+                flex-direction: column;
+                border: 1px solid #393939;
+            }
+
+            .input-box {
+                border-bottom: 2px solid var(--corTextPrincipal);
+                color: var(--corPrimaria);
+            }
+
+            .input-box::placeholder {
+                color: #5a5a5a;
+            }
+
+            .total-geral {
+                font-weight: 400;
+                font-size: 16px;
+            }
+
+        }
+
         .container-checkout-form {
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-bottom: 2em;
         }
 
-        .checkout-pedido{
+        .checkout-pedido {
             border: 1px solid #f1f1f1;
             color: #FFA7DE;
             padding: 10px;
@@ -38,6 +72,27 @@ if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true
             width: 50%;
             position: relative;
             left: 150px;
+        }
+
+        .checkout-produtos {
+            text-align: start;
+            margin: 3px;
+        }
+
+        .container-hr {
+            display: grid;
+            place-items: center
+        }
+
+        .checkout-hr {
+            border-color: #393939;
+            width: 99%;
+            margin: 8px;
+        }
+
+        .total-geral {
+            font-weight: 500;
+            font-size: 16px;
         }
 
         .checkout-titulo {
@@ -225,7 +280,7 @@ if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true
 
         <section class="container">
             <section class="container-checkout-form">
-                <form action="" method="post" class="checkout-form">
+                <form onsubmit="abrirWhatsapp()" method="post" class="checkout-form">
                     <h3 class="checkout-titulo">Complete seu pedido</h3>
 
                     <div class="checkout-pedido">
@@ -242,10 +297,15 @@ if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true
                                 $total_geral = $total += $preco_total;
                                 ?>
 
-                                <span>
-                                    <?= $row['nome_produto']; ?>(
-                                    <?= $row['quantidade'] ?>)
-                                </span>
+                                <div class="checkout-produtos">
+                                    <span>
+                                        <?= $row['nome_produto']; ?>
+                                        (<?= $row['quantidade'] ?>) <br>
+                                        <input type="hidden" id="nome_produto" name="nome_produto" value="<?php echo $row['nome_produto'];?>">
+                                        <input type="hidden" id="quantidade" name="quantidade" value="<?php echo $row['quantidade'];?>">
+                                    </span>
+                                </div>
+
 
                             <?php }
                         } else {
@@ -253,56 +313,62 @@ if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true
                         }
                         ?>
 
+                        <div class="container-hr">
+                            <hr class="checkout-hr">
+                        </div>
+
                         <span class="total-geral">Total geral:
                             <?= $total_geral ?>,0
+                            <input type="hidden" id="valor_total" name="valor_total" value="<?php echo $total_geral ?>" >
                         </span>
                     </div>
 
                     <div class="checkout">
                         <div class="checkout-left">
                             <div class="input-wrapper">
-                                <input class="input-box" type="text" name="nome" placeholder="Nome:" required>
+                                <input class="input-box" id="nome" type="text" name="nome" placeholder="Nome:" required>
                                 <span class="underline"></span>
                             </div>
                             <div class="input-wrapper">
-                                <input class="input-box" type="text" name="telefone" placeholder="Telefone" required>
+                                <input class="input-box" id="telefone" type="text" name="telefone" placeholder="Telefone" required>
                                 <span class="underline"></span>
                             </div>
                             <div class="input-wrapper">
-                                <input class="input-box" type="text" name="email" placeholder="Email" required>
+                                <input class="input-box" id="email" type="text" name="email" placeholder="Email" required>
                                 <span class="underline"></span>
                             </div>
                             <div class="input-wrapper">
-                                <input class="input-box" type="text" name="cep" placeholder="Cep" required>
+                                <input class="input-box" id="cep" type="text" name="cep" placeholder="Cep" required>
                                 <span class="underline"></span>
                             </div>
                         </div>
                         <div class="checkout-right">
                             <div class="input-wrapper">
-                                <input class="input-box" type="text" name="endereco" placeholder="Endereço" required>
+                                <input class="input-box" id="endereco" type="text" name="endereco" placeholder="Endereço" required>
                                 <span class="underline"></span>
                             </div>
                             <div class="input-wrapper">
-                                <input class="input-box" type="text" name="numero" placeholder="Número do endereço"
+                                <input class="input-box" id="numero" type="text" name="numero" placeholder="Número do endereço"
                                     required>
                                 <span class="underline"></span>
                             </div>
                             <div class="input-wrapper">
-                                <input class="input-box" type="text" name="cidade" placeholder="Cidade" required>
+                                <input class="input-box" id="cidade" type="text" name="cidade" placeholder="Cidade" required>
                                 <span class="underline"></span>
                             </div>
                             <div class="input-wrapper">
-                                <input class="input-box" type="text" name="estado" placeholder="Estado" required>
+                                <input class="input-box" id="estado" type="text" name="estado" placeholder="Estado" required>
                                 <span class="underline"></span>
                             </div>
                         </div>
                     </div>
-                    <input type="submit" value="Concluir compra" class="btn-checkout">
+                    <input type="submit" name="btn-concluir" value="Concluir compra" class="btn-checkout">
                 </form>
             </section>
         </section>
     </main>
 
+    <script src="checkout.js"></script>
     <script src="../../js/modoNoturno.js"></script>
 </body>
 

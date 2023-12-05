@@ -49,6 +49,10 @@ if (isset($_POST['add_carrinho'])) {
             .footer-hr {
                 border-color: #393939;
             }
+
+            .descricao-card{
+                color: #f1f1f1;
+            }
         }
 
         @media (max-width: 860px) {
