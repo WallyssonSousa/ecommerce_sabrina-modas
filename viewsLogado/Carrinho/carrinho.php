@@ -41,6 +41,92 @@ if (isset($_GET['apagarTudo'])) {
     <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="carrinho.css">
     <title>Sabrina Modas | Carrinho</title>
+    <style>
+        body.dark {
+            background: #2a2c2b;
+            color: #fafafa;
+        }
+
+        @media (max-width: 1030px) {
+            td {
+                padding: 5px 30px;
+                text-align: left;
+                border-bottom: 1px solid #f1f1f1;
+                font-weight: 400;
+            }
+        }
+
+        @media (max-width: 790px) {
+            .lista-img {
+                width: 100%;
+                height: 120px;
+                object-fit: cover;
+                position: relative;
+                border-radius: 5px;
+            }
+
+            .input-quantidade {
+                width: 30%;
+                padding: 7px;
+                border: 1px solid #f1f1f1;
+                border-radius: 3px;
+            }
+
+            .btn-update-quantidade {
+                padding: 5px;
+                border: 1px solid #f1f1f1;
+                background-color: #FFA7DE;
+                border-radius: 3px;
+                color: #f1f1f1;
+                cursor: pointer;
+                font-size: 12px;
+                transition: all 1s;
+            }
+
+            .container-update{
+                display: flex;
+            }
+
+            td {
+                padding: 5px 30px;
+                text-align: left;
+                border-bottom: 1px solid #f1f1f1;
+                font-weight: 400;
+                font-size: 12px;
+            }
+
+            .btn-remover,
+            .btn-voltar {
+                padding: 7px;
+                background-color: #FFA7DE;
+                color: #f1f1f1;
+                cursor: pointer;
+                border-radius: 3px;
+                font-size: 12px;
+                transition: all 1s;
+            }
+
+            .btn-checkout {
+                background-color: #FFA7DE;
+                padding: 7px;
+                border-radius: 3px;
+                border: 1px solid #f1f1f1;
+                color: #f1f1f1;
+                margin: 10px;
+                font-size: 12px;
+            }
+
+            .btn-remover-all {
+                padding: 7px;
+                background-color: #FFA7DE;
+                color: #f1f1f1;
+                cursor: pointer;
+                border-radius: 3px;
+                font-size: 12px;
+                transition: all 1s;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -67,6 +153,13 @@ if (isset($_GET['apagarTudo'])) {
                         <a href="../sair.php" class="button-sair">Sair</a>
                     </div>
                 </div>
+            </div>
+
+            <div>
+                <label class="switch">
+                    <input type="checkbox" checked="checked" id="chk" />
+                    <span class="slider"></span>
+                </label>
             </div>
 
         </div>
@@ -129,14 +222,17 @@ if (isset($_GET['apagarTudo'])) {
                                         src="../../admin/upload/<?php echo $row['imagem_produto'] ?>" />
                                 </td>
                                 <td>
-                                    <?php echo $row['nome_produto'] ?>
+                                    <p>
+                                        <?php echo $row['nome_produto'] ?>
+                                    </p>
                                 </td>
                                 <td>
-                                    R$
-                                    <?php echo number_format($row['preco_produto']); ?>
+                                    <p>R$
+                                        <?php echo number_format($row['preco_produto']); ?>
+                                    </p>
                                 </td>
                                 <td>
-                                    <form action="" method="post">
+                                    <form class="container-update" action="" method="post">
                                         <input type="hidden" name="update_quantidade_id"
                                             value="<?php echo $row['id_carrinho'] ?>">
                                         <input class="input-quantidade" type="number" name="update_quantidade" min="1"
@@ -146,8 +242,9 @@ if (isset($_GET['apagarTudo'])) {
                                     </form>
                                 </td>
                                 <td>
-                                    R$
-                                    <?php echo $sub_total = number_format($row['preco_produto'] * $row['quantidade']); ?>,0
+                                    <p>R$
+                                        <?php echo $sub_total = number_format($row['preco_produto'] * $row['quantidade']); ?>,0
+                                    </p>
                                 </td>
                                 <td>
                                     <a href='apagar.php?id_carrinho="<?php echo $row['id_carrinho']; ?>"'
@@ -162,18 +259,18 @@ if (isset($_GET['apagarTudo'])) {
                     ?>
                     <tr class="footer-carrinho">
                         <td>
-                            <a onclick="voltarPagina()" class="btn-voltar">Continuar comprando</a>
+                            <a onclick="voltarPagina()" class="btn-voltar">Voltar</a>
                         </td>
                         <td colspan="3">Total: </td>
                         <td>R$
                             <?php echo $total ?>,0
                         </td>
-                        <td><a href="carrinho.php?apagarTudo" class="btn-remover-all">Remover tudo</a></td>
+                        <td><a href="carrinho.php?apagarTudo" class="btn-remover-all">Tudo</a></td>
                     </tr>
                 </tbody>
             </table>
-            <a href="checkout.php"
-                                class="btn-checkout <?= ($total > 1) ? '' : 'desabilitado'; ?>">Prosseguir para Checkout</a>
+            <a href="../Checkout/index.php" class="btn-checkout <?= ($total > 1) ? '' : 'desabilitado'; ?>">Prosseguir para
+                Checkout</a>
         </section>
     </main>
 
@@ -182,6 +279,8 @@ if (isset($_GET['apagarTudo'])) {
             history.go(-2);
         }
     </script>
+
+    <script src="../../js/modoNoturno.js"></script>
     <script src="../../js/menuResponsivo.js"></script>
 </body>
 

@@ -43,11 +43,9 @@ $result = $conn->query($sql);
             .nav-item a {
                 color: #fafafa;
             }
-
-            th {
-                border: 1px solid #393939;
-            }
+            
         }
+
 
         main {
             display: grid;
@@ -78,7 +76,7 @@ $result = $conn->query($sql);
         table {
             width: 100%;
             border-collapse: collapse;
-            border: 1px solid #f1f1f1;
+            border: 1px solid #393939;
             border-radius: 5px;
         }
 
@@ -89,8 +87,68 @@ $result = $conn->query($sql);
         }
 
         th {
-            border: 1px solid #f1f1f1;
+            border: 1px solid #393939;
             font-weight: 500;
+        }
+
+        @media (max-width: 870px) {
+            table {
+                width: 80%;
+            }
+
+            td,
+            th {
+                padding: 8px 40px;
+            }
+        }
+
+        @media (max-width: 730px) {
+
+            td,
+            th {
+                padding: 8px 35px;
+                font-size: 14px;
+            }
+
+            .icon-td {
+                width: 20px;
+            }
+
+            .container-titulo {
+                font-size: 12px;
+            }
+
+            .container-administrador {
+                display: grid;
+                place-items: center;
+                margin-top: 50px;
+            }
+        }
+
+        @media (max-width: 630px) {
+
+            td,
+            th {
+                padding: 8px 15px;
+                font-size: 10px;
+            }
+
+            .icon-td {
+                width: 16px;
+            }
+        }
+
+        @media (max-width: 430px) {
+
+            td,
+            th {
+                padding: 10px 15px;
+                font-size: 10px;
+            }
+
+            .icon-td {
+                width: 14px;
+            }
         }
     </style>
 </head>
@@ -122,7 +180,7 @@ $result = $conn->query($sql);
                         <a class="item" href="../views/Contato/">Contato</a>
                     </li>
                     <li class="nav-item">
-                        <a class="item" href="./upload/uploadDeProduto.php">Criar/Editar/Excluir Produto</a>
+                        <a class="item" href="./upload/uploadDeProduto.php">Editar</a>
                     </li>
                 </ul>
             </nav>
@@ -137,6 +195,13 @@ $result = $conn->query($sql);
                         <a href="../viewsLogado/sair.php" class="button-sair">Sair</a>
                     </div>
                 </div>
+            </div>
+
+            <div>
+                <label class="switch">
+                    <input type="checkbox" checked="checked" id="chk" />
+                    <span class="slider"></span>
+                </label>
             </div>
 
 
@@ -177,7 +242,7 @@ $result = $conn->query($sql);
                                 <a class="item" href="../views/Contato/">Contato</a>
                             </li>
                             <li class="nav-item">
-                                <a class="item" href="./uploadDeProduto.php">Criar/Editar/Excluir Produto</a>
+                                <a class="item" href="./uploadDeProduto.php">Editar</a>
                             </li>
                         </ul>
                     </nav>
@@ -237,10 +302,10 @@ $result = $conn->query($sql);
                             echo "<td>
                                     <a class='button-editar'
                                         href='edit.php?id_usuario=$user_data[id_usuario]'>
-                                        <img src='../img/lapis.png'/>
+                                        <img class='icon-td' src='../img/lapis.png'/>
                                     </a>
                                     <a class='button-excluir' href='delete.php?id_usuario=$user_data[id_usuario]'>
-                                        <img src='../img/lixeira.png' />
+                                        <img class='icon-td'  src='../img/lixeira.png' />
                                     </a>
                                 </td>";
                             echo "</tr>";

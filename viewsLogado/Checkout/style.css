@@ -25,31 +25,12 @@ body {
 }
 
 body.dark {
-    background: #2a2c2b;
+    background-color: #2a2c2b;
     color: #fafafa;
 
     .nav-item a {
         color: #fafafa;
     }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        border: 1px solid #393939;
-        border-radius: 5px;
-    }
-
-    td,
-    th {
-        padding: 10px 50px;
-        text-align: left;
-    }
-
-    th {
-        border: 1px solid #393939;
-        font-weight: 500;
-    }
-
 }
 
 .line-header {
@@ -367,3 +348,4 @@ input:checked+.slider:before {
         margin: 5px;
     }
 }
+

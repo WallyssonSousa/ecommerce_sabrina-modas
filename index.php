@@ -43,7 +43,7 @@ include('connection/conexao.php');
             font-weight: 500;
         }
 
-        
+
         .carrinho-compras {
             display: flex;
             align-items: center;
@@ -129,7 +129,7 @@ include('connection/conexao.php');
             font-weight: 600;
         }
 
-        .card .button.add-button {
+        .card button.add-carrinho {
             display: none;
             position: absolute;
             bottom: 10px;
@@ -147,7 +147,7 @@ include('connection/conexao.php');
             cursor: pointer;
         }
 
-        .card:hover .button.add-button {
+        .card:hover button.add-carrinho {
             display: block;
         }
 
@@ -174,6 +174,20 @@ include('connection/conexao.php');
         }
 
         @media (max-width: 860px) {
+
+            .card-pesquisa {
+                text-align: start;
+                width: 170px;
+                height: 250px;
+                padding: 5px;
+                margin: 5px 6px;
+                border: 1px solid #f1f1f1;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                position: relative;
+                top: 25px;
+            }
+
             .container-sobre {
                 display: flex;
                 flex-direction: column;
@@ -203,40 +217,18 @@ include('connection/conexao.php');
                 display: flex;
                 justify-content: center;
             }
-        }
 
-        @media (max-width: 850px) {
-            .card .button.add-button {
+            .card button.add-carrinho {
                 display: none;
                 position: absolute;
-                bottom: 8px;
+                bottom: 10px;
                 left: 50%;
                 transform: translateX(-50%);
                 background-color: var(--corRosa);
                 color: #fff;
                 font-weight: 400;
                 border: none;
-                padding: 8px 18px;
-                border-radius: 6px;
-                text-align: center;
-                text-decoration: none;
-                font-size: 12px;
-                cursor: pointer;
-            }
-        }
-
-        @media (max-width: 750px) {
-            .card .button.button.add-button {
-                display: none;
-                position: absolute;
-                bottom: 8px;
-                left: 50%;
-                transform: translateX(-50%);
-                background-color: var(--corRosa);
-                color: #fff;
-                font-weight: 400;
-                border: none;
-                padding: 6px 16px;
+                padding: 8px 10px;
                 border-radius: 6px;
                 text-align: center;
                 text-decoration: none;
@@ -246,6 +238,38 @@ include('connection/conexao.php');
         }
 
         @media (max-width: 650px) {
+
+            .card-pesquisa {
+                text-align: start;
+                width: 140px;
+                height: 225px;
+                padding: 5px;
+                margin: 5px 6px;
+                border: 1px solid #f1f1f1;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                position: relative;
+                top: 25px;
+            }
+
+            .img-card-pesquisa {
+                width: 70%;
+                height: 170px;
+                object-fit: cover;
+                position: relative;
+            }
+
+            .preco-card-pesquisa {
+                color: #FFA7DE;
+                font-weight: 600;
+                margin: 5px 0;
+                font-size: 14px;
+            }
+
+            .descricao-card-pesquisa {
+                font-size: 12px;
+                font-weight: 600;
+            }
 
             .container-sobre {
                 margin: 60px;
@@ -260,6 +284,61 @@ include('connection/conexao.php');
                 width: 100%;
                 height: 230px;
             }
+
+            .card button.add-carrinho {
+                display: none;
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: var(--corRosa);
+                color: #fff;
+                font-weight: 400;
+                border: none;
+                padding: 8px 12px;
+                border-radius: 6px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 12px;
+                cursor: pointer;
+            }
+
+
+
+            .card:hover button.add-carrinho {
+                display: block;
+            }
+        }
+
+        @media (max-width: 530px) {
+            .container-sobre {
+                margin: 40px;
+                padding: 40px;
+            }
+
+            .preco-card {
+                font-size: 12px;
+            }
+
+            .card-pesquisa {
+                text-align: start;
+                width: 130px;
+                height: 220px;
+                padding: 5px;
+                margin: 5px 6px;
+                border: 1px solid #f1f1f1;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                position: relative;
+                top: 25px;
+            }
+
+            .img-card-pesquisa {
+                width: 75%;
+                height: 160px;
+                object-fit: cover;
+                position: relative;
+            }
         }
 
         @media (max-width: 500px) {
@@ -270,6 +349,57 @@ include('connection/conexao.php');
 
             .preco-card {
                 font-size: 12px;
+            }
+
+            .descricao-card-pesquisa {
+                font-size: 10px;
+                font-weight: 600;
+            }
+
+            .preco-card-pesquisa {
+                color: #FFA7DE;
+                font-weight: 600;
+                margin: 5px 0;
+                font-size: 12px;
+            }
+
+            .card-pesquisa {
+                text-align: start;
+                width: 115px;
+                height: 195px;
+                padding: 5px;
+                margin: 5px 6px;
+                border: 1px solid #f1f1f1;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                position: relative;
+                top: 25px;
+            }
+
+            .img-card-pesquisa {
+                width: 80%;
+                height: 130px;
+                object-fit: cover;
+                position: relative;
+            }
+
+            .preco-card-pesquisa {
+                color: #FFA7DE;
+                font-weight: 600;
+                margin: 5px 0;
+                font-size: 11px;
+            }
+
+        }
+
+        @media (max-width: 450px) {
+            .container-card-busca {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                place-items: center;
+                position: relative;
+                width: 100%;
+                margin-top: 10px
             }
         }
 
@@ -529,25 +659,38 @@ include('connection/conexao.php');
 
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        echo "<div class='card'>";
-                        echo "<div class='card-content'>";
-                        echo "<div class='card-img'>";
-                        echo '<img class="img-card"  src="admin/upload/' . $row['imagem_produto'] . '" />';
-                        echo "</div>";
-                        echo "<div class='card-descricao'>";
-                        echo "<a href='./views/Detalhes/index.php?id_produto=$row[id_produto]'>
-                                <p class='descricao-card'>" . $row['nome_produto'] . "</p>
-                            </a>";
-                        echo "</div>";
-                        echo "<div class='card-preco'";
-                        echo "<p class='preco-card' style='color: #FFA7DE; font-weight: 500;'>R$ " . $row['preco_produto'] . "</p>";
-                        echo "</div>";
-                        echo "</div>";
-                        echo "<div class='card-buttons'>";
-                        echo "<button class='button add-button'><a href='views/Login/login.php' style='color: #fff'>Adicionar</a></button>";
-                        echo "</div>";
-                        echo "</div>";
-                    }
+
+                        ?>
+                        <form action="" method="post">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-img">
+                                        <img class="img-card" name="imagem_produto"
+                                            src="admin/upload/<?php echo $row['imagem_produto'] ?>" />
+                                    </div>
+                                    <div class="card-descricao">
+                                        <a
+                                            href="viewsLogado/Detalhes/index.php?id_produto=<?php echo $row['id_produto'] ?>">
+                                            <p class="descricao-card">
+                                                <?php echo $row['nome_produto'] ?>
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <div class="card-preco">
+                                        <p class="preco-card">
+                                            R$
+                                            <?php echo $row['preco_produto'] ?>
+                                        </p>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="produto_nome" value="<?php echo $row['nome_produto'] ?>">
+                                <input type="hidden" name="produto_preco" value="<?php echo $row['preco_produto'] ?>">
+                                <input type="hidden" name="produto_imagem" value="<?php echo $row['imagem_produto'] ?>">
+                                <button type="submit" class="button add-carrinho" name="add_carrinho" value='Adicionar'><a
+                                        href="../Login/login.php" style="color: #fff">Adicionar</a></button>
+                            </div>
+                        </form>
+            <?php        }
                 } else {
                     echo "<p>Nenhum produto encontrado.</p>";
                 }
